@@ -1,0 +1,653 @@
+openapi: 3.1.0
+info:
+  title: Amazon CloudFront API
+  description: >-
+    Amazon CloudFront is a content delivery network (CDN) service that
+    accelerates delivery of your websites, APIs, video content, and other web
+    assets. The CloudFront API enables you to programmatically manage
+    distributions, invalidations, functions, and other CloudFront resources.
+  version: "2020-05-31"
+  contact:
+    name: Amazon Web Services
+    url: https://aws.amazon.com/cloudfront/
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0.html
+servers:
+  - url: https://cloudfront.amazonaws.com
+    description: Amazon CloudFront API endpoint
+paths:
+  /2020-05-31/distribution:
+    post:
+      operationId: CreateDistribution
+      summary: Create a new CloudFront distribution
+      description: >-
+        Creates a new CloudFront distribution. You create a distribution to
+        tell CloudFront where you want content to be delivered from, and the
+        details about how to track and manage content delivery.
+      requestBody:
+        required: true
+        content:
+          application/xml:
+            schema:
+              $ref: "#/components/schemas/DistributionConfig"
+      responses:
+        "201":
+          description: Distribution created successfully
+          content:
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/Distribution"
+          headers:
+            Location:
+              schema:
+                type: string
+              description: The fully qualified URI of the new distribution resource
+            ETag:
+              schema:
+                type: string
+              description: The current version of the distribution
+        "400":
+          description: Bad request
+        "403":
+          description: Access denied
+      tags:
+        - Distributions
+    get:
+      operationId: ListDistributions
+      summary: List CloudFront distributions
+      description: Returns a list of distributions for the current AWS account.
+      parameters:
+        - name: Marker
+          in: query
+          description: >-
+            Use this when paginating results to indicate where to begin in
+            your list of distributions.
+          schema:
+            type: string
+        - name: MaxItems
+          in: query
+          description: The maximum number of distributions to return.
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: Successful response
+          content:
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/DistributionList"
+        "400":
+          description: Bad request
+      tags:
+        - Distributions
+  /2020-05-31/distribution/{Id}:
+    get:
+      operationId: GetDistribution
+      summary: Get a CloudFront distribution
+      description: Get the information about a distribution.
+      parameters:
+        - name: Id
+          in: path
+          required: true
+          description: The distribution's ID.
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Successful response
+          content:
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/Distribution"
+          headers:
+            ETag:
+              schema:
+                type: string
+              description: The current version of the distribution
+        "404":
+          description: Distribution not found
+      tags:
+        - Distributions
+    delete:
+      operationId: DeleteDistribution
+      summary: Delete a CloudFront distribution
+      description: Delete a distribution. You must disable the distribution before deleting it.
+      parameters:
+        - name: Id
+          in: path
+          required: true
+          description: The distribution ID.
+          schema:
+            type: string
+        - name: If-Match
+          in: header
+          required: true
+          description: >-
+            The value of the ETag header that you received when you disabled
+            the distribution.
+          schema:
+            type: string
+      responses:
+        "204":
+          description: Distribution deleted successfully
+        "404":
+          description: Distribution not found
+        "412":
+          description: Precondition failed - the If-Match value does not match
+      tags:
+        - Distributions
+  /2020-05-31/distribution/{Id}/config:
+    put:
+      operationId: UpdateDistribution
+      summary: Update a CloudFront distribution configuration
+      description: Update a distribution's configuration.
+      parameters:
+        - name: Id
+          in: path
+          required: true
+          description: The distribution's ID.
+          schema:
+            type: string
+        - name: If-Match
+          in: header
+          required: true
+          description: >-
+            The value of the ETag header that you received when retrieving
+            the distribution's configuration.
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/xml:
+            schema:
+              $ref: "#/components/schemas/DistributionConfig"
+      responses:
+        "200":
+          description: Distribution updated successfully
+          content:
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/Distribution"
+          headers:
+            ETag:
+              schema:
+                type: string
+              description: The current version of the distribution
+        "400":
+          description: Bad request
+        "404":
+          description: Distribution not found
+        "412":
+          description: Precondition failed
+      tags:
+        - Distributions
+  /2020-05-31/distribution/{DistributionId}/invalidation:
+    post:
+      operationId: CreateInvalidation
+      summary: Create an invalidation
+      description: >-
+        Create a new invalidation to remove content from CloudFront edge
+        caches. An invalidation forces CloudFront to re-request the content
+        from the origin the next time a viewer requests it.
+      parameters:
+        - name: DistributionId
+          in: path
+          required: true
+          description: The distribution's ID.
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/xml:
+            schema:
+              $ref: "#/components/schemas/InvalidationBatch"
+      responses:
+        "201":
+          description: Invalidation created successfully
+          content:
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/Invalidation"
+          headers:
+            Location:
+              schema:
+                type: string
+              description: The fully qualified URI of the invalidation
+        "400":
+          description: Bad request
+        "404":
+          description: Distribution not found
+      tags:
+        - Invalidations
+    get:
+      operationId: ListInvalidations
+      summary: List invalidations for a distribution
+      description: Lists invalidation batches for the specified distribution.
+      parameters:
+        - name: DistributionId
+          in: path
+          required: true
+          description: The distribution's ID.
+          schema:
+            type: string
+        - name: Marker
+          in: query
+          description: >-
+            Use this parameter when paginating results to indicate where to
+            begin in your list of invalidation batches.
+          schema:
+            type: string
+        - name: MaxItems
+          in: query
+          description: The maximum number of invalidation batches to return.
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: Successful response
+          content:
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/InvalidationList"
+        "400":
+          description: Bad request
+        "404":
+          description: Distribution not found
+      tags:
+        - Invalidations
+  /2020-05-31/function:
+    post:
+      operationId: CreateFunction
+      summary: Create a CloudFront function
+      description: >-
+        Creates a CloudFront function. CloudFront functions are lightweight
+        functions in JavaScript for high-scale, latency-sensitive CDN
+        customizations.
+      requestBody:
+        required: true
+        content:
+          application/xml:
+            schema:
+              type: object
+              properties:
+                Name:
+                  type: string
+                  description: A name to identify the function.
+                FunctionConfig:
+                  type: object
+                  properties:
+                    Comment:
+                      type: string
+                    Runtime:
+                      type: string
+                      enum:
+                        - cloudfront-js-1.0
+                        - cloudfront-js-2.0
+                FunctionCode:
+                  type: string
+                  format: byte
+                  description: The function code, as a Base64-encoded string.
+      responses:
+        "201":
+          description: Function created successfully
+          headers:
+            Location:
+              schema:
+                type: string
+            ETag:
+              schema:
+                type: string
+        "400":
+          description: Bad request
+        "403":
+          description: Access denied
+      tags:
+        - Functions
+    get:
+      operationId: ListFunctions
+      summary: List CloudFront functions
+      description: >-
+        Gets a list of all CloudFront functions in your AWS account.
+      parameters:
+        - name: Marker
+          in: query
+          description: Use this to paginate results.
+          schema:
+            type: string
+        - name: MaxItems
+          in: query
+          description: The maximum number of functions to return.
+          schema:
+            type: integer
+        - name: Stage
+          in: query
+          description: The function stage to filter by.
+          schema:
+            type: string
+            enum:
+              - DEVELOPMENT
+              - LIVE
+      responses:
+        "200":
+          description: Successful response
+        "400":
+          description: Bad request
+      tags:
+        - Functions
+components:
+  schemas:
+    Distribution:
+      type: object
+      properties:
+        Id:
+          type: string
+          description: The distribution's unique identifier.
+        ARN:
+          type: string
+          description: The ARN of the distribution.
+        Status:
+          type: string
+          description: >-
+            The current status of the distribution (e.g., Deployed, InProgress).
+        LastModifiedTime:
+          type: string
+          format: date-time
+          description: The date and time the distribution was last modified.
+        DomainName:
+          type: string
+          description: >-
+            The domain name corresponding to the distribution
+            (e.g., d111111abcdef8.cloudfront.net).
+        DistributionConfig:
+          $ref: "#/components/schemas/DistributionConfig"
+    DistributionConfig:
+      type: object
+      required:
+        - CallerReference
+        - Origins
+        - DefaultCacheBehavior
+        - Comment
+        - Enabled
+      properties:
+        CallerReference:
+          type: string
+          description: >-
+            A unique value that ensures the request can't be replayed.
+        Aliases:
+          type: object
+          properties:
+            Quantity:
+              type: integer
+            Items:
+              type: array
+              items:
+                type: string
+          description: CNAMEs (alternate domain names) for the distribution.
+        DefaultRootObject:
+          type: string
+          description: >-
+            The object that you want CloudFront to return when an end user
+            requests the root URL.
+        Origins:
+          type: object
+          properties:
+            Quantity:
+              type: integer
+            Items:
+              type: array
+              items:
+                $ref: "#/components/schemas/Origin"
+        DefaultCacheBehavior:
+          $ref: "#/components/schemas/CacheBehavior"
+        CacheBehaviors:
+          type: object
+          properties:
+            Quantity:
+              type: integer
+            Items:
+              type: array
+              items:
+                $ref: "#/components/schemas/CacheBehavior"
+        Comment:
+          type: string
+          description: A comment to describe the distribution.
+        Enabled:
+          type: boolean
+          description: Whether the distribution is enabled to accept user requests.
+        PriceClass:
+          type: string
+          enum:
+            - PriceClass_100
+            - PriceClass_200
+            - PriceClass_All
+          description: The price class for the distribution.
+        ViewerCertificate:
+          type: object
+          properties:
+            CloudFrontDefaultCertificate:
+              type: boolean
+            ACMCertificateArn:
+              type: string
+            SSLSupportMethod:
+              type: string
+              enum:
+                - sni-only
+                - vip
+                - static-ip
+            MinimumProtocolVersion:
+              type: string
+        WebACLId:
+          type: string
+          description: The AWS WAF web ACL to associate with this distribution.
+        HttpVersion:
+          type: string
+          enum:
+            - http1.1
+            - http2
+            - http3
+            - http2and3
+        IsIPV6Enabled:
+          type: boolean
+    Origin:
+      type: object
+      required:
+        - Id
+        - DomainName
+      properties:
+        Id:
+          type: string
+          description: A unique identifier for the origin.
+        DomainName:
+          type: string
+          description: >-
+            The domain name for the origin (e.g., my-bucket.s3.amazonaws.com).
+        OriginPath:
+          type: string
+          description: An optional path to append to the origin domain name.
+        S3OriginConfig:
+          type: object
+          properties:
+            OriginAccessIdentity:
+              type: string
+        CustomOriginConfig:
+          type: object
+          properties:
+            HTTPPort:
+              type: integer
+            HTTPSPort:
+              type: integer
+            OriginProtocolPolicy:
+              type: string
+              enum:
+                - http-only
+                - match-viewer
+                - https-only
+    CacheBehavior:
+      type: object
+      required:
+        - ViewerProtocolPolicy
+        - TargetOriginId
+      properties:
+        PathPattern:
+          type: string
+          description: >-
+            The pattern that specifies which requests to apply the behavior
+            to. Not required for the default cache behavior.
+        TargetOriginId:
+          type: string
+          description: The ID of the origin that you want CloudFront to route requests to.
+        ViewerProtocolPolicy:
+          type: string
+          enum:
+            - allow-all
+            - https-only
+            - redirect-to-https
+          description: >-
+            The protocol that viewers can use to access the files in the
+            origin.
+        AllowedMethods:
+          type: object
+          properties:
+            Quantity:
+              type: integer
+            Items:
+              type: array
+              items:
+                type: string
+                enum:
+                  - GET
+                  - HEAD
+                  - POST
+                  - PUT
+                  - PATCH
+                  - OPTIONS
+                  - DELETE
+        CachePolicyId:
+          type: string
+          description: The unique identifier of the cache policy.
+        OriginRequestPolicyId:
+          type: string
+          description: The unique identifier of the origin request policy.
+        Compress:
+          type: boolean
+          description: >-
+            Whether you want CloudFront to automatically compress certain
+            files for this cache behavior.
+        FunctionAssociations:
+          type: object
+          properties:
+            Quantity:
+              type: integer
+            Items:
+              type: array
+              items:
+                type: object
+                properties:
+                  FunctionARN:
+                    type: string
+                  EventType:
+                    type: string
+                    enum:
+                      - viewer-request
+                      - viewer-response
+        LambdaFunctionAssociations:
+          type: object
+          properties:
+            Quantity:
+              type: integer
+            Items:
+              type: array
+              items:
+                type: object
+                properties:
+                  LambdaFunctionARN:
+                    type: string
+                  EventType:
+                    type: string
+                    enum:
+                      - viewer-request
+                      - viewer-response
+                      - origin-request
+                      - origin-response
+    Invalidation:
+      type: object
+      properties:
+        Id:
+          type: string
+          description: The identifier for the invalidation request.
+        Status:
+          type: string
+          description: The status of the invalidation request.
+        CreateTime:
+          type: string
+          format: date-time
+          description: The date and time the invalidation request was created.
+        InvalidationBatch:
+          $ref: "#/components/schemas/InvalidationBatch"
+    InvalidationBatch:
+      type: object
+      required:
+        - Paths
+        - CallerReference
+      properties:
+        Paths:
+          type: object
+          properties:
+            Quantity:
+              type: integer
+              description: The number of invalidation paths specified.
+            Items:
+              type: array
+              items:
+                type: string
+              description: >-
+                A list of paths to invalidate
+                (e.g., /images/image1.jpg, /images/*).
+        CallerReference:
+          type: string
+          description: >-
+            A unique value that ensures the request can't be replayed.
+    DistributionList:
+      type: object
+      properties:
+        Marker:
+          type: string
+        NextMarker:
+          type: string
+        MaxItems:
+          type: integer
+        IsTruncated:
+          type: boolean
+        Quantity:
+          type: integer
+        Items:
+          type: array
+          items:
+            $ref: "#/components/schemas/Distribution"
+    InvalidationList:
+      type: object
+      properties:
+        Marker:
+          type: string
+        NextMarker:
+          type: string
+        MaxItems:
+          type: integer
+        IsTruncated:
+          type: boolean
+        Quantity:
+          type: integer
+        Items:
+          type: array
+          items:
+            $ref: "#/components/schemas/Invalidation"
+tags:
+  - name: Distributions
+    description: Operations for managing CloudFront distributions
+  - name: Invalidations
+    description: Operations for managing cache invalidations
+  - name: Functions
+    description: Operations for managing CloudFront functions

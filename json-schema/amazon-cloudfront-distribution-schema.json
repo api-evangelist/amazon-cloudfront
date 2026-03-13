@@ -1,0 +1,242 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.com/schemas/amazon-cloudfront-distribution.json",
+  "title": "Amazon CloudFront Distribution",
+  "description": "Schema for an Amazon CloudFront distribution resource, representing a CDN distribution that delivers content from origins to edge locations worldwide.",
+  "type": "object",
+  "properties": {
+    "Id": {
+      "type": "string",
+      "description": "The unique identifier for the distribution."
+    },
+    "ARN": {
+      "type": "string",
+      "description": "The ARN (Amazon Resource Name) for the distribution.",
+      "pattern": "^arn:aws:cloudfront::[0-9]{12}:distribution/[A-Z0-9]+"
+    },
+    "Status": {
+      "type": "string",
+      "description": "The current status of the distribution.",
+      "enum": ["Deployed", "InProgress"]
+    },
+    "LastModifiedTime": {
+      "type": "string",
+      "format": "date-time",
+      "description": "The date and time the distribution was last modified."
+    },
+    "DomainName": {
+      "type": "string",
+      "description": "The CloudFront domain name assigned to the distribution (e.g., d111111abcdef8.cloudfront.net).",
+      "pattern": "^[a-z0-9]+\\.cloudfront\\.net$"
+    },
+    "DistributionConfig": {
+      "type": "object",
+      "description": "The distribution's configuration.",
+      "required": ["CallerReference", "Origins", "DefaultCacheBehavior", "Comment", "Enabled"],
+      "properties": {
+        "CallerReference": {
+          "type": "string",
+          "description": "A unique value that ensures the request cannot be replayed."
+        },
+        "Aliases": {
+          "type": "object",
+          "description": "Alternate domain names (CNAMEs) for the distribution.",
+          "properties": {
+            "Quantity": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "Items": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "DefaultRootObject": {
+          "type": "string",
+          "description": "The object returned when a user requests the root URL (e.g., index.html)."
+        },
+        "Origins": {
+          "type": "object",
+          "description": "The origin servers for the distribution.",
+          "required": ["Quantity", "Items"],
+          "properties": {
+            "Quantity": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "Items": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "$ref": "#/$defs/Origin"
+              }
+            }
+          }
+        },
+        "DefaultCacheBehavior": {
+          "$ref": "#/$defs/CacheBehavior",
+          "description": "The default cache behavior for the distribution."
+        },
+        "CacheBehaviors": {
+          "type": "object",
+          "description": "Additional cache behaviors for the distribution.",
+          "properties": {
+            "Quantity": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "Items": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/CacheBehavior"
+              }
+            }
+          }
+        },
+        "Comment": {
+          "type": "string",
+          "description": "A comment to describe the distribution.",
+          "maxLength": 128
+        },
+        "Enabled": {
+          "type": "boolean",
+          "description": "Whether the distribution is enabled to accept end user requests."
+        },
+        "PriceClass": {
+          "type": "string",
+          "description": "The price class that corresponds with the maximum price to pay for CloudFront service.",
+          "enum": ["PriceClass_100", "PriceClass_200", "PriceClass_All"]
+        },
+        "ViewerCertificate": {
+          "type": "object",
+          "description": "SSL/TLS certificate configuration.",
+          "properties": {
+            "CloudFrontDefaultCertificate": {
+              "type": "boolean"
+            },
+            "ACMCertificateArn": {
+              "type": "string"
+            },
+            "SSLSupportMethod": {
+              "type": "string",
+              "enum": ["sni-only", "vip", "static-ip"]
+            },
+            "MinimumProtocolVersion": {
+              "type": "string",
+              "enum": ["SSLv3", "TLSv1", "TLSv1_2016", "TLSv1.1_2016", "TLSv1.2_2018", "TLSv1.2_2019", "TLSv1.2_2021"]
+            }
+          }
+        },
+        "WebACLId": {
+          "type": "string",
+          "description": "The AWS WAF web ACL to associate with the distribution."
+        },
+        "HttpVersion": {
+          "type": "string",
+          "description": "The maximum HTTP version that viewers can use to communicate with CloudFront.",
+          "enum": ["http1.1", "http2", "http3", "http2and3"]
+        },
+        "IsIPV6Enabled": {
+          "type": "boolean",
+          "description": "Whether IPv6 is enabled for the distribution."
+        }
+      }
+    }
+  },
+  "$defs": {
+    "Origin": {
+      "type": "object",
+      "description": "An origin server for the distribution.",
+      "required": ["Id", "DomainName"],
+      "properties": {
+        "Id": {
+          "type": "string",
+          "description": "A unique identifier for the origin."
+        },
+        "DomainName": {
+          "type": "string",
+          "description": "The domain name for the origin."
+        },
+        "OriginPath": {
+          "type": "string",
+          "description": "An optional path to append to the origin domain name for requests."
+        },
+        "S3OriginConfig": {
+          "type": "object",
+          "properties": {
+            "OriginAccessIdentity": {
+              "type": "string",
+              "description": "The CloudFront origin access identity to associate with the origin."
+            }
+          }
+        },
+        "CustomOriginConfig": {
+          "type": "object",
+          "properties": {
+            "HTTPPort": {
+              "type": "integer",
+              "description": "The HTTP port the custom origin listens on.",
+              "default": 80
+            },
+            "HTTPSPort": {
+              "type": "integer",
+              "description": "The HTTPS port the custom origin listens on.",
+              "default": 443
+            },
+            "OriginProtocolPolicy": {
+              "type": "string",
+              "description": "The origin protocol policy to apply to the origin.",
+              "enum": ["http-only", "match-viewer", "https-only"]
+            }
+          }
+        }
+      }
+    },
+    "CacheBehavior": {
+      "type": "object",
+      "description": "A cache behavior that specifies how CloudFront handles requests.",
+      "required": ["TargetOriginId", "ViewerProtocolPolicy"],
+      "properties": {
+        "PathPattern": {
+          "type": "string",
+          "description": "The URL pattern that specifies which requests to apply the behavior to."
+        },
+        "TargetOriginId": {
+          "type": "string",
+          "description": "The ID of the origin to route requests to."
+        },
+        "ViewerProtocolPolicy": {
+          "type": "string",
+          "description": "The protocol that viewers can use to access the files.",
+          "enum": ["allow-all", "https-only", "redirect-to-https"]
+        },
+        "AllowedMethods": {
+          "type": "object",
+          "properties": {
+            "Quantity": {
+              "type": "integer"
+            },
+            "Items": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "enum": ["GET", "HEAD", "POST", "PUT", "PATCH", "OPTIONS", "DELETE"]
+              }
+            }
+          }
+        },
+        "CachePolicyId": {
+          "type": "string",
+          "description": "The unique identifier of the cache policy attached to the behavior."
+        },
+        "Compress": {
+          "type": "boolean",
+          "description": "Whether CloudFront automatically compresses certain files."
+        }
+      }
+    }
+  }
+}
