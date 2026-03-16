@@ -1,81 +1,62 @@
+aid: amazon-cloudfront
+url: >-
+  https://raw.githubusercontent.com/api-evangelist/amazon-cloudfront/refs/heads/main/apis.yml
 name: Amazon CloudFront API
-description: >-
-  Amazon CloudFront is a content delivery network (CDN) service built for high
-  performance, security, and developer convenience. CloudFront delivers data,
-  videos, applications, and APIs to customers globally with low latency and high
-  transfer speeds, all within a developer-friendly environment. CloudFront is
-  integrated with AWS services including AWS Shield for DDoS mitigation, Amazon
-  S3, Elastic Load Balancing, and Amazon EC2 as origins for your applications,
-  and Lambda@Edge for running custom code closer to users.
-url: https://aws.amazon.com/cloudfront/
-baseURL: https://cloudfront.amazonaws.com
 tags:
   - CDN
   - Content Delivery
   - Edge Computing
   - Caching
   - AWS
-properties:
-  - type: Documentation
-    url: https://docs.aws.amazon.com/cloudfront/latest/APIReference/
-  - type: OpenAPI
-    url: openapi/amazon-cloudfront-openapi.yml
-  - type: OpenAPI
-    url: https://api.apis.guru/v2/specs/amazonaws.com/cloudfront/2020-05-31/openapi.yaml
-  - type: JSONSchema
-    url: json-schema/amazon-cloudfront-distribution-schema.json
-  - type: JSONLD
-    url: json-ld/amazon-cloudfront-context.jsonld
-  - type: Pricing
-    url: https://aws.amazon.com/cloudfront/pricing/
-  - type: Getting Started
-    url: https://aws.amazon.com/cloudfront/getting-started/
-  - type: FAQ
-    url: https://aws.amazon.com/cloudfront/faqs/
-  - type: User Guide
-    url: https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/
-  - type: API Reference
-    url: https://docs.aws.amazon.com/cloudfront/latest/APIReference/
-  - type: CLI Reference
-    url: https://docs.aws.amazon.com/cli/latest/reference/cloudfront/
-  - type: Security
-    url: https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/security.html
+type: Index
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+description: >-
+  Amazon CloudFront is a content delivery network (CDN) service built for high
+  performance, security, and developer convenience. CloudFront delivers data,
+  videos, applications, and APIs to customers globally with low latency and
+  high transfer speeds, all within a developer-friendly environment.
+created: '2024-01-01'
+modified: '2026-03-16'
+specificationVersion: '0.19'
+apis:
+  - aid: amazon-cloudfront:amazon-cloudfront-api
+    name: Amazon CloudFront API
+    tags:
+      - CDN
+      - AWS
+    humanURL: https://docs.aws.amazon.com/cloudfront/latest/APIReference/
+    properties:
+      - type: Documentation
+        url: https://docs.aws.amazon.com/cloudfront/latest/APIReference/
+      - type: OpenAPI
+        url: openapi/amazon-cloudfront-openapi.yml
 common:
   - type: Portal
     url: https://aws.amazon.com/
   - type: Website
     url: https://aws.amazon.com/cloudfront/
   - type: Documentation
-    url: https://docs.aws.amazon.com/
-  - type: Terms of Service
+    url: https://docs.aws.amazon.com/cloudfront/
+  - type: TermsOfService
     url: https://aws.amazon.com/service-terms/
-  - type: Privacy Policy
+  - type: PrivacyPolicy
     url: https://aws.amazon.com/privacy/
   - type: Support
     url: https://aws.amazon.com/support/
   - type: Blog
     url: https://aws.amazon.com/blogs/networking-and-content-delivery/
-  - type: GitHub
+  - type: GitHubOrganization
     url: https://github.com/aws
   - type: Console
     url: https://console.aws.amazon.com/cloudfront/
-  - type: Sign Up
+  - type: SignUp
     url: https://portal.aws.amazon.com/billing/signup
   - type: Login
     url: https://signin.aws.amazon.com/
   - type: Status
     url: https://health.aws.amazon.com/health/status
-  - type: Knowledge Center
-    url: https://repost.aws/knowledge-center
-  - type: YouTube
-    url: https://www.youtube.com/user/AmazonWebServices
-  - type: Stack Overflow
-    url: https://stackoverflow.com/questions/tagged/amazon-cloudfront
-  - type: Contact
-    url: https://aws.amazon.com/contact-us/
-  - type: Security
-    url: https://aws.amazon.com/security/
-  - type: Compliance
-    url: https://aws.amazon.com/compliance/
-maintainer:
-  name: Kin Lane
+  - type: Pricing
+    url: https://aws.amazon.com/cloudfront/pricing/
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com
