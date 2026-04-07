@@ -3,11 +3,11 @@ url: >-
   https://raw.githubusercontent.com/api-evangelist/amazon-cloudfront/refs/heads/main/apis.yml
 name: Amazon CloudFront
 tags:
+  - AWS
+  - Caching
   - CDN
   - Content Delivery
   - Edge Computing
-  - Caching
-  - AWS
 type: Index
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 description: >-
@@ -22,8 +22,8 @@ apis:
   - aid: amazon-cloudfront:amazon-cloudfront-api
     name: Amazon CloudFront API
     tags:
-      - CDN
       - AWS
+      - CDN
     humanURL: https://docs.aws.amazon.com/cloudfront/latest/APIReference/
     properties:
       - type: Documentation
