@@ -1,0 +1,125 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-cloudfront/refs/heads/main/json-schema/cloudfront-distribution-config-schema.json",
+  "title": "DistributionConfig",
+  "description": "DistributionConfig schema",
+  "type": "object",
+  "properties": {
+    "CallerReference": {
+      "type": "string",
+      "description": "A unique value that ensures the request can't be replayed."
+    },
+    "Aliases": {
+      "type": "object",
+      "properties": {
+        "Quantity": {
+          "type": "integer"
+        },
+        "Items": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "description": "CNAMEs (alternate domain names) for the distribution."
+    },
+    "DefaultRootObject": {
+      "type": "string",
+      "description": "The object that you want CloudFront to return when an end user requests the root URL."
+    },
+    "Origins": {
+      "type": "object",
+      "properties": {
+        "Quantity": {
+          "type": "integer"
+        },
+        "Items": {
+          "type": "array",
+          "items": {
+            "$ref": "#/components/schemas/Origin"
+          }
+        }
+      }
+    },
+    "DefaultCacheBehavior": {
+      "$ref": "#/components/schemas/CacheBehavior"
+    },
+    "CacheBehaviors": {
+      "type": "object",
+      "properties": {
+        "Quantity": {
+          "type": "integer"
+        },
+        "Items": {
+          "type": "array",
+          "items": {
+            "$ref": "#/components/schemas/CacheBehavior"
+          }
+        }
+      }
+    },
+    "Comment": {
+      "type": "string",
+      "description": "A comment to describe the distribution."
+    },
+    "Enabled": {
+      "type": "boolean",
+      "description": "Whether the distribution is enabled to accept user requests."
+    },
+    "PriceClass": {
+      "type": "string",
+      "enum": [
+        "PriceClass_100",
+        "PriceClass_200",
+        "PriceClass_All"
+      ],
+      "description": "The price class for the distribution."
+    },
+    "ViewerCertificate": {
+      "type": "object",
+      "properties": {
+        "CloudFrontDefaultCertificate": {
+          "type": "boolean"
+        },
+        "ACMCertificateArn": {
+          "type": "string"
+        },
+        "SSLSupportMethod": {
+          "type": "string",
+          "enum": [
+            "sni-only",
+            "vip",
+            "static-ip"
+          ]
+        },
+        "MinimumProtocolVersion": {
+          "type": "string"
+        }
+      }
+    },
+    "WebACLId": {
+      "type": "string",
+      "description": "The AWS WAF web ACL to associate with this distribution."
+    },
+    "HttpVersion": {
+      "type": "string",
+      "enum": [
+        "http1.1",
+        "http2",
+        "http3",
+        "http2and3"
+      ]
+    },
+    "IsIPV6Enabled": {
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "CallerReference",
+    "Origins",
+    "DefaultCacheBehavior",
+    "Comment",
+    "Enabled"
+  ]
+}

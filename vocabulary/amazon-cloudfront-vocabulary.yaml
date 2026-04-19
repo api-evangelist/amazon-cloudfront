@@ -1,0 +1,65 @@
+vocabulary: "1.0.0"
+
+info:
+  provider: "Amazon CloudFront"
+  description: "Vocabulary for Amazon CloudFront APIs covering operations, schemas, and capability workflows."
+  created: "2026-04-19"
+  modified: "2026-04-19"
+
+operational:
+  apis:
+    - name: "Amazon CloudFront API"
+      namespace: cloudfront
+      baseUrl: https://cloudfront.amazonaws.com
+      status: active
+
+  resources: []
+  actions:
+    - name: list
+      httpMethod: GET
+      pattern: read
+    - name: create
+      httpMethod: POST
+      pattern: write
+    - name: get
+      httpMethod: GET
+      pattern: read
+    - name: delete
+      httpMethod: DELETE
+      pattern: destructive
+
+  authentication:
+    schemes:
+      - type: AWS Signature Version 4
+        apis: [cloudfront]
+
+capability:
+  workflows:
+    - name: "Content Delivery Network Management"
+      file: capabilities/content-delivery.yaml
+      toolCount: 7
+      personas: [Platform Engineer]
+
+  personas:
+    - id: platform-engineer
+      name: "Platform Engineer"
+      workflows: ["Content Delivery Network Management"]
+
+  namespaces:
+    - name: cloudfront
+      type: consumed
+      baseUri: https://cloudfront.amazonaws.com
+    - name: cloudfront-workflow-api
+      type: rest-exposed
+      port: 8080
+    - name: cloudfront-workflow-mcp
+      type: mcp-exposed
+      port: 9090
+
+  binds:
+    - name: AWS_ACCESS_KEY_ID
+      workflows: ["Content Delivery Network Management"]
+    - name: AWS_SECRET_ACCESS_KEY
+      workflows: ["Content Delivery Network Management"]
+
+crossReference: []

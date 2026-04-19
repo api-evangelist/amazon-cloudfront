@@ -1,0 +1,13 @@
+{
+  "Id": "abc12345",
+  "DomainName": "example-resource",
+  "OriginPath": "example-value",
+  "S3OriginConfig": {
+    "OriginAccessIdentity": "abc12345"
+  },
+  "CustomOriginConfig": {
+    "HTTPPort": 100,
+    "HTTPSPort": 100,
+    "OriginProtocolPolicy": "http-only"
+  }
+}

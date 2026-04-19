@@ -1,0 +1,119 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-cloudfront/refs/heads/main/json-schema/cloudfront-cache-behavior-schema.json",
+  "title": "CacheBehavior",
+  "description": "CacheBehavior schema",
+  "type": "object",
+  "properties": {
+    "PathPattern": {
+      "type": "string",
+      "description": "The pattern that specifies which requests to apply the behavior to. Not required for the default cache behavior."
+    },
+    "TargetOriginId": {
+      "type": "string",
+      "description": "The ID of the origin that you want CloudFront to route requests to."
+    },
+    "ViewerProtocolPolicy": {
+      "type": "string",
+      "enum": [
+        "allow-all",
+        "https-only",
+        "redirect-to-https"
+      ],
+      "description": "The protocol that viewers can use to access the files in the origin."
+    },
+    "AllowedMethods": {
+      "type": "object",
+      "properties": {
+        "Quantity": {
+          "type": "integer"
+        },
+        "Items": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "GET",
+              "HEAD",
+              "POST",
+              "PUT",
+              "PATCH",
+              "OPTIONS",
+              "DELETE"
+            ]
+          }
+        }
+      }
+    },
+    "CachePolicyId": {
+      "type": "string",
+      "description": "The unique identifier of the cache policy."
+    },
+    "OriginRequestPolicyId": {
+      "type": "string",
+      "description": "The unique identifier of the origin request policy."
+    },
+    "Compress": {
+      "type": "boolean",
+      "description": "Whether you want CloudFront to automatically compress certain files for this cache behavior."
+    },
+    "FunctionAssociations": {
+      "type": "object",
+      "properties": {
+        "Quantity": {
+          "type": "integer"
+        },
+        "Items": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "FunctionARN": {
+                "type": "string"
+              },
+              "EventType": {
+                "type": "string",
+                "enum": [
+                  "viewer-request",
+                  "viewer-response"
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "LambdaFunctionAssociations": {
+      "type": "object",
+      "properties": {
+        "Quantity": {
+          "type": "integer"
+        },
+        "Items": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "LambdaFunctionARN": {
+                "type": "string"
+              },
+              "EventType": {
+                "type": "string",
+                "enum": [
+                  "viewer-request",
+                  "viewer-response",
+                  "origin-request",
+                  "origin-response"
+                ]
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "required": [
+    "ViewerProtocolPolicy",
+    "TargetOriginId"
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "Paths": {
+    "Quantity": 100,
+    "Items": [
+      "example-value"
+    ]
+  },
+  "CallerReference": "example-value"
+}

@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-cloudfront/refs/heads/main/json-schema/cloudfront-distribution-list-schema.json",
+  "title": "DistributionList",
+  "description": "DistributionList schema",
+  "type": "object",
+  "properties": {
+    "Marker": {
+      "type": "string"
+    },
+    "NextMarker": {
+      "type": "string"
+    },
+    "MaxItems": {
+      "type": "integer"
+    },
+    "IsTruncated": {
+      "type": "boolean"
+    },
+    "Quantity": {
+      "type": "integer"
+    },
+    "Items": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/Distribution"
+      }
+    }
+  }
+}

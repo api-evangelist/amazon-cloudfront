@@ -1,0 +1,10 @@
+{
+  "Marker": "example-value",
+  "NextMarker": "example-value",
+  "MaxItems": 100,
+  "IsTruncated": true,
+  "Quantity": 100,
+  "Items": [
+    "example-value"
+  ]
+}

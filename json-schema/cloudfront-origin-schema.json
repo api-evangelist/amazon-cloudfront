@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-cloudfront/refs/heads/main/json-schema/cloudfront-origin-schema.json",
+  "title": "Origin",
+  "description": "Origin schema",
+  "type": "object",
+  "properties": {
+    "Id": {
+      "type": "string",
+      "description": "A unique identifier for the origin."
+    },
+    "DomainName": {
+      "type": "string",
+      "description": "The domain name for the origin (e.g., my-bucket.s3.amazonaws.com)."
+    },
+    "OriginPath": {
+      "type": "string",
+      "description": "An optional path to append to the origin domain name."
+    },
+    "S3OriginConfig": {
+      "type": "object",
+      "properties": {
+        "OriginAccessIdentity": {
+          "type": "string"
+        }
+      }
+    },
+    "CustomOriginConfig": {
+      "type": "object",
+      "properties": {
+        "HTTPPort": {
+          "type": "integer"
+        },
+        "HTTPSPort": {
+          "type": "integer"
+        },
+        "OriginProtocolPolicy": {
+          "type": "string",
+          "enum": [
+            "http-only",
+            "match-viewer",
+            "https-only"
+          ]
+        }
+      }
+    }
+  },
+  "required": [
+    "Id",
+    "DomainName"
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "PathPattern": "example-value",
+  "TargetOriginId": "abc12345",
+  "ViewerProtocolPolicy": "allow-all",
+  "AllowedMethods": {
+    "Quantity": 100,
+    "Items": [
+      "GET"
+    ]
+  },
+  "CachePolicyId": "abc12345",
+  "OriginRequestPolicyId": "abc12345",
+  "Compress": true,
+  "FunctionAssociations": {
+    "Quantity": 100,
+    "Items": [
+      {
+        "FunctionARN": "arn:aws:::example/abc12345",
+        "EventType": "viewer-request"
+      }
+    ]
+  },
+  "LambdaFunctionAssociations": {
+    "Quantity": 100,
+    "Items": [
+      {
+        "LambdaFunctionARN": "arn:aws:::example/abc12345",
+        "EventType": "viewer-request"
+      }
+    ]
+  }
+}

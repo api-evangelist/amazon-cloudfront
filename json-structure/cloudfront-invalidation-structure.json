@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-cloudfront/refs/heads/main/json-structure/cloudfront-invalidation-structure.json",
+  "name": "Invalidation",
+  "description": "Invalidation schema",
+  "type": "object",
+  "properties": {
+    "Id": {
+      "type": "string",
+      "description": "The identifier for the invalidation request."
+    },
+    "Status": {
+      "type": "string",
+      "description": "The status of the invalidation request."
+    },
+    "CreateTime": {
+      "type": "datetime",
+      "description": "The date and time the invalidation request was created."
+    },
+    "InvalidationBatch": {
+      "$ref": "#/components/schemas/InvalidationBatch"
+    }
+  }
+}

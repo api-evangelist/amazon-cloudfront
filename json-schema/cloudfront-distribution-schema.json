@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-cloudfront/refs/heads/main/json-schema/cloudfront-distribution-schema.json",
+  "title": "Distribution",
+  "description": "Distribution schema",
+  "type": "object",
+  "properties": {
+    "Id": {
+      "type": "string",
+      "description": "The distribution's unique identifier."
+    },
+    "ARN": {
+      "type": "string",
+      "description": "The ARN of the distribution."
+    },
+    "Status": {
+      "type": "string",
+      "description": "The current status of the distribution (e.g., Deployed, InProgress)."
+    },
+    "LastModifiedTime": {
+      "type": "string",
+      "format": "date-time",
+      "description": "The date and time the distribution was last modified."
+    },
+    "DomainName": {
+      "type": "string",
+      "description": "The domain name corresponding to the distribution (e.g., d111111abcdef8.cloudfront.net)."
+    },
+    "DistributionConfig": {
+      "$ref": "#/components/schemas/DistributionConfig"
+    }
+  }
+}

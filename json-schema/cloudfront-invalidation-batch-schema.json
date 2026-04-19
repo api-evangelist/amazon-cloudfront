@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-cloudfront/refs/heads/main/json-schema/cloudfront-invalidation-batch-schema.json",
+  "title": "InvalidationBatch",
+  "description": "InvalidationBatch schema",
+  "type": "object",
+  "properties": {
+    "Paths": {
+      "type": "object",
+      "properties": {
+        "Quantity": {
+          "type": "integer",
+          "description": "The number of invalidation paths specified."
+        },
+        "Items": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "A list of paths to invalidate (e.g., /images/image1.jpg, /images/*)."
+        }
+      }
+    },
+    "CallerReference": {
+      "type": "string",
+      "description": "A unique value that ensures the request can't be replayed."
+    }
+  },
+  "required": [
+    "Paths",
+    "CallerReference"
+  ]
+}

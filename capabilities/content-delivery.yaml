@@ -1,0 +1,36 @@
+naftiko: "1.0.0-alpha1"
+
+info:
+  label: "Amazon CloudFront Content Delivery Network Management"
+  description: "Workflow for content delivery network management using Amazon CloudFront for Platform Engineer personas."
+  tags:
+    - Amazon Web Services
+    - Amazon CloudFront
+  created: "2026-04-19"
+  modified: "2026-04-19"
+
+binds:
+  - namespace: env
+    keys:
+      AWS_ACCESS_KEY_ID: AWS_ACCESS_KEY_ID
+      AWS_SECRET_ACCESS_KEY: AWS_SECRET_ACCESS_KEY
+      AWS_REGION: AWS_REGION
+
+capability:
+  consumes:
+    - import: cloudfront
+      location: ./shared/cloudfront.yaml
+
+  exposes:
+    - type: rest
+      port: 8080
+      namespace: cloudfront-workflow-api
+      description: "Unified REST API for Amazon CloudFront content delivery network management."
+      resources: []
+
+    - type: mcp
+      port: 9090
+      namespace: cloudfront-workflow-mcp
+      transport: http
+      description: "MCP server for AI-assisted Amazon CloudFront content delivery network management."
+      tools: []

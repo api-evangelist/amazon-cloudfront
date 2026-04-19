@@ -1,0 +1,8 @@
+{
+  "Id": "abc12345",
+  "ARN": "arn:aws:::example/abc12345",
+  "Status": "ACTIVE",
+  "LastModifiedTime": "2025-03-15T14:30:00Z",
+  "DomainName": "example-resource",
+  "DistributionConfig": "example-value"
+}

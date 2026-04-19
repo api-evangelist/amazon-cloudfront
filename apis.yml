@@ -3,60 +3,128 @@ url: >-
   https://raw.githubusercontent.com/api-evangelist/amazon-cloudfront/refs/heads/main/apis.yml
 name: Amazon CloudFront
 tags:
-  - AWS
-  - Caching
-  - CDN
-  - Content Delivery
-  - Edge Computing
+- AWS
+- CloudFront
+- CDN
+- Content Delivery
+- Edge
 type: Index
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 description: >-
-  Amazon CloudFront is a content delivery network (CDN) service built for high
-  performance, security, and developer convenience. CloudFront delivers data,
-  videos, applications, and APIs to customers globally with low latency and
-  high transfer speeds, all within a developer-friendly environment.
+  Amazon CloudFront is a fast content delivery network (CDN) service that securely delivers data, videos, applications, and APIs to customers globally with low latency and high transfer speeds across 750+
+  globally dispersed Points of Presence.
 created: '2024-01-01'
-modified: '2026-03-16'
+modified: '2026-04-19'
 specificationVersion: '0.19'
 apis:
-  - aid: amazon-cloudfront:amazon-cloudfront-api
-    name: Amazon CloudFront API
-    tags:
-      - AWS
-      - CDN
-    humanURL: https://docs.aws.amazon.com/cloudfront/latest/APIReference/
-    properties:
-      - type: Documentation
-        url: https://docs.aws.amazon.com/cloudfront/latest/APIReference/
-      - type: OpenAPI
-        url: openapi/amazon-cloudfront-openapi.yml
-common:
-  - type: Portal
-    url: https://aws.amazon.com/
-  - type: Website
-    url: https://aws.amazon.com/cloudfront/
+- name: Amazon CloudFront API
+  description: API for managing CloudFront distributions, origins, behaviors, cache policies, and edge functions for global content delivery.
+  image: https://a0.awsstatic.com/libra-css/images/logos/aws_logo_smile_1200x630.png
+  humanURL: https://aws.amazon.com/cloudfront/
+  baseURL: https://cloudfront.amazonaws.com
+  tags:
+  - AWS
+  - CloudFront
+  - CDN
+  - Content Delivery
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-cloudfront-openapi.yml
   - type: Documentation
-    url: https://docs.aws.amazon.com/cloudfront/
-  - type: TermsOfService
-    url: https://aws.amazon.com/service-terms/
-  - type: PrivacyPolicy
-    url: https://aws.amazon.com/privacy/
-  - type: Support
-    url: https://aws.amazon.com/support/
-  - type: Blog
-    url: https://aws.amazon.com/blogs/networking-and-content-delivery/
-  - type: GitHubOrganization
-    url: https://github.com/aws
-  - type: Console
-    url: https://console.aws.amazon.com/cloudfront/
-  - type: SignUp
-    url: https://portal.aws.amazon.com/billing/signup
-  - type: Login
-    url: https://signin.aws.amazon.com/
-  - type: Status
-    url: https://health.aws.amazon.com/health/status
+    url: https://docs.aws.amazon.com/cloudfront/latest/APIReference/
+  - type: GettingStarted
+    url: https://aws.amazon.com/cloudfront/getting-started/
   - type: Pricing
     url: https://aws.amazon.com/cloudfront/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/cloudfront/faqs/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/cloudfront/latest/APIReference/
+  - type: CLI
+    url: https://docs.aws.amazon.com/cli/latest/reference/cloudfront/
+  - type: JSONSchema
+    url: json-schema/cloudfront-distribution-schema.json
+  - type: JSONSchema
+    url: json-schema/cloudfront-distribution-config-schema.json
+  - type: JSONSchema
+    url: json-schema/cloudfront-origin-schema.json
+  - type: JSONSchema
+    url: json-schema/cloudfront-cache-behavior-schema.json
+  - type: JSONSchema
+    url: json-schema/cloudfront-invalidation-schema.json
+  - type: JSONLD
+    url: json-ld/amazon-cloudfront-context.jsonld
+common:
+- type: Portal
+  url: https://aws.amazon.com/
+- type: Website
+  url: https://aws.amazon.com/cloudfront/
+- type: Documentation
+  url: https://docs.aws.amazon.com/cloudfront/latest/APIReference/
+- type: TermsOfService
+  url: https://aws.amazon.com/service-terms/
+- type: PrivacyPolicy
+  url: https://aws.amazon.com/privacy/
+- type: Support
+  url: https://aws.amazon.com/premiumsupport/
+- type: Blog
+  url: https://aws.amazon.com/blogs/networking-and-content-delivery/
+- type: GitHubOrganization
+  url: https://github.com/aws
+- type: Console
+  url: https://console.aws.amazon.com/cloudfront/
+- type: SignUp
+  url: https://signin.aws.amazon.com/signup?request_type=register
+- type: StatusPage
+  url: https://health.aws.amazon.com/health/status
+- type: YouTube
+  url: https://www.youtube.com/user/AmazonWebServices
+- type: StackOverflow
+  url: https://stackoverflow.com/questions/tagged/amazon-cloudfront
+- type: Contact
+  url: https://aws.amazon.com/contact-us/
+- type: Compliance
+  url: https://aws.amazon.com/compliance/
+- type: SpectralRules
+  url: rules/amazon-cloudfront-spectral-rules.yml
+- type: Vocabulary
+  url: vocabulary/amazon-cloudfront-vocabulary.yaml
+- type: NaftikoCapability
+  url: capabilities/content-delivery.yaml
+- type: Features
+  data:
+  - name: Global Edge Network
+    description: Deliver content from 750+ globally distributed Points of Presence for low latency.
+  - name: DDoS Protection
+    description: Built-in AWS Shield Standard protection for all CloudFront distributions at no extra cost.
+  - name: Edge Functions
+    description: Deploy serverless code at edge locations with CloudFront Functions and Lambda@Edge.
+  - name: HTTPS Encryption
+    description: Secure content delivery with HTTPS and field-level encryption capabilities.
+  - name: Origin Shield
+    description: Additional caching layer to reduce load on origins and improve cache hit rates.
+- type: UseCases
+  data:
+  - name: Website Acceleration
+    description: Fast, secure global content delivery for web applications.
+  - name: Video Streaming
+    description: Live and on-demand video streaming with Media Services integration.
+  - name: API Acceleration
+    description: Low-latency API delivery with edge termination and WebSocket support.
+  - name: Software Distribution
+    description: Scale patch and software update delivery globally to millions of endpoints.
+- type: Integrations
+  data:
+  - name: Amazon S3
+    description: Serve static content from S3 buckets through CloudFront distributions.
+  - name: AWS Lambda@Edge
+    description: Run Lambda functions at CloudFront edge locations for request customization.
+  - name: AWS WAF
+    description: Filter malicious traffic with WAF rules applied at the CloudFront edge.
+  - name: AWS ACM
+    description: Use ACM SSL/TLS certificates with CloudFront distributions.
+  - name: Amazon Route 53
+    description: Route traffic to CloudFront distributions using Route 53 aliases.
 maintainers:
-  - FN: Kin Lane
-    email: kin@apievangelist.com
+- FN: Kin Lane
+  email: kin@apievangelist.com

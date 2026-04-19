@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-cloudfront/refs/heads/main/json-structure/cloudfront-invalidation-list-structure.json",
+  "name": "InvalidationList",
+  "description": "InvalidationList schema",
+  "type": "object",
+  "properties": {
+    "Marker": {
+      "type": "string"
+    },
+    "NextMarker": {
+      "type": "string"
+    },
+    "MaxItems": {
+      "type": "int32"
+    },
+    "IsTruncated": {
+      "type": "boolean"
+    },
+    "Quantity": {
+      "type": "int32"
+    },
+    "Items": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/Invalidation"
+      }
+    }
+  }
+}

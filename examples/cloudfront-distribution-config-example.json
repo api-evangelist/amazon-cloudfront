@@ -1,0 +1,35 @@
+{
+  "CallerReference": "example-value",
+  "Aliases": {
+    "Quantity": 100,
+    "Items": [
+      "example-value"
+    ]
+  },
+  "DefaultRootObject": "example-value",
+  "Origins": {
+    "Quantity": 100,
+    "Items": [
+      "example-value"
+    ]
+  },
+  "DefaultCacheBehavior": "example-value",
+  "CacheBehaviors": {
+    "Quantity": 100,
+    "Items": [
+      "example-value"
+    ]
+  },
+  "Comment": "example-value",
+  "Enabled": true,
+  "PriceClass": "PriceClass_100",
+  "ViewerCertificate": {
+    "CloudFrontDefaultCertificate": true,
+    "ACMCertificateArn": "arn:aws:::example/abc12345",
+    "SSLSupportMethod": "sni-only",
+    "MinimumProtocolVersion": "example-value"
+  },
+  "WebACLId": "abc12345",
+  "HttpVersion": "http1.1",
+  "IsIPV6Enabled": true
+}

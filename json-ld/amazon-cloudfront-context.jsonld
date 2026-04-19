@@ -1,125 +1,178 @@
 {
   "@context": {
-    "@vocab": "https://schema.org/",
-    "cloudfront": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/",
-    "aws": "https://aws.amazon.com/",
-    "Distribution": {
-      "@id": "cloudfront:API_Distribution",
-      "@context": {
-        "distributionId": {
-          "@id": "cloudfront:Distribution/Id",
-          "@type": "xsd:string"
-        },
-        "arn": {
-          "@id": "cloudfront:Distribution/ARN",
-          "@type": "xsd:string"
-        },
-        "status": {
-          "@id": "cloudfront:Distribution/Status",
-          "@type": "xsd:string"
-        },
-        "domainName": {
-          "@id": "cloudfront:Distribution/DomainName",
-          "@type": "xsd:string"
-        },
-        "lastModifiedTime": {
-          "@id": "cloudfront:Distribution/LastModifiedTime",
-          "@type": "xsd:dateTime"
-        },
-        "enabled": {
-          "@id": "cloudfront:Distribution/Enabled",
-          "@type": "xsd:boolean"
-        },
-        "comment": {
-          "@id": "cloudfront:Distribution/Comment",
-          "@type": "xsd:string"
-        },
-        "priceClass": {
-          "@id": "cloudfront:Distribution/PriceClass",
-          "@type": "xsd:string"
-        },
-        "httpVersion": {
-          "@id": "cloudfront:Distribution/HttpVersion",
-          "@type": "xsd:string"
-        }
-      }
+    "@version": 1.1,
+    "cloudfront": "https://aws.amazon.com/cloudfront/schema/",
+    "schema": "https://schema.org/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "Distribution": "cloudfront:Distribution",
+    "id": {
+      "@id": "cloudfront:id",
+      "@type": "xsd:string"
     },
-    "Origin": {
-      "@id": "cloudfront:API_Origin",
-      "@context": {
-        "originId": {
-          "@id": "cloudfront:Origin/Id",
-          "@type": "xsd:string"
-        },
-        "domainName": {
-          "@id": "cloudfront:Origin/DomainName",
-          "@type": "xsd:string"
-        },
-        "originPath": {
-          "@id": "cloudfront:Origin/OriginPath",
-          "@type": "xsd:string"
-        }
-      }
+    "aRN": {
+      "@id": "cloudfront:a_r_n",
+      "@type": "xsd:string"
     },
-    "CacheBehavior": {
-      "@id": "cloudfront:API_CacheBehavior",
-      "@context": {
-        "pathPattern": {
-          "@id": "cloudfront:CacheBehavior/PathPattern",
-          "@type": "xsd:string"
-        },
-        "targetOriginId": {
-          "@id": "cloudfront:CacheBehavior/TargetOriginId",
-          "@type": "xsd:string"
-        },
-        "viewerProtocolPolicy": {
-          "@id": "cloudfront:CacheBehavior/ViewerProtocolPolicy",
-          "@type": "xsd:string"
-        },
-        "compress": {
-          "@id": "cloudfront:CacheBehavior/Compress",
-          "@type": "xsd:boolean"
-        }
-      }
+    "status": {
+      "@id": "cloudfront:status",
+      "@type": "xsd:string"
     },
-    "Invalidation": {
-      "@id": "cloudfront:API_Invalidation",
-      "@context": {
-        "invalidationId": {
-          "@id": "cloudfront:Invalidation/Id",
-          "@type": "xsd:string"
-        },
-        "status": {
-          "@id": "cloudfront:Invalidation/Status",
-          "@type": "xsd:string"
-        },
-        "createTime": {
-          "@id": "cloudfront:Invalidation/CreateTime",
-          "@type": "xsd:dateTime"
-        },
-        "paths": {
-          "@id": "cloudfront:Invalidation/Paths",
-          "@container": "@list"
-        }
-      }
+    "lastModifiedTime": {
+      "@id": "cloudfront:last_modified_time",
+      "@type": "xsd:dateTime"
     },
-    "Function": {
-      "@id": "cloudfront:API_Function",
-      "@context": {
-        "functionName": {
-          "@id": "cloudfront:Function/Name",
-          "@type": "xsd:string"
-        },
-        "stage": {
-          "@id": "cloudfront:Function/Stage",
-          "@type": "xsd:string"
-        },
-        "runtime": {
-          "@id": "cloudfront:Function/Runtime",
-          "@type": "xsd:string"
-        }
-      }
+    "domainName": {
+      "@id": "cloudfront:domain_name",
+      "@type": "xsd:string"
     },
-    "xsd": "http://www.w3.org/2001/XMLSchema#"
+    "distributionConfig": {
+      "@id": "cloudfront:distribution_config",
+      "@type": "xsd:string"
+    },
+    "DistributionConfig": "cloudfront:DistributionConfig",
+    "callerReference": {
+      "@id": "cloudfront:caller_reference",
+      "@type": "xsd:string"
+    },
+    "aliases": {
+      "@id": "cloudfront:aliases",
+      "@type": "xsd:string"
+    },
+    "defaultRootObject": {
+      "@id": "cloudfront:default_root_object",
+      "@type": "xsd:string"
+    },
+    "origins": {
+      "@id": "cloudfront:origins",
+      "@type": "xsd:string"
+    },
+    "defaultCacheBehavior": {
+      "@id": "cloudfront:default_cache_behavior",
+      "@type": "xsd:string"
+    },
+    "cacheBehaviors": {
+      "@id": "cloudfront:cache_behaviors",
+      "@type": "xsd:string"
+    },
+    "comment": {
+      "@id": "cloudfront:comment",
+      "@type": "xsd:string"
+    },
+    "enabled": {
+      "@id": "cloudfront:enabled",
+      "@type": "xsd:boolean"
+    },
+    "priceClass": {
+      "@id": "cloudfront:price_class",
+      "@type": "xsd:string"
+    },
+    "viewerCertificate": {
+      "@id": "cloudfront:viewer_certificate",
+      "@type": "xsd:string"
+    },
+    "webACLId": {
+      "@id": "cloudfront:web_a_c_l_id",
+      "@type": "xsd:string"
+    },
+    "httpVersion": {
+      "@id": "cloudfront:http_version",
+      "@type": "xsd:string"
+    },
+    "isIPV6Enabled": {
+      "@id": "cloudfront:is_i_p_v6_enabled",
+      "@type": "xsd:boolean"
+    },
+    "Origin": "cloudfront:Origin",
+    "originPath": {
+      "@id": "cloudfront:origin_path",
+      "@type": "xsd:string"
+    },
+    "s3OriginConfig": {
+      "@id": "cloudfront:s3_origin_config",
+      "@type": "xsd:string"
+    },
+    "customOriginConfig": {
+      "@id": "cloudfront:custom_origin_config",
+      "@type": "xsd:string"
+    },
+    "CacheBehavior": "cloudfront:CacheBehavior",
+    "pathPattern": {
+      "@id": "cloudfront:path_pattern",
+      "@type": "xsd:string"
+    },
+    "targetOriginId": {
+      "@id": "cloudfront:target_origin_id",
+      "@type": "xsd:string"
+    },
+    "viewerProtocolPolicy": {
+      "@id": "cloudfront:viewer_protocol_policy",
+      "@type": "xsd:string"
+    },
+    "allowedMethods": {
+      "@id": "cloudfront:allowed_methods",
+      "@type": "xsd:string"
+    },
+    "cachePolicyId": {
+      "@id": "cloudfront:cache_policy_id",
+      "@type": "xsd:string"
+    },
+    "originRequestPolicyId": {
+      "@id": "cloudfront:origin_request_policy_id",
+      "@type": "xsd:string"
+    },
+    "compress": {
+      "@id": "cloudfront:compress",
+      "@type": "xsd:boolean"
+    },
+    "functionAssociations": {
+      "@id": "cloudfront:function_associations",
+      "@type": "xsd:string"
+    },
+    "lambdaFunctionAssociations": {
+      "@id": "cloudfront:lambda_function_associations",
+      "@type": "xsd:string"
+    },
+    "Invalidation": "cloudfront:Invalidation",
+    "createTime": {
+      "@id": "cloudfront:create_time",
+      "@type": "xsd:dateTime"
+    },
+    "invalidationBatch": {
+      "@id": "cloudfront:invalidation_batch",
+      "@type": "xsd:string"
+    },
+    "InvalidationBatch": "cloudfront:InvalidationBatch",
+    "paths": {
+      "@id": "cloudfront:paths",
+      "@type": "xsd:string"
+    },
+    "DistributionList": "cloudfront:DistributionList",
+    "marker": {
+      "@id": "cloudfront:marker",
+      "@type": "xsd:string"
+    },
+    "nextMarker": {
+      "@id": "cloudfront:next_marker",
+      "@type": "xsd:string"
+    },
+    "maxItems": {
+      "@id": "cloudfront:max_items",
+      "@type": "xsd:integer"
+    },
+    "isTruncated": {
+      "@id": "cloudfront:is_truncated",
+      "@type": "xsd:boolean"
+    },
+    "quantity": {
+      "@id": "cloudfront:quantity",
+      "@type": "xsd:integer"
+    },
+    "items": {
+      "@id": "cloudfront:items",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "InvalidationList": "cloudfront:InvalidationList"
   }
 }
