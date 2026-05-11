@@ -13,8 +13,8 @@ image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 description: >-
   Amazon CloudFront is a fast content delivery network (CDN) service that securely delivers data, videos, applications, and APIs to customers globally with low latency and high transfer speeds across 750+
   globally dispersed Points of Presence.
-created: '2024-01-01'
-modified: '2026-04-19'
+created: '2026-05-11'
+modified: '2026-05-11'
 specificationVersion: '0.19'
 apis:
 - name: Amazon CloudFront API
