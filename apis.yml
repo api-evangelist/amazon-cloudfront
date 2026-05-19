@@ -1,6 +1,5 @@
 aid: amazon-cloudfront
-url: >-
-  https://raw.githubusercontent.com/api-evangelist/amazon-cloudfront/refs/heads/main/apis.yml
+url: https://raw.githubusercontent.com/api-evangelist/amazon-cloudfront/refs/heads/main/apis.yml
 name: Amazon CloudFront
 tags:
 - AWS
@@ -10,15 +9,15 @@ tags:
 - Edge
 type: Index
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
-description: >-
-  Amazon CloudFront is a fast content delivery network (CDN) service that securely delivers data, videos, applications, and APIs to customers globally with low latency and high transfer speeds across 750+
-  globally dispersed Points of Presence.
+description: Amazon CloudFront is a fast content delivery network (CDN) service that securely delivers data, videos, applications,
+  and APIs to customers globally with low latency and high transfer speeds across 750+ globally dispersed Points of Presence.
 created: '2026-05-11'
-modified: '2026-05-11'
+modified: '2026-05-19'
 specificationVersion: '0.19'
 apis:
 - name: Amazon CloudFront API
-  description: API for managing CloudFront distributions, origins, behaviors, cache policies, and edge functions for global content delivery.
+  description: API for managing CloudFront distributions, origins, behaviors, cache policies, and edge functions for global
+    content delivery.
   image: https://a0.awsstatic.com/libra-css/images/logos/aws_logo_smile_1200x630.png
   humanURL: https://aws.amazon.com/cloudfront/
   baseURL: https://cloudfront.amazonaws.com
@@ -54,6 +53,12 @@ apis:
     url: json-schema/cloudfront-invalidation-schema.json
   - type: JSONLD
     url: json-ld/amazon-cloudfront-context.jsonld
+  - type: NaftikoCapability
+    url: capabilities/amazon-cloudfront-distributions.yaml
+  - type: NaftikoCapability
+    url: capabilities/amazon-cloudfront-functions.yaml
+  - type: NaftikoCapability
+    url: capabilities/amazon-cloudfront-invalidations.yaml
 common:
 - type: Portal
   url: https://aws.amazon.com/
@@ -89,8 +94,6 @@ common:
   url: rules/amazon-cloudfront-spectral-rules.yml
 - type: Vocabulary
   url: vocabulary/amazon-cloudfront-vocabulary.yaml
-- type: NaftikoCapability
-  url: capabilities/content-delivery.yaml
 - type: Features
   data:
   - name: Global Edge Network
