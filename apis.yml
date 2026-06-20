@@ -8,7 +8,7 @@ tags:
   - Content Delivery
   - Edge
 type: Index
-image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 description: >-
   Amazon CloudFront is a fast content delivery network (CDN) service that securely delivers data, videos, applications,
   and APIs to customers globally with low latency and high transfer speeds across 750+ globally dispersed Points of
