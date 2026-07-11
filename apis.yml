@@ -57,6 +57,12 @@ apis:
       - type: JSONLD
         url: json-ld/amazon-cloudfront-context.jsonld
 common:
+  - type: TrustCenter
+    url: security/amazon-cloudfront-trust-center.yml
+  - type: VulnerabilityDisclosure
+    url: security/amazon-cloudfront-vulnerability-disclosure.yml
+  - type: DomainSecurity
+    url: security/amazon-cloudfront-domain-security.yml
   - type: Portal
     url: https://aws.amazon.com/
   - type: Website
