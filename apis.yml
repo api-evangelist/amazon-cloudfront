@@ -57,6 +57,8 @@ apis:
       - type: JSONLD
         url: json-ld/amazon-cloudfront-context.jsonld
 common:
+  - type: AgenticAccess
+    url: agentic-access/amazon-cloudfront-agentic-access.yml
   - type: TrustCenter
     url: security/amazon-cloudfront-trust-center.yml
   - type: VulnerabilityDisclosure
