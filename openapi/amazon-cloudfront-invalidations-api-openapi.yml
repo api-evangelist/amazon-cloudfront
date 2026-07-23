@@ -1,0 +1,142 @@
+openapi: 3.1.0
+info:
+  title: Amazon CloudFront Distributions Invalidations API
+  description: Amazon CloudFront is a content delivery network (CDN) service that accelerates delivery of your websites, APIs, video content, and other web assets. The CloudFront API enables you to programmatically manage distributions, invalidations, functions, and other CloudFront resources.
+  version: '2020-05-31'
+  contact:
+    name: Amazon Web Services
+    url: https://aws.amazon.com/cloudfront/
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0.html
+servers:
+- url: https://cloudfront.amazonaws.com
+  description: Amazon CloudFront API endpoint
+tags:
+- name: Invalidations
+  description: Operations for managing cache invalidations
+paths:
+  /2020-05-31/distribution/{DistributionId}/invalidation:
+    post:
+      operationId: CreateInvalidation
+      summary: Amazon CloudFront Create an invalidation
+      description: Create a new invalidation to remove content from CloudFront edge caches. An invalidation forces CloudFront to re-request the content from the origin the next time a viewer requests it.
+      parameters:
+      - name: DistributionId
+        in: path
+        required: true
+        description: The distribution's ID.
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/InvalidationBatch'
+      responses:
+        '201':
+          description: Invalidation created successfully
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/Invalidation'
+          headers:
+            Location:
+              schema:
+                type: string
+              description: The fully qualified URI of the invalidation
+        '400':
+          description: Bad request
+        '404':
+          description: Distribution not found
+      tags:
+      - Invalidations
+    get:
+      operationId: ListInvalidations
+      summary: Amazon CloudFront List invalidations for a distribution
+      description: Lists invalidation batches for the specified distribution.
+      parameters:
+      - name: DistributionId
+        in: path
+        required: true
+        description: The distribution's ID.
+        schema:
+          type: string
+      - name: Marker
+        in: query
+        description: Use this parameter when paginating results to indicate where to begin in your list of invalidation batches.
+        schema:
+          type: string
+      - name: MaxItems
+        in: query
+        description: The maximum number of invalidation batches to return.
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/InvalidationList'
+        '400':
+          description: Bad request
+        '404':
+          description: Distribution not found
+      tags:
+      - Invalidations
+components:
+  schemas:
+    Invalidation:
+      type: object
+      properties:
+        Id:
+          type: string
+          description: The identifier for the invalidation request.
+        Status:
+          type: string
+          description: The status of the invalidation request.
+        CreateTime:
+          type: string
+          format: date-time
+          description: The date and time the invalidation request was created.
+        InvalidationBatch:
+          $ref: '#/components/schemas/InvalidationBatch'
+    InvalidationBatch:
+      type: object
+      required:
+      - Paths
+      - CallerReference
+      properties:
+        Paths:
+          type: object
+          properties:
+            Quantity:
+              type: integer
+              description: The number of invalidation paths specified.
+            Items:
+              type: array
+              items:
+                type: string
+              description: A list of paths to invalidate (e.g., /images/image1.jpg, /images/*).
+        CallerReference:
+          type: string
+          description: A unique value that ensures the request can't be replayed.
+    InvalidationList:
+      type: object
+      properties:
+        Marker:
+          type: string
+        NextMarker:
+          type: string
+        MaxItems:
+          type: integer
+        IsTruncated:
+          type: boolean
+        Quantity:
+          type: integer
+        Items:
+          type: array
+          items:
+            $ref: '#/components/schemas/Invalidation'

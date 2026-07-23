@@ -1,0 +1,93 @@
+openapi: 3.1.0
+info:
+  title: Amazon CloudFront Distributions Functions API
+  description: Amazon CloudFront is a content delivery network (CDN) service that accelerates delivery of your websites, APIs, video content, and other web assets. The CloudFront API enables you to programmatically manage distributions, invalidations, functions, and other CloudFront resources.
+  version: '2020-05-31'
+  contact:
+    name: Amazon Web Services
+    url: https://aws.amazon.com/cloudfront/
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0.html
+servers:
+- url: https://cloudfront.amazonaws.com
+  description: Amazon CloudFront API endpoint
+tags:
+- name: Functions
+  description: Operations for managing CloudFront functions
+paths:
+  /2020-05-31/function:
+    post:
+      operationId: CreateFunction
+      summary: Amazon CloudFront Create a CloudFront function
+      description: Creates a CloudFront function. CloudFront functions are lightweight functions in JavaScript for high-scale, latency-sensitive CDN customizations.
+      requestBody:
+        required: true
+        content:
+          application/xml:
+            schema:
+              type: object
+              properties:
+                Name:
+                  type: string
+                  description: A name to identify the function.
+                FunctionConfig:
+                  type: object
+                  properties:
+                    Comment:
+                      type: string
+                    Runtime:
+                      type: string
+                      enum:
+                      - cloudfront-js-1.0
+                      - cloudfront-js-2.0
+                FunctionCode:
+                  type: string
+                  format: byte
+                  description: The function code, as a Base64-encoded string.
+      responses:
+        '201':
+          description: Function created successfully
+          headers:
+            Location:
+              schema:
+                type: string
+            ETag:
+              schema:
+                type: string
+        '400':
+          description: Bad request
+        '403':
+          description: Access denied
+      tags:
+      - Functions
+    get:
+      operationId: ListFunctions
+      summary: Amazon CloudFront List CloudFront functions
+      description: Gets a list of all CloudFront functions in your AWS account.
+      parameters:
+      - name: Marker
+        in: query
+        description: Use this to paginate results.
+        schema:
+          type: string
+      - name: MaxItems
+        in: query
+        description: The maximum number of functions to return.
+        schema:
+          type: integer
+      - name: Stage
+        in: query
+        description: The function stage to filter by.
+        schema:
+          type: string
+          enum:
+          - DEVELOPMENT
+          - LIVE
+      responses:
+        '200':
+          description: Successful response
+        '400':
+          description: Bad request
+      tags:
+      - Functions
