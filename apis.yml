@@ -8,7 +8,19 @@ tags:
   - Content Delivery
   - Edge
 type: Index
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: free
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Free
+  confidence: medium
+  source:
+  - plans
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/amazon-cloudfront.png
 description: >-
   Amazon CloudFront is a fast content delivery network (CDN) service that securely delivers data, videos, applications,
   and APIs to customers globally with low latency and high transfer speeds across 750+ globally dispersed Points of
@@ -17,46 +29,111 @@ created: '2026-05-11'
 modified: '2026-05-19'
 specificationVersion: '0.19'
 apis:
-  - name: Amazon CloudFront API
-    description: >-
-      API for managing CloudFront distributions, origins, behaviors, cache policies, and edge functions for global
-      content delivery.
-    image: https://a0.awsstatic.com/libra-css/images/logos/aws_logo_smile_1200x630.png
-    humanURL: https://aws.amazon.com/cloudfront/
-    baseURL: https://cloudfront.amazonaws.com
-    tags:
-      - AWS
-      - CloudFront
-      - CDN
-      - Content Delivery
-    properties:
-      - type: OpenAPI
-        url: openapi/amazon-cloudfront-openapi.yml
-      - type: Documentation
-        url: https://docs.aws.amazon.com/cloudfront/latest/APIReference/
-      - type: GettingStarted
-        url: https://aws.amazon.com/cloudfront/getting-started/
-      - type: Pricing
-        url: https://aws.amazon.com/cloudfront/pricing/
-      - type: FAQ
-        url: https://aws.amazon.com/cloudfront/faqs/
-      - type: APIReference
-        url: https://docs.aws.amazon.com/cloudfront/latest/APIReference/
-      - type: CLI
-        url: https://docs.aws.amazon.com/cli/latest/reference/cloudfront/
-      - type: JSONSchema
-        url: json-schema/cloudfront-distribution-schema.json
-      - type: JSONSchema
-        url: json-schema/cloudfront-distribution-config-schema.json
-      - type: JSONSchema
-        url: json-schema/cloudfront-origin-schema.json
-      - type: JSONSchema
-        url: json-schema/cloudfront-cache-behavior-schema.json
-      - type: JSONSchema
-        url: json-schema/cloudfront-invalidation-schema.json
-      - type: JSONLD
-        url: json-ld/amazon-cloudfront-context.jsonld
+- aid: amazon-cloudfront:amazon-cloudfront-distributions-api
+  name: Amazon CloudFront Distributions API
+  description: Operations for managing CloudFront distributions
+  humanURL: https://aws.amazon.com/cloudfront/
+  baseURL: https://cloudfront.amazonaws.com
+  tags:
+  - Distributions
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-cloudfront-distributions-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/cloudfront/latest/APIReference/
+  - type: GettingStarted
+    url: https://aws.amazon.com/cloudfront/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/cloudfront/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/cloudfront/faqs/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/cloudfront/latest/APIReference/
+  - type: CLI
+    url: https://docs.aws.amazon.com/cli/latest/reference/cloudfront/
+  - type: JSONSchema
+    url: json-schema/cloudfront-distribution-schema.json
+  - type: JSONSchema
+    url: json-schema/cloudfront-distribution-config-schema.json
+  - type: JSONSchema
+    url: json-schema/cloudfront-origin-schema.json
+  - type: JSONSchema
+    url: json-schema/cloudfront-cache-behavior-schema.json
+  - type: JSONSchema
+    url: json-schema/cloudfront-invalidation-schema.json
+  - type: JSONLD
+    url: json-ld/amazon-cloudfront-context.jsonld
+- aid: amazon-cloudfront:amazon-cloudfront-functions-api
+  name: Amazon CloudFront Functions API
+  description: Operations for managing CloudFront functions
+  humanURL: https://aws.amazon.com/cloudfront/
+  baseURL: https://cloudfront.amazonaws.com
+  tags:
+  - Functions
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-cloudfront-functions-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/cloudfront/latest/APIReference/
+  - type: GettingStarted
+    url: https://aws.amazon.com/cloudfront/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/cloudfront/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/cloudfront/faqs/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/cloudfront/latest/APIReference/
+  - type: CLI
+    url: https://docs.aws.amazon.com/cli/latest/reference/cloudfront/
+  - type: JSONSchema
+    url: json-schema/cloudfront-distribution-schema.json
+  - type: JSONSchema
+    url: json-schema/cloudfront-distribution-config-schema.json
+  - type: JSONSchema
+    url: json-schema/cloudfront-origin-schema.json
+  - type: JSONSchema
+    url: json-schema/cloudfront-cache-behavior-schema.json
+  - type: JSONSchema
+    url: json-schema/cloudfront-invalidation-schema.json
+  - type: JSONLD
+    url: json-ld/amazon-cloudfront-context.jsonld
+- aid: amazon-cloudfront:amazon-cloudfront-invalidations-api
+  name: Amazon CloudFront Invalidations API
+  description: Operations for managing cache invalidations
+  humanURL: https://aws.amazon.com/cloudfront/
+  baseURL: https://cloudfront.amazonaws.com
+  tags:
+  - Invalidations
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-cloudfront-invalidations-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/cloudfront/latest/APIReference/
+  - type: GettingStarted
+    url: https://aws.amazon.com/cloudfront/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/cloudfront/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/cloudfront/faqs/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/cloudfront/latest/APIReference/
+  - type: CLI
+    url: https://docs.aws.amazon.com/cli/latest/reference/cloudfront/
+  - type: JSONSchema
+    url: json-schema/cloudfront-distribution-schema.json
+  - type: JSONSchema
+    url: json-schema/cloudfront-distribution-config-schema.json
+  - type: JSONSchema
+    url: json-schema/cloudfront-origin-schema.json
+  - type: JSONSchema
+    url: json-schema/cloudfront-cache-behavior-schema.json
+  - type: JSONSchema
+    url: json-schema/cloudfront-invalidation-schema.json
+  - type: JSONLD
+    url: json-ld/amazon-cloudfront-context.jsonld
 common:
+  - type: PostmanWorkspace
+    url: https://www.postman.com/kinlaneapi/amazon-cloudfront/overview
   - type: AgenticAccess
     url: agentic-access/amazon-cloudfront-agentic-access.yml
   - type: TrustCenter
