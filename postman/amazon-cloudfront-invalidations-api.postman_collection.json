@@ -1,0 +1,485 @@
+{
+  "info": {
+    "_postman_id": "54731783-32e5-4018-ad67-277a0f6ff717",
+    "name": "Amazon CloudFront Distributions Invalidations API",
+    "description": "Amazon CloudFront is a content delivery network (CDN) service that accelerates delivery of your websites, APIs, video content, and other web assets. The CloudFront API enables you to programmatically manage distributions, invalidations, functions, and other CloudFront resources.\n\nContact Support:\n Name: Amazon Web Services",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T00:30:35.000Z",
+    "updatedAt": "2026-07-28T00:30:35.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-54731783-32e5-4018-ad67-277a0f6ff717"
+  },
+  "item": [
+    {
+      "name": "2020-05-31",
+      "item": [
+        {
+          "name": "distribution",
+          "item": [
+            {
+              "name": "{DistributionId}",
+              "item": [
+                {
+                  "name": "invalidation",
+                  "item": [
+                    {
+                      "name": "Amazon CloudFront Create an invalidation",
+                      "id": "61fb4f35-212f-44d0-a531-9e470207de79",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/xml"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/xml"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <Paths>\n    <Quantity>(integer)</Quantity>\n    <Items>(string)</Items>\n    <Items>(string)</Items>\n  </Paths>\n  <CallerReference>(string)</CallerReference>\n</element>",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "xml",
+                              "language": "xml"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/2020-05-31/distribution/:DistributionId/invalidation",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "2020-05-31",
+                            "distribution",
+                            ":DistributionId",
+                            "invalidation"
+                          ],
+                          "variable": [
+                            {
+                              "id": "3fdf694d-44d8-444a-ab5b-a1c19d46c5b8",
+                              "key": "DistributionId",
+                              "value": "<string>",
+                              "description": "(Required) The distribution's ID."
+                            }
+                          ]
+                        },
+                        "description": "Create a new invalidation to remove content from CloudFront edge caches. An invalidation forces CloudFront to re-request the content from the origin the next time a viewer requests it."
+                      },
+                      "response": [
+                        {
+                          "id": "a2cea8aa-9b7a-4cd0-afa3-227d854f0c09",
+                          "name": "Invalidation created successfully",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/xml"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/xml"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <Paths>\n    <Quantity>(integer)</Quantity>\n    <Items>(string)</Items>\n    <Items>(string)</Items>\n  </Paths>\n  <CallerReference>(string)</CallerReference>\n</element>",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "xml",
+                                  "language": "xml"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/2020-05-31/distribution/:DistributionId/invalidation",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "2020-05-31",
+                                "distribution",
+                                ":DistributionId",
+                                "invalidation"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "DistributionId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Created",
+                          "code": 201,
+                          "_postman_previewlanguage": "xml",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/xml"
+                            },
+                            {
+                              "disabled": false,
+                              "description": {
+                                "content": "The fully qualified URI of the invalidation",
+                                "type": "text/plain"
+                              },
+                              "key": "Location",
+                              "value": "<string>"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <Id>(string)</Id>\n  <Status>(string)</Status>\n  <CreateTime>(string)</CreateTime>\n  <InvalidationBatch>\n    <Paths>\n      <Quantity>(integer)</Quantity>\n      <Items>(string)</Items>\n      <Items>(string)</Items>\n    </Paths>\n    <CallerReference>(string)</CallerReference>\n  </InvalidationBatch>\n</element>",
+                          "createdAt": "2026-07-28T00:30:35.000Z",
+                          "updatedAt": "2026-07-28T00:30:35.000Z",
+                          "uid": "35240-a2cea8aa-9b7a-4cd0-afa3-227d854f0c09"
+                        },
+                        {
+                          "id": "8a454c9b-eb66-4098-ae5c-bbb1f5dec309",
+                          "name": "Bad request",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/xml"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <Paths>\n    <Quantity>(integer)</Quantity>\n    <Items>(string)</Items>\n    <Items>(string)</Items>\n  </Paths>\n  <CallerReference>(string)</CallerReference>\n</element>",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "xml",
+                                  "language": "xml"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/2020-05-31/distribution/:DistributionId/invalidation",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "2020-05-31",
+                                "distribution",
+                                ":DistributionId",
+                                "invalidation"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "DistributionId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Bad Request",
+                          "code": 400,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T00:30:35.000Z",
+                          "updatedAt": "2026-07-28T00:30:35.000Z",
+                          "uid": "35240-8a454c9b-eb66-4098-ae5c-bbb1f5dec309"
+                        },
+                        {
+                          "id": "fb75528f-b7b3-401a-9f12-01cd2afc5be9",
+                          "name": "Distribution not found",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/xml"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <Paths>\n    <Quantity>(integer)</Quantity>\n    <Items>(string)</Items>\n    <Items>(string)</Items>\n  </Paths>\n  <CallerReference>(string)</CallerReference>\n</element>",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "xml",
+                                  "language": "xml"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/2020-05-31/distribution/:DistributionId/invalidation",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "2020-05-31",
+                                "distribution",
+                                ":DistributionId",
+                                "invalidation"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "DistributionId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Not Found",
+                          "code": 404,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T00:30:35.000Z",
+                          "updatedAt": "2026-07-28T00:30:35.000Z",
+                          "uid": "35240-fb75528f-b7b3-401a-9f12-01cd2afc5be9"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T00:30:35.000Z",
+                      "updatedAt": "2026-07-28T00:30:35.000Z",
+                      "uid": "35240-61fb4f35-212f-44d0-a531-9e470207de79"
+                    },
+                    {
+                      "name": "Amazon CloudFront List invalidations for a distribution",
+                      "id": "109d8d7f-dd07-40c3-89d6-ff1183a0d2ac",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/xml"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/2020-05-31/distribution/:DistributionId/invalidation?Marker=<string>&MaxItems=<integer>",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "2020-05-31",
+                            "distribution",
+                            ":DistributionId",
+                            "invalidation"
+                          ],
+                          "query": [
+                            {
+                              "description": "Use this parameter when paginating results to indicate where to begin in your list of invalidation batches.",
+                              "key": "Marker",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "The maximum number of invalidation batches to return.",
+                              "key": "MaxItems",
+                              "value": "<integer>"
+                            }
+                          ],
+                          "variable": [
+                            {
+                              "id": "3440a226-0f69-43cb-adc5-6cfa84e76285",
+                              "key": "DistributionId",
+                              "value": "<string>",
+                              "description": "(Required) The distribution's ID."
+                            }
+                          ]
+                        },
+                        "description": "Lists invalidation batches for the specified distribution."
+                      },
+                      "response": [
+                        {
+                          "id": "33ca6101-cf28-4eb2-8853-a8dd4550931a",
+                          "name": "Successful response",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/xml"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/2020-05-31/distribution/:DistributionId/invalidation?Marker=<string>&MaxItems=<integer>",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "2020-05-31",
+                                "distribution",
+                                ":DistributionId",
+                                "invalidation"
+                              ],
+                              "query": [
+                                {
+                                  "description": "Use this parameter when paginating results to indicate where to begin in your list of invalidation batches.",
+                                  "key": "Marker",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "The maximum number of invalidation batches to return.",
+                                  "key": "MaxItems",
+                                  "value": "<integer>"
+                                }
+                              ],
+                              "variable": [
+                                {
+                                  "key": "DistributionId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "xml",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/xml"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <Marker>(string)</Marker>\n  <NextMarker>(string)</NextMarker>\n  <MaxItems>(integer)</MaxItems>\n  <IsTruncated>(boolean)</IsTruncated>\n  <Quantity>(integer)</Quantity>\n  <Items>\n    <Id>(string)</Id>\n    <Status>(string)</Status>\n    <CreateTime>(string)</CreateTime>\n    <InvalidationBatch>\n      <Paths>\n        <Quantity>(integer)</Quantity>\n        <Items>(string)</Items>\n        <Items>(string)</Items>\n      </Paths>\n      <CallerReference>(string)</CallerReference>\n    </InvalidationBatch>\n  </Items>\n  <Items>\n    <Id>(string)</Id>\n    <Status>(string)</Status>\n    <CreateTime>(string)</CreateTime>\n    <InvalidationBatch>\n      <Paths>\n        <Quantity>(integer)</Quantity>\n        <Items>(string)</Items>\n        <Items>(string)</Items>\n      </Paths>\n      <CallerReference>(string)</CallerReference>\n    </InvalidationBatch>\n  </Items>\n</element>",
+                          "createdAt": "2026-07-28T00:30:35.000Z",
+                          "updatedAt": "2026-07-28T00:30:35.000Z",
+                          "uid": "35240-33ca6101-cf28-4eb2-8853-a8dd4550931a"
+                        },
+                        {
+                          "id": "b3b2b744-f969-4653-b751-8f3e33240ff5",
+                          "name": "Bad request",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [],
+                            "url": {
+                              "raw": "{{baseUrl}}/2020-05-31/distribution/:DistributionId/invalidation?Marker=<string>&MaxItems=<integer>",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "2020-05-31",
+                                "distribution",
+                                ":DistributionId",
+                                "invalidation"
+                              ],
+                              "query": [
+                                {
+                                  "description": "Use this parameter when paginating results to indicate where to begin in your list of invalidation batches.",
+                                  "key": "Marker",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "The maximum number of invalidation batches to return.",
+                                  "key": "MaxItems",
+                                  "value": "<integer>"
+                                }
+                              ],
+                              "variable": [
+                                {
+                                  "key": "DistributionId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Bad Request",
+                          "code": 400,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T00:30:35.000Z",
+                          "updatedAt": "2026-07-28T00:30:35.000Z",
+                          "uid": "35240-b3b2b744-f969-4653-b751-8f3e33240ff5"
+                        },
+                        {
+                          "id": "1d6e81d8-8b9a-4ff0-9c7d-eb210d056432",
+                          "name": "Distribution not found",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [],
+                            "url": {
+                              "raw": "{{baseUrl}}/2020-05-31/distribution/:DistributionId/invalidation?Marker=<string>&MaxItems=<integer>",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "2020-05-31",
+                                "distribution",
+                                ":DistributionId",
+                                "invalidation"
+                              ],
+                              "query": [
+                                {
+                                  "description": "Use this parameter when paginating results to indicate where to begin in your list of invalidation batches.",
+                                  "key": "Marker",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "The maximum number of invalidation batches to return.",
+                                  "key": "MaxItems",
+                                  "value": "<integer>"
+                                }
+                              ],
+                              "variable": [
+                                {
+                                  "key": "DistributionId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Not Found",
+                          "code": 404,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T00:30:35.000Z",
+                          "updatedAt": "2026-07-28T00:30:35.000Z",
+                          "uid": "35240-1d6e81d8-8b9a-4ff0-9c7d-eb210d056432"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T00:30:35.000Z",
+                      "updatedAt": "2026-07-28T00:30:35.000Z",
+                      "uid": "35240-109d8d7f-dd07-40c3-89d6-ff1183a0d2ac"
+                    }
+                  ],
+                  "id": "6451d5ec-7f48-447b-9301-6f51be4983b1",
+                  "createdAt": "2026-07-28T00:30:35.000Z",
+                  "updatedAt": "2026-07-28T00:30:35.000Z",
+                  "uid": "35240-6451d5ec-7f48-447b-9301-6f51be4983b1"
+                }
+              ],
+              "id": "34f37be6-050c-4994-8117-b9e5532dd997",
+              "createdAt": "2026-07-28T00:30:35.000Z",
+              "updatedAt": "2026-07-28T00:30:35.000Z",
+              "uid": "35240-34f37be6-050c-4994-8117-b9e5532dd997"
+            }
+          ],
+          "id": "debe3e7d-d5c5-49d0-bb44-eebef41cfdf4",
+          "createdAt": "2026-07-28T00:30:35.000Z",
+          "updatedAt": "2026-07-28T00:30:35.000Z",
+          "uid": "35240-debe3e7d-d5c5-49d0-bb44-eebef41cfdf4"
+        }
+      ],
+      "id": "fefd7b5b-fc30-4ad2-9a82-72b9f868f810",
+      "createdAt": "2026-07-28T00:30:35.000Z",
+      "updatedAt": "2026-07-28T00:30:35.000Z",
+      "uid": "35240-fefd7b5b-fc30-4ad2-9a82-72b9f868f810"
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://cloudfront.amazonaws.com"
+    }
+  ]
+}

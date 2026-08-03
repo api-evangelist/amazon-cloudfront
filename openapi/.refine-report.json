@@ -1,0 +1,18 @@
+{
+  "provider": "amazon-cloudfront",
+  "sources": [
+    "amazon-cloudfront-distributions-api-openapi.yml",
+    "amazon-cloudfront-functions-api-openapi.yml",
+    "amazon-cloudfront-invalidations-api-openapi.yml"
+  ],
+  "outputs": [
+    "amazon-cloudfront-distributions-api-openapi.yml",
+    "amazon-cloudfront-functions-api-openapi.yml",
+    "amazon-cloudfront-invalidations-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}

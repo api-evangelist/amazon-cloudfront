@@ -1,0 +1,981 @@
+{
+  "info": {
+    "_postman_id": "e19e8628-6076-48b5-89ff-a9132487c52e",
+    "name": "Amazon CloudFront Distributions API",
+    "description": "Amazon CloudFront is a content delivery network (CDN) service that accelerates delivery of your websites, APIs, video content, and other web assets. The CloudFront API enables you to programmatically manage distributions, invalidations, functions, and other CloudFront resources.\n\nContact Support:\n Name: Amazon Web Services",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T00:30:33.000Z",
+    "updatedAt": "2026-07-28T00:30:33.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-e19e8628-6076-48b5-89ff-a9132487c52e"
+  },
+  "item": [
+    {
+      "name": "2020-05-31",
+      "item": [
+        {
+          "name": "distribution",
+          "item": [
+            {
+              "name": "{Id}",
+              "item": [
+                {
+                  "name": "config",
+                  "item": [
+                    {
+                      "name": "Amazon CloudFront Update a CloudFront distribution configuration",
+                      "id": "31058546-b192-44f8-b590-fc30c04567f7",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "PUT",
+                        "header": [
+                          {
+                            "description": "(Required) The value of the ETag header that you received when retrieving the distribution's configuration.",
+                            "key": "If-Match",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "Content-Type",
+                            "value": "application/xml"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/xml"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <CallerReference>(string)</CallerReference>\n  <Aliases>\n    <Quantity>(integer)</Quantity>\n    <Items>(string)</Items>\n    <Items>(string)</Items>\n  </Aliases>\n  <DefaultRootObject>(string)</DefaultRootObject>\n  <Origins>\n    <Quantity>(integer)</Quantity>\n    <Items>\n      <Id>(string)</Id>\n      <DomainName>(string)</DomainName>\n      <OriginPath>(string)</OriginPath>\n      <S3OriginConfig>\n        <OriginAccessIdentity>(string)</OriginAccessIdentity>\n      </S3OriginConfig>\n      <CustomOriginConfig>\n        <HTTPPort>(integer)</HTTPPort>\n        <HTTPSPort>(integer)</HTTPSPort>\n        <OriginProtocolPolicy>(string)</OriginProtocolPolicy>\n      </CustomOriginConfig>\n    </Items>\n    <Items>\n      <Id>(string)</Id>\n      <DomainName>(string)</DomainName>\n      <OriginPath>(string)</OriginPath>\n      <S3OriginConfig>\n        <OriginAccessIdentity>(string)</OriginAccessIdentity>\n      </S3OriginConfig>\n      <CustomOriginConfig>\n        <HTTPPort>(integer)</HTTPPort>\n        <HTTPSPort>(integer)</HTTPSPort>\n        <OriginProtocolPolicy>(string)</OriginProtocolPolicy>\n      </CustomOriginConfig>\n    </Items>\n  </Origins>\n  <DefaultCacheBehavior>\n    <PathPattern>(string)</PathPattern>\n    <TargetOriginId>(string)</TargetOriginId>\n    <ViewerProtocolPolicy>(string)</ViewerProtocolPolicy>\n    <AllowedMethods>\n      <Quantity>(integer)</Quantity>\n      <Items>(string)</Items>\n      <Items>(string)</Items>\n    </AllowedMethods>\n    <CachePolicyId>(string)</CachePolicyId>\n    <OriginRequestPolicyId>(string)</OriginRequestPolicyId>\n    <Compress>(boolean)</Compress>\n    <FunctionAssociations>\n      <Quantity>(integer)</Quantity>\n      <Items>\n        <FunctionARN>(string)</FunctionARN>\n        <EventType>(string)</EventType>\n      </Items>\n      <Items>\n        <FunctionARN>(string)</FunctionARN>\n        <EventType>(string)</EventType>\n      </Items>\n    </FunctionAssociations>\n    <LambdaFunctionAssociations>\n      <Quantity>(integer)</Quantity>\n      <Items>\n        <LambdaFunctionARN>(string)</LambdaFunctionARN>\n        <EventType>(string)</EventType>\n      </Items>\n      <Items>\n        <LambdaFunctionARN>(string)</LambdaFunctionARN>\n        <EventType>(string)</EventType>\n      </Items>\n    </LambdaFunctionAssociations>\n  </DefaultCacheBehavior>\n  <CacheBehaviors>\n    <Quantity>(integer)</Quantity>\n    <Items>\n      <PathPattern>(string)</PathPattern>\n      <TargetOriginId>(string)</TargetOriginId>\n      <ViewerProtocolPolicy>(string)</ViewerProtocolPolicy>\n      <AllowedMethods>\n        <Quantity>(integer)</Quantity>\n        <Items>(string)</Items>\n        <Items>(string)</Items>\n      </AllowedMethods>\n      <CachePolicyId>(string)</CachePolicyId>\n      <OriginRequestPolicyId>(string)</OriginRequestPolicyId>\n      <Compress>(boolean)</Compress>\n      <FunctionAssociations>\n        <Quantity>(integer)</Quantity>\n        <Items>\n          <FunctionARN>(string)</FunctionARN>\n          <EventType>(string)</EventType>\n        </Items>\n        <Items>\n          <FunctionARN>(string)</FunctionARN>\n          <EventType>(string)</EventType>\n        </Items>\n      </FunctionAssociations>\n      <LambdaFunctionAssociations>\n        <Quantity>(integer)</Quantity>\n        <Items>\n          <LambdaFunctionARN>(string)</LambdaFunctionARN>\n          <EventType>(string)</EventType>\n        </Items>\n        <Items>\n          <LambdaFunctionARN>(string)</LambdaFunctionARN>\n          <EventType>(string)</EventType>\n        </Items>\n      </LambdaFunctionAssociations>\n    </Items>\n    <Items>\n      <PathPattern>(string)</PathPattern>\n      <TargetOriginId>(string)</TargetOriginId>\n      <ViewerProtocolPolicy>(string)</ViewerProtocolPolicy>\n      <AllowedMethods>\n        <Quantity>(integer)</Quantity>\n        <Items>(string)</Items>\n        <Items>(string)</Items>\n      </AllowedMethods>\n      <CachePolicyId>(string)</CachePolicyId>\n      <OriginRequestPolicyId>(string)</OriginRequestPolicyId>\n      <Compress>(boolean)</Compress>\n      <FunctionAssociations>\n        <Quantity>(integer)</Quantity>\n        <Items>\n          <FunctionARN>(string)</FunctionARN>\n          <EventType>(string)</EventType>\n        </Items>\n        <Items>\n          <FunctionARN>(string)</FunctionARN>\n          <EventType>(string)</EventType>\n        </Items>\n      </FunctionAssociations>\n      <LambdaFunctionAssociations>\n        <Quantity>(integer)</Quantity>\n        <Items>\n          <LambdaFunctionARN>(string)</LambdaFunctionARN>\n          <EventType>(string)</EventType>\n        </Items>\n        <Items>\n          <LambdaFunctionARN>(string)</LambdaFunctionARN>\n          <EventType>(string)</EventType>\n        </Items>\n      </LambdaFunctionAssociations>\n    </Items>\n  </CacheBehaviors>\n  <Comment>(string)</Comment>\n  <Enabled>(boolean)</Enabled>\n  <PriceClass>(string)</PriceClass>\n  <ViewerCertificate>\n    <CloudFrontDefaultCertificate>(boolean)</CloudFrontDefaultCertificate>\n    <ACMCertificateArn>(string)</ACMCertificateArn>\n    <SSLSupportMethod>(string)</SSLSupportMethod>\n    <MinimumProtocolVersion>(string)</MinimumProtocolVersion>\n  </ViewerCertificate>\n  <WebACLId>(string)</WebACLId>\n  <HttpVersion>(string)</HttpVersion>\n  <IsIPV6Enabled>(boolean)</IsIPV6Enabled>\n</element>",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "xml",
+                              "language": "xml"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/2020-05-31/distribution/:Id/config",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "2020-05-31",
+                            "distribution",
+                            ":Id",
+                            "config"
+                          ],
+                          "variable": [
+                            {
+                              "id": "7fdfec7a-2a3d-48b1-afd0-ad0a1abc9da3",
+                              "key": "Id",
+                              "value": "<string>",
+                              "description": "(Required) The distribution's ID."
+                            }
+                          ]
+                        },
+                        "description": "Update a distribution's configuration."
+                      },
+                      "response": [
+                        {
+                          "id": "189b058f-bafa-491c-8a15-0dbd1fef0f38",
+                          "name": "Distribution updated successfully",
+                          "originalRequest": {
+                            "method": "PUT",
+                            "header": [
+                              {
+                                "description": "(Required) The value of the ETag header that you received when retrieving the distribution's configuration.",
+                                "key": "If-Match",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "Content-Type",
+                                "value": "application/xml"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/xml"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <CallerReference>(string)</CallerReference>\n  <Aliases>\n    <Quantity>(integer)</Quantity>\n    <Items>(string)</Items>\n    <Items>(string)</Items>\n  </Aliases>\n  <DefaultRootObject>(string)</DefaultRootObject>\n  <Origins>\n    <Quantity>(integer)</Quantity>\n    <Items>\n      <Id>(string)</Id>\n      <DomainName>(string)</DomainName>\n      <OriginPath>(string)</OriginPath>\n      <S3OriginConfig>\n        <OriginAccessIdentity>(string)</OriginAccessIdentity>\n      </S3OriginConfig>\n      <CustomOriginConfig>\n        <HTTPPort>(integer)</HTTPPort>\n        <HTTPSPort>(integer)</HTTPSPort>\n        <OriginProtocolPolicy>(string)</OriginProtocolPolicy>\n      </CustomOriginConfig>\n    </Items>\n    <Items>\n      <Id>(string)</Id>\n      <DomainName>(string)</DomainName>\n      <OriginPath>(string)</OriginPath>\n      <S3OriginConfig>\n        <OriginAccessIdentity>(string)</OriginAccessIdentity>\n      </S3OriginConfig>\n      <CustomOriginConfig>\n        <HTTPPort>(integer)</HTTPPort>\n        <HTTPSPort>(integer)</HTTPSPort>\n        <OriginProtocolPolicy>(string)</OriginProtocolPolicy>\n      </CustomOriginConfig>\n    </Items>\n  </Origins>\n  <DefaultCacheBehavior>\n    <PathPattern>(string)</PathPattern>\n    <TargetOriginId>(string)</TargetOriginId>\n    <ViewerProtocolPolicy>(string)</ViewerProtocolPolicy>\n    <AllowedMethods>\n      <Quantity>(integer)</Quantity>\n      <Items>(string)</Items>\n      <Items>(string)</Items>\n    </AllowedMethods>\n    <CachePolicyId>(string)</CachePolicyId>\n    <OriginRequestPolicyId>(string)</OriginRequestPolicyId>\n    <Compress>(boolean)</Compress>\n    <FunctionAssociations>\n      <Quantity>(integer)</Quantity>\n      <Items>\n        <FunctionARN>(string)</FunctionARN>\n        <EventType>(string)</EventType>\n      </Items>\n      <Items>\n        <FunctionARN>(string)</FunctionARN>\n        <EventType>(string)</EventType>\n      </Items>\n    </FunctionAssociations>\n    <LambdaFunctionAssociations>\n      <Quantity>(integer)</Quantity>\n      <Items>\n        <LambdaFunctionARN>(string)</LambdaFunctionARN>\n        <EventType>(string)</EventType>\n      </Items>\n      <Items>\n        <LambdaFunctionARN>(string)</LambdaFunctionARN>\n        <EventType>(string)</EventType>\n      </Items>\n    </LambdaFunctionAssociations>\n  </DefaultCacheBehavior>\n  <CacheBehaviors>\n    <Quantity>(integer)</Quantity>\n    <Items>\n      <PathPattern>(string)</PathPattern>\n      <TargetOriginId>(string)</TargetOriginId>\n      <ViewerProtocolPolicy>(string)</ViewerProtocolPolicy>\n      <AllowedMethods>\n        <Quantity>(integer)</Quantity>\n        <Items>(string)</Items>\n        <Items>(string)</Items>\n      </AllowedMethods>\n      <CachePolicyId>(string)</CachePolicyId>\n      <OriginRequestPolicyId>(string)</OriginRequestPolicyId>\n      <Compress>(boolean)</Compress>\n      <FunctionAssociations>\n        <Quantity>(integer)</Quantity>\n        <Items>\n          <FunctionARN>(string)</FunctionARN>\n          <EventType>(string)</EventType>\n        </Items>\n        <Items>\n          <FunctionARN>(string)</FunctionARN>\n          <EventType>(string)</EventType>\n        </Items>\n      </FunctionAssociations>\n      <LambdaFunctionAssociations>\n        <Quantity>(integer)</Quantity>\n        <Items>\n          <LambdaFunctionARN>(string)</LambdaFunctionARN>\n          <EventType>(string)</EventType>\n        </Items>\n        <Items>\n          <LambdaFunctionARN>(string)</LambdaFunctionARN>\n          <EventType>(string)</EventType>\n        </Items>\n      </LambdaFunctionAssociations>\n    </Items>\n    <Items>\n      <PathPattern>(string)</PathPattern>\n      <TargetOriginId>(string)</TargetOriginId>\n      <ViewerProtocolPolicy>(string)</ViewerProtocolPolicy>\n      <AllowedMethods>\n        <Quantity>(integer)</Quantity>\n        <Items>(string)</Items>\n        <Items>(string)</Items>\n      </AllowedMethods>\n      <CachePolicyId>(string)</CachePolicyId>\n      <OriginRequestPolicyId>(string)</OriginRequestPolicyId>\n      <Compress>(boolean)</Compress>\n      <FunctionAssociations>\n        <Quantity>(integer)</Quantity>\n        <Items>\n          <FunctionARN>(string)</FunctionARN>\n          <EventType>(string)</EventType>\n        </Items>\n        <Items>\n          <FunctionARN>(string)</FunctionARN>\n          <EventType>(string)</EventType>\n        </Items>\n      </FunctionAssociations>\n      <LambdaFunctionAssociations>\n        <Quantity>(integer)</Quantity>\n        <Items>\n          <LambdaFunctionARN>(string)</LambdaFunctionARN>\n          <EventType>(string)</EventType>\n        </Items>\n        <Items>\n          <LambdaFunctionARN>(string)</LambdaFunctionARN>\n          <EventType>(string)</EventType>\n        </Items>\n      </LambdaFunctionAssociations>\n    </Items>\n  </CacheBehaviors>\n  <Comment>(string)</Comment>\n  <Enabled>(boolean)</Enabled>\n  <PriceClass>(string)</PriceClass>\n  <ViewerCertificate>\n    <CloudFrontDefaultCertificate>(boolean)</CloudFrontDefaultCertificate>\n    <ACMCertificateArn>(string)</ACMCertificateArn>\n    <SSLSupportMethod>(string)</SSLSupportMethod>\n    <MinimumProtocolVersion>(string)</MinimumProtocolVersion>\n  </ViewerCertificate>\n  <WebACLId>(string)</WebACLId>\n  <HttpVersion>(string)</HttpVersion>\n  <IsIPV6Enabled>(boolean)</IsIPV6Enabled>\n</element>",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "xml",
+                                  "language": "xml"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/2020-05-31/distribution/:Id/config",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "2020-05-31",
+                                "distribution",
+                                ":Id",
+                                "config"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "Id"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "xml",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/xml"
+                            },
+                            {
+                              "disabled": false,
+                              "description": {
+                                "content": "The current version of the distribution",
+                                "type": "text/plain"
+                              },
+                              "key": "ETag",
+                              "value": "<string>"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <Id>(string)</Id>\n  <ARN>(string)</ARN>\n  <Status>(string)</Status>\n  <LastModifiedTime>(string)</LastModifiedTime>\n  <DomainName>(string)</DomainName>\n  <DistributionConfig>\n    <CallerReference>(string)</CallerReference>\n    <Aliases>\n      <Quantity>(integer)</Quantity>\n      <Items>(string)</Items>\n      <Items>(string)</Items>\n    </Aliases>\n    <DefaultRootObject>(string)</DefaultRootObject>\n    <Origins>\n      <Quantity>(integer)</Quantity>\n      <Items>\n        <Id>(string)</Id>\n        <DomainName>(string)</DomainName>\n        <OriginPath>(string)</OriginPath>\n        <S3OriginConfig>\n          <OriginAccessIdentity>(string)</OriginAccessIdentity>\n        </S3OriginConfig>\n        <CustomOriginConfig>\n          <HTTPPort>(integer)</HTTPPort>\n          <HTTPSPort>(integer)</HTTPSPort>\n          <OriginProtocolPolicy>(string)</OriginProtocolPolicy>\n        </CustomOriginConfig>\n      </Items>\n      <Items>\n        <Id>(string)</Id>\n        <DomainName>(string)</DomainName>\n        <OriginPath>(string)</OriginPath>\n        <S3OriginConfig>\n          <OriginAccessIdentity>(string)</OriginAccessIdentity>\n        </S3OriginConfig>\n        <CustomOriginConfig>\n          <HTTPPort>(integer)</HTTPPort>\n          <HTTPSPort>(integer)</HTTPSPort>\n          <OriginProtocolPolicy>(string)</OriginProtocolPolicy>\n        </CustomOriginConfig>\n      </Items>\n    </Origins>\n    <DefaultCacheBehavior>\n      <PathPattern>(string)</PathPattern>\n      <TargetOriginId>(string)</TargetOriginId>\n      <ViewerProtocolPolicy>(string)</ViewerProtocolPolicy>\n      <AllowedMethods>\n        <Quantity>(integer)</Quantity>\n        <Items>(string)</Items>\n        <Items>(string)</Items>\n      </AllowedMethods>\n      <CachePolicyId>(string)</CachePolicyId>\n      <OriginRequestPolicyId>(string)</OriginRequestPolicyId>\n      <Compress>(boolean)</Compress>\n      <FunctionAssociations>\n        <Quantity>(integer)</Quantity>\n        <Items>\n          <FunctionARN>(string)</FunctionARN>\n          <EventType>(string)</EventType>\n        </Items>\n        <Items>\n          <FunctionARN>(string)</FunctionARN>\n          <EventType>(string)</EventType>\n        </Items>\n      </FunctionAssociations>\n      <LambdaFunctionAssociations>\n        <Quantity>(integer)</Quantity>\n        <Items>\n          <LambdaFunctionARN>(string)</LambdaFunctionARN>\n          <EventType>(string)</EventType>\n        </Items>\n        <Items>\n          <LambdaFunctionARN>(string)</LambdaFunctionARN>\n          <EventType>(string)</EventType>\n        </Items>\n      </LambdaFunctionAssociations>\n    </DefaultCacheBehavior>\n    <CacheBehaviors>\n      <Quantity>(integer)</Quantity>\n      <Items>\n        <PathPattern>(string)</PathPattern>\n        <TargetOriginId>(string)</TargetOriginId>\n        <ViewerProtocolPolicy>(string)</ViewerProtocolPolicy>\n        <AllowedMethods>\n          <Quantity>(integer)</Quantity>\n          <Items>(string)</Items>\n          <Items>(string)</Items>\n        </AllowedMethods>\n        <CachePolicyId>(string)</CachePolicyId>\n        <OriginRequestPolicyId>(string)</OriginRequestPolicyId>\n        <Compress>(boolean)</Compress>\n        <FunctionAssociations>\n          <Quantity>(integer)</Quantity>\n          <Items>\n            <FunctionARN>(string)</FunctionARN>\n            <EventType>(string)</EventType>\n          </Items>\n          <Items>\n            <FunctionARN>(string)</FunctionARN>\n            <EventType>(string)</EventType>\n          </Items>\n        </FunctionAssociations>\n        <LambdaFunctionAssociations>\n          <Quantity>(integer)</Quantity>\n          <Items>\n            <LambdaFunctionARN>(string)</LambdaFunctionARN>\n            <EventType>(string)</EventType>\n          </Items>\n          <Items>\n            <LambdaFunctionARN>(string)</LambdaFunctionARN>\n            <EventType>(string)</EventType>\n          </Items>\n        </LambdaFunctionAssociations>\n      </Items>\n      <Items>\n        <PathPattern>(string)</PathPattern>\n        <TargetOriginId>(string)</TargetOriginId>\n        <ViewerProtocolPolicy>(string)</ViewerProtocolPolicy>\n        <AllowedMethods>\n          <Quantity>(integer)</Quantity>\n          <Items>(string)</Items>\n          <Items>(string)</Items>\n        </AllowedMethods>\n        <CachePolicyId>(string)</CachePolicyId>\n        <OriginRequestPolicyId>(string)</OriginRequestPolicyId>\n        <Compress>(boolean)</Compress>\n        <FunctionAssociations>\n          <Quantity>(integer)</Quantity>\n          <Items>\n            <FunctionARN>(string)</FunctionARN>\n            <EventType>(string)</EventType>\n          </Items>\n          <Items>\n            <FunctionARN>(string)</FunctionARN>\n            <EventType>(string)</EventType>\n          </Items>\n        </FunctionAssociations>\n        <LambdaFunctionAssociations>\n          <Quantity>(integer)</Quantity>\n          <Items>\n            <LambdaFunctionARN>(string)</LambdaFunctionARN>\n            <EventType>(string)</EventType>\n          </Items>\n          <Items>\n            <LambdaFunctionARN>(string)</LambdaFunctionARN>\n            <EventType>(string)</EventType>\n          </Items>\n        </LambdaFunctionAssociations>\n      </Items>\n    </CacheBehaviors>\n    <Comment>(string)</Comment>\n    <Enabled>(boolean)</Enabled>\n    <PriceClass>(string)</PriceClass>\n    <ViewerCertificate>\n      <CloudFrontDefaultCertificate>(boolean)</CloudFrontDefaultCertificate>\n      <ACMCertificateArn>(string)</ACMCertificateArn>\n      <SSLSupportMethod>(string)</SSLSupportMethod>\n      <MinimumProtocolVersion>(string)</MinimumProtocolVersion>\n    </ViewerCertificate>\n    <WebACLId>(string)</WebACLId>\n    <HttpVersion>(string)</HttpVersion>\n    <IsIPV6Enabled>(boolean)</IsIPV6Enabled>\n  </DistributionConfig>\n</element>",
+                          "createdAt": "2026-07-28T00:30:33.000Z",
+                          "updatedAt": "2026-07-28T00:30:33.000Z",
+                          "uid": "35240-189b058f-bafa-491c-8a15-0dbd1fef0f38"
+                        },
+                        {
+                          "id": "d37ad013-0c66-4378-ad43-4203f6a3dbe3",
+                          "name": "Bad request",
+                          "originalRequest": {
+                            "method": "PUT",
+                            "header": [
+                              {
+                                "description": "(Required) The value of the ETag header that you received when retrieving the distribution's configuration.",
+                                "key": "If-Match",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "Content-Type",
+                                "value": "application/xml"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <CallerReference>(string)</CallerReference>\n  <Aliases>\n    <Quantity>(integer)</Quantity>\n    <Items>(string)</Items>\n    <Items>(string)</Items>\n  </Aliases>\n  <DefaultRootObject>(string)</DefaultRootObject>\n  <Origins>\n    <Quantity>(integer)</Quantity>\n    <Items>\n      <Id>(string)</Id>\n      <DomainName>(string)</DomainName>\n      <OriginPath>(string)</OriginPath>\n      <S3OriginConfig>\n        <OriginAccessIdentity>(string)</OriginAccessIdentity>\n      </S3OriginConfig>\n      <CustomOriginConfig>\n        <HTTPPort>(integer)</HTTPPort>\n        <HTTPSPort>(integer)</HTTPSPort>\n        <OriginProtocolPolicy>(string)</OriginProtocolPolicy>\n      </CustomOriginConfig>\n    </Items>\n    <Items>\n      <Id>(string)</Id>\n      <DomainName>(string)</DomainName>\n      <OriginPath>(string)</OriginPath>\n      <S3OriginConfig>\n        <OriginAccessIdentity>(string)</OriginAccessIdentity>\n      </S3OriginConfig>\n      <CustomOriginConfig>\n        <HTTPPort>(integer)</HTTPPort>\n        <HTTPSPort>(integer)</HTTPSPort>\n        <OriginProtocolPolicy>(string)</OriginProtocolPolicy>\n      </CustomOriginConfig>\n    </Items>\n  </Origins>\n  <DefaultCacheBehavior>\n    <PathPattern>(string)</PathPattern>\n    <TargetOriginId>(string)</TargetOriginId>\n    <ViewerProtocolPolicy>(string)</ViewerProtocolPolicy>\n    <AllowedMethods>\n      <Quantity>(integer)</Quantity>\n      <Items>(string)</Items>\n      <Items>(string)</Items>\n    </AllowedMethods>\n    <CachePolicyId>(string)</CachePolicyId>\n    <OriginRequestPolicyId>(string)</OriginRequestPolicyId>\n    <Compress>(boolean)</Compress>\n    <FunctionAssociations>\n      <Quantity>(integer)</Quantity>\n      <Items>\n        <FunctionARN>(string)</FunctionARN>\n        <EventType>(string)</EventType>\n      </Items>\n      <Items>\n        <FunctionARN>(string)</FunctionARN>\n        <EventType>(string)</EventType>\n      </Items>\n    </FunctionAssociations>\n    <LambdaFunctionAssociations>\n      <Quantity>(integer)</Quantity>\n      <Items>\n        <LambdaFunctionARN>(string)</LambdaFunctionARN>\n        <EventType>(string)</EventType>\n      </Items>\n      <Items>\n        <LambdaFunctionARN>(string)</LambdaFunctionARN>\n        <EventType>(string)</EventType>\n      </Items>\n    </LambdaFunctionAssociations>\n  </DefaultCacheBehavior>\n  <CacheBehaviors>\n    <Quantity>(integer)</Quantity>\n    <Items>\n      <PathPattern>(string)</PathPattern>\n      <TargetOriginId>(string)</TargetOriginId>\n      <ViewerProtocolPolicy>(string)</ViewerProtocolPolicy>\n      <AllowedMethods>\n        <Quantity>(integer)</Quantity>\n        <Items>(string)</Items>\n        <Items>(string)</Items>\n      </AllowedMethods>\n      <CachePolicyId>(string)</CachePolicyId>\n      <OriginRequestPolicyId>(string)</OriginRequestPolicyId>\n      <Compress>(boolean)</Compress>\n      <FunctionAssociations>\n        <Quantity>(integer)</Quantity>\n        <Items>\n          <FunctionARN>(string)</FunctionARN>\n          <EventType>(string)</EventType>\n        </Items>\n        <Items>\n          <FunctionARN>(string)</FunctionARN>\n          <EventType>(string)</EventType>\n        </Items>\n      </FunctionAssociations>\n      <LambdaFunctionAssociations>\n        <Quantity>(integer)</Quantity>\n        <Items>\n          <LambdaFunctionARN>(string)</LambdaFunctionARN>\n          <EventType>(string)</EventType>\n        </Items>\n        <Items>\n          <LambdaFunctionARN>(string)</LambdaFunctionARN>\n          <EventType>(string)</EventType>\n        </Items>\n      </LambdaFunctionAssociations>\n    </Items>\n    <Items>\n      <PathPattern>(string)</PathPattern>\n      <TargetOriginId>(string)</TargetOriginId>\n      <ViewerProtocolPolicy>(string)</ViewerProtocolPolicy>\n      <AllowedMethods>\n        <Quantity>(integer)</Quantity>\n        <Items>(string)</Items>\n        <Items>(string)</Items>\n      </AllowedMethods>\n      <CachePolicyId>(string)</CachePolicyId>\n      <OriginRequestPolicyId>(string)</OriginRequestPolicyId>\n      <Compress>(boolean)</Compress>\n      <FunctionAssociations>\n        <Quantity>(integer)</Quantity>\n        <Items>\n          <FunctionARN>(string)</FunctionARN>\n          <EventType>(string)</EventType>\n        </Items>\n        <Items>\n          <FunctionARN>(string)</FunctionARN>\n          <EventType>(string)</EventType>\n        </Items>\n      </FunctionAssociations>\n      <LambdaFunctionAssociations>\n        <Quantity>(integer)</Quantity>\n        <Items>\n          <LambdaFunctionARN>(string)</LambdaFunctionARN>\n          <EventType>(string)</EventType>\n        </Items>\n        <Items>\n          <LambdaFunctionARN>(string)</LambdaFunctionARN>\n          <EventType>(string)</EventType>\n        </Items>\n      </LambdaFunctionAssociations>\n    </Items>\n  </CacheBehaviors>\n  <Comment>(string)</Comment>\n  <Enabled>(boolean)</Enabled>\n  <PriceClass>(string)</PriceClass>\n  <ViewerCertificate>\n    <CloudFrontDefaultCertificate>(boolean)</CloudFrontDefaultCertificate>\n    <ACMCertificateArn>(string)</ACMCertificateArn>\n    <SSLSupportMethod>(string)</SSLSupportMethod>\n    <MinimumProtocolVersion>(string)</MinimumProtocolVersion>\n  </ViewerCertificate>\n  <WebACLId>(string)</WebACLId>\n  <HttpVersion>(string)</HttpVersion>\n  <IsIPV6Enabled>(boolean)</IsIPV6Enabled>\n</element>",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "xml",
+                                  "language": "xml"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/2020-05-31/distribution/:Id/config",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "2020-05-31",
+                                "distribution",
+                                ":Id",
+                                "config"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "Id"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Bad Request",
+                          "code": 400,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T00:30:33.000Z",
+                          "updatedAt": "2026-07-28T00:30:33.000Z",
+                          "uid": "35240-d37ad013-0c66-4378-ad43-4203f6a3dbe3"
+                        },
+                        {
+                          "id": "ddd80931-988b-467d-82b7-c9d9f4678071",
+                          "name": "Distribution not found",
+                          "originalRequest": {
+                            "method": "PUT",
+                            "header": [
+                              {
+                                "description": "(Required) The value of the ETag header that you received when retrieving the distribution's configuration.",
+                                "key": "If-Match",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "Content-Type",
+                                "value": "application/xml"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <CallerReference>(string)</CallerReference>\n  <Aliases>\n    <Quantity>(integer)</Quantity>\n    <Items>(string)</Items>\n    <Items>(string)</Items>\n  </Aliases>\n  <DefaultRootObject>(string)</DefaultRootObject>\n  <Origins>\n    <Quantity>(integer)</Quantity>\n    <Items>\n      <Id>(string)</Id>\n      <DomainName>(string)</DomainName>\n      <OriginPath>(string)</OriginPath>\n      <S3OriginConfig>\n        <OriginAccessIdentity>(string)</OriginAccessIdentity>\n      </S3OriginConfig>\n      <CustomOriginConfig>\n        <HTTPPort>(integer)</HTTPPort>\n        <HTTPSPort>(integer)</HTTPSPort>\n        <OriginProtocolPolicy>(string)</OriginProtocolPolicy>\n      </CustomOriginConfig>\n    </Items>\n    <Items>\n      <Id>(string)</Id>\n      <DomainName>(string)</DomainName>\n      <OriginPath>(string)</OriginPath>\n      <S3OriginConfig>\n        <OriginAccessIdentity>(string)</OriginAccessIdentity>\n      </S3OriginConfig>\n      <CustomOriginConfig>\n        <HTTPPort>(integer)</HTTPPort>\n        <HTTPSPort>(integer)</HTTPSPort>\n        <OriginProtocolPolicy>(string)</OriginProtocolPolicy>\n      </CustomOriginConfig>\n    </Items>\n  </Origins>\n  <DefaultCacheBehavior>\n    <PathPattern>(string)</PathPattern>\n    <TargetOriginId>(string)</TargetOriginId>\n    <ViewerProtocolPolicy>(string)</ViewerProtocolPolicy>\n    <AllowedMethods>\n      <Quantity>(integer)</Quantity>\n      <Items>(string)</Items>\n      <Items>(string)</Items>\n    </AllowedMethods>\n    <CachePolicyId>(string)</CachePolicyId>\n    <OriginRequestPolicyId>(string)</OriginRequestPolicyId>\n    <Compress>(boolean)</Compress>\n    <FunctionAssociations>\n      <Quantity>(integer)</Quantity>\n      <Items>\n        <FunctionARN>(string)</FunctionARN>\n        <EventType>(string)</EventType>\n      </Items>\n      <Items>\n        <FunctionARN>(string)</FunctionARN>\n        <EventType>(string)</EventType>\n      </Items>\n    </FunctionAssociations>\n    <LambdaFunctionAssociations>\n      <Quantity>(integer)</Quantity>\n      <Items>\n        <LambdaFunctionARN>(string)</LambdaFunctionARN>\n        <EventType>(string)</EventType>\n      </Items>\n      <Items>\n        <LambdaFunctionARN>(string)</LambdaFunctionARN>\n        <EventType>(string)</EventType>\n      </Items>\n    </LambdaFunctionAssociations>\n  </DefaultCacheBehavior>\n  <CacheBehaviors>\n    <Quantity>(integer)</Quantity>\n    <Items>\n      <PathPattern>(string)</PathPattern>\n      <TargetOriginId>(string)</TargetOriginId>\n      <ViewerProtocolPolicy>(string)</ViewerProtocolPolicy>\n      <AllowedMethods>\n        <Quantity>(integer)</Quantity>\n        <Items>(string)</Items>\n        <Items>(string)</Items>\n      </AllowedMethods>\n      <CachePolicyId>(string)</CachePolicyId>\n      <OriginRequestPolicyId>(string)</OriginRequestPolicyId>\n      <Compress>(boolean)</Compress>\n      <FunctionAssociations>\n        <Quantity>(integer)</Quantity>\n        <Items>\n          <FunctionARN>(string)</FunctionARN>\n          <EventType>(string)</EventType>\n        </Items>\n        <Items>\n          <FunctionARN>(string)</FunctionARN>\n          <EventType>(string)</EventType>\n        </Items>\n      </FunctionAssociations>\n      <LambdaFunctionAssociations>\n        <Quantity>(integer)</Quantity>\n        <Items>\n          <LambdaFunctionARN>(string)</LambdaFunctionARN>\n          <EventType>(string)</EventType>\n        </Items>\n        <Items>\n          <LambdaFunctionARN>(string)</LambdaFunctionARN>\n          <EventType>(string)</EventType>\n        </Items>\n      </LambdaFunctionAssociations>\n    </Items>\n    <Items>\n      <PathPattern>(string)</PathPattern>\n      <TargetOriginId>(string)</TargetOriginId>\n      <ViewerProtocolPolicy>(string)</ViewerProtocolPolicy>\n      <AllowedMethods>\n        <Quantity>(integer)</Quantity>\n        <Items>(string)</Items>\n        <Items>(string)</Items>\n      </AllowedMethods>\n      <CachePolicyId>(string)</CachePolicyId>\n      <OriginRequestPolicyId>(string)</OriginRequestPolicyId>\n      <Compress>(boolean)</Compress>\n      <FunctionAssociations>\n        <Quantity>(integer)</Quantity>\n        <Items>\n          <FunctionARN>(string)</FunctionARN>\n          <EventType>(string)</EventType>\n        </Items>\n        <Items>\n          <FunctionARN>(string)</FunctionARN>\n          <EventType>(string)</EventType>\n        </Items>\n      </FunctionAssociations>\n      <LambdaFunctionAssociations>\n        <Quantity>(integer)</Quantity>\n        <Items>\n          <LambdaFunctionARN>(string)</LambdaFunctionARN>\n          <EventType>(string)</EventType>\n        </Items>\n        <Items>\n          <LambdaFunctionARN>(string)</LambdaFunctionARN>\n          <EventType>(string)</EventType>\n        </Items>\n      </LambdaFunctionAssociations>\n    </Items>\n  </CacheBehaviors>\n  <Comment>(string)</Comment>\n  <Enabled>(boolean)</Enabled>\n  <PriceClass>(string)</PriceClass>\n  <ViewerCertificate>\n    <CloudFrontDefaultCertificate>(boolean)</CloudFrontDefaultCertificate>\n    <ACMCertificateArn>(string)</ACMCertificateArn>\n    <SSLSupportMethod>(string)</SSLSupportMethod>\n    <MinimumProtocolVersion>(string)</MinimumProtocolVersion>\n  </ViewerCertificate>\n  <WebACLId>(string)</WebACLId>\n  <HttpVersion>(string)</HttpVersion>\n  <IsIPV6Enabled>(boolean)</IsIPV6Enabled>\n</element>",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "xml",
+                                  "language": "xml"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/2020-05-31/distribution/:Id/config",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "2020-05-31",
+                                "distribution",
+                                ":Id",
+                                "config"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "Id"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Not Found",
+                          "code": 404,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T00:30:33.000Z",
+                          "updatedAt": "2026-07-28T00:30:33.000Z",
+                          "uid": "35240-ddd80931-988b-467d-82b7-c9d9f4678071"
+                        },
+                        {
+                          "id": "55e40d03-a6e9-42f7-817a-e2bcfb08182c",
+                          "name": "Precondition failed",
+                          "originalRequest": {
+                            "method": "PUT",
+                            "header": [
+                              {
+                                "description": "(Required) The value of the ETag header that you received when retrieving the distribution's configuration.",
+                                "key": "If-Match",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "Content-Type",
+                                "value": "application/xml"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <CallerReference>(string)</CallerReference>\n  <Aliases>\n    <Quantity>(integer)</Quantity>\n    <Items>(string)</Items>\n    <Items>(string)</Items>\n  </Aliases>\n  <DefaultRootObject>(string)</DefaultRootObject>\n  <Origins>\n    <Quantity>(integer)</Quantity>\n    <Items>\n      <Id>(string)</Id>\n      <DomainName>(string)</DomainName>\n      <OriginPath>(string)</OriginPath>\n      <S3OriginConfig>\n        <OriginAccessIdentity>(string)</OriginAccessIdentity>\n      </S3OriginConfig>\n      <CustomOriginConfig>\n        <HTTPPort>(integer)</HTTPPort>\n        <HTTPSPort>(integer)</HTTPSPort>\n        <OriginProtocolPolicy>(string)</OriginProtocolPolicy>\n      </CustomOriginConfig>\n    </Items>\n    <Items>\n      <Id>(string)</Id>\n      <DomainName>(string)</DomainName>\n      <OriginPath>(string)</OriginPath>\n      <S3OriginConfig>\n        <OriginAccessIdentity>(string)</OriginAccessIdentity>\n      </S3OriginConfig>\n      <CustomOriginConfig>\n        <HTTPPort>(integer)</HTTPPort>\n        <HTTPSPort>(integer)</HTTPSPort>\n        <OriginProtocolPolicy>(string)</OriginProtocolPolicy>\n      </CustomOriginConfig>\n    </Items>\n  </Origins>\n  <DefaultCacheBehavior>\n    <PathPattern>(string)</PathPattern>\n    <TargetOriginId>(string)</TargetOriginId>\n    <ViewerProtocolPolicy>(string)</ViewerProtocolPolicy>\n    <AllowedMethods>\n      <Quantity>(integer)</Quantity>\n      <Items>(string)</Items>\n      <Items>(string)</Items>\n    </AllowedMethods>\n    <CachePolicyId>(string)</CachePolicyId>\n    <OriginRequestPolicyId>(string)</OriginRequestPolicyId>\n    <Compress>(boolean)</Compress>\n    <FunctionAssociations>\n      <Quantity>(integer)</Quantity>\n      <Items>\n        <FunctionARN>(string)</FunctionARN>\n        <EventType>(string)</EventType>\n      </Items>\n      <Items>\n        <FunctionARN>(string)</FunctionARN>\n        <EventType>(string)</EventType>\n      </Items>\n    </FunctionAssociations>\n    <LambdaFunctionAssociations>\n      <Quantity>(integer)</Quantity>\n      <Items>\n        <LambdaFunctionARN>(string)</LambdaFunctionARN>\n        <EventType>(string)</EventType>\n      </Items>\n      <Items>\n        <LambdaFunctionARN>(string)</LambdaFunctionARN>\n        <EventType>(string)</EventType>\n      </Items>\n    </LambdaFunctionAssociations>\n  </DefaultCacheBehavior>\n  <CacheBehaviors>\n    <Quantity>(integer)</Quantity>\n    <Items>\n      <PathPattern>(string)</PathPattern>\n      <TargetOriginId>(string)</TargetOriginId>\n      <ViewerProtocolPolicy>(string)</ViewerProtocolPolicy>\n      <AllowedMethods>\n        <Quantity>(integer)</Quantity>\n        <Items>(string)</Items>\n        <Items>(string)</Items>\n      </AllowedMethods>\n      <CachePolicyId>(string)</CachePolicyId>\n      <OriginRequestPolicyId>(string)</OriginRequestPolicyId>\n      <Compress>(boolean)</Compress>\n      <FunctionAssociations>\n        <Quantity>(integer)</Quantity>\n        <Items>\n          <FunctionARN>(string)</FunctionARN>\n          <EventType>(string)</EventType>\n        </Items>\n        <Items>\n          <FunctionARN>(string)</FunctionARN>\n          <EventType>(string)</EventType>\n        </Items>\n      </FunctionAssociations>\n      <LambdaFunctionAssociations>\n        <Quantity>(integer)</Quantity>\n        <Items>\n          <LambdaFunctionARN>(string)</LambdaFunctionARN>\n          <EventType>(string)</EventType>\n        </Items>\n        <Items>\n          <LambdaFunctionARN>(string)</LambdaFunctionARN>\n          <EventType>(string)</EventType>\n        </Items>\n      </LambdaFunctionAssociations>\n    </Items>\n    <Items>\n      <PathPattern>(string)</PathPattern>\n      <TargetOriginId>(string)</TargetOriginId>\n      <ViewerProtocolPolicy>(string)</ViewerProtocolPolicy>\n      <AllowedMethods>\n        <Quantity>(integer)</Quantity>\n        <Items>(string)</Items>\n        <Items>(string)</Items>\n      </AllowedMethods>\n      <CachePolicyId>(string)</CachePolicyId>\n      <OriginRequestPolicyId>(string)</OriginRequestPolicyId>\n      <Compress>(boolean)</Compress>\n      <FunctionAssociations>\n        <Quantity>(integer)</Quantity>\n        <Items>\n          <FunctionARN>(string)</FunctionARN>\n          <EventType>(string)</EventType>\n        </Items>\n        <Items>\n          <FunctionARN>(string)</FunctionARN>\n          <EventType>(string)</EventType>\n        </Items>\n      </FunctionAssociations>\n      <LambdaFunctionAssociations>\n        <Quantity>(integer)</Quantity>\n        <Items>\n          <LambdaFunctionARN>(string)</LambdaFunctionARN>\n          <EventType>(string)</EventType>\n        </Items>\n        <Items>\n          <LambdaFunctionARN>(string)</LambdaFunctionARN>\n          <EventType>(string)</EventType>\n        </Items>\n      </LambdaFunctionAssociations>\n    </Items>\n  </CacheBehaviors>\n  <Comment>(string)</Comment>\n  <Enabled>(boolean)</Enabled>\n  <PriceClass>(string)</PriceClass>\n  <ViewerCertificate>\n    <CloudFrontDefaultCertificate>(boolean)</CloudFrontDefaultCertificate>\n    <ACMCertificateArn>(string)</ACMCertificateArn>\n    <SSLSupportMethod>(string)</SSLSupportMethod>\n    <MinimumProtocolVersion>(string)</MinimumProtocolVersion>\n  </ViewerCertificate>\n  <WebACLId>(string)</WebACLId>\n  <HttpVersion>(string)</HttpVersion>\n  <IsIPV6Enabled>(boolean)</IsIPV6Enabled>\n</element>",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "xml",
+                                  "language": "xml"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/2020-05-31/distribution/:Id/config",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "2020-05-31",
+                                "distribution",
+                                ":Id",
+                                "config"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "Id"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Precondition Failed",
+                          "code": 412,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T00:30:33.000Z",
+                          "updatedAt": "2026-07-28T00:30:33.000Z",
+                          "uid": "35240-55e40d03-a6e9-42f7-817a-e2bcfb08182c"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T00:30:33.000Z",
+                      "updatedAt": "2026-07-28T00:30:33.000Z",
+                      "uid": "35240-31058546-b192-44f8-b590-fc30c04567f7"
+                    }
+                  ],
+                  "id": "33c98d65-05a9-4d09-8ed4-7e813e0eb1ef",
+                  "createdAt": "2026-07-28T00:30:33.000Z",
+                  "updatedAt": "2026-07-28T00:30:33.000Z",
+                  "uid": "35240-33c98d65-05a9-4d09-8ed4-7e813e0eb1ef"
+                },
+                {
+                  "name": "Amazon CloudFront Get a CloudFront distribution",
+                  "id": "ecc4934b-39d8-4380-af90-8e0f01d1b362",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/xml"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/2020-05-31/distribution/:Id",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "2020-05-31",
+                        "distribution",
+                        ":Id"
+                      ],
+                      "variable": [
+                        {
+                          "id": "fe307dcc-f551-4e91-8d30-b97740d0ab25",
+                          "key": "Id",
+                          "value": "<string>",
+                          "description": "(Required) The distribution's ID."
+                        }
+                      ]
+                    },
+                    "description": "Get the information about a distribution."
+                  },
+                  "response": [
+                    {
+                      "id": "a58d2c46-7f80-43aa-af5f-94aebaee5cfb",
+                      "name": "Successful response",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/xml"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/2020-05-31/distribution/:Id",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "2020-05-31",
+                            "distribution",
+                            ":Id"
+                          ],
+                          "variable": [
+                            {
+                              "key": "Id"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "xml",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/xml"
+                        },
+                        {
+                          "disabled": false,
+                          "description": {
+                            "content": "The current version of the distribution",
+                            "type": "text/plain"
+                          },
+                          "key": "ETag",
+                          "value": "<string>"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <Id>(string)</Id>\n  <ARN>(string)</ARN>\n  <Status>(string)</Status>\n  <LastModifiedTime>(string)</LastModifiedTime>\n  <DomainName>(string)</DomainName>\n  <DistributionConfig>\n    <CallerReference>(string)</CallerReference>\n    <Aliases>\n      <Quantity>(integer)</Quantity>\n      <Items>(string)</Items>\n      <Items>(string)</Items>\n    </Aliases>\n    <DefaultRootObject>(string)</DefaultRootObject>\n    <Origins>\n      <Quantity>(integer)</Quantity>\n      <Items>\n        <Id>(string)</Id>\n        <DomainName>(string)</DomainName>\n        <OriginPath>(string)</OriginPath>\n        <S3OriginConfig>\n          <OriginAccessIdentity>(string)</OriginAccessIdentity>\n        </S3OriginConfig>\n        <CustomOriginConfig>\n          <HTTPPort>(integer)</HTTPPort>\n          <HTTPSPort>(integer)</HTTPSPort>\n          <OriginProtocolPolicy>(string)</OriginProtocolPolicy>\n        </CustomOriginConfig>\n      </Items>\n      <Items>\n        <Id>(string)</Id>\n        <DomainName>(string)</DomainName>\n        <OriginPath>(string)</OriginPath>\n        <S3OriginConfig>\n          <OriginAccessIdentity>(string)</OriginAccessIdentity>\n        </S3OriginConfig>\n        <CustomOriginConfig>\n          <HTTPPort>(integer)</HTTPPort>\n          <HTTPSPort>(integer)</HTTPSPort>\n          <OriginProtocolPolicy>(string)</OriginProtocolPolicy>\n        </CustomOriginConfig>\n      </Items>\n    </Origins>\n    <DefaultCacheBehavior>\n      <PathPattern>(string)</PathPattern>\n      <TargetOriginId>(string)</TargetOriginId>\n      <ViewerProtocolPolicy>(string)</ViewerProtocolPolicy>\n      <AllowedMethods>\n        <Quantity>(integer)</Quantity>\n        <Items>(string)</Items>\n        <Items>(string)</Items>\n      </AllowedMethods>\n      <CachePolicyId>(string)</CachePolicyId>\n      <OriginRequestPolicyId>(string)</OriginRequestPolicyId>\n      <Compress>(boolean)</Compress>\n      <FunctionAssociations>\n        <Quantity>(integer)</Quantity>\n        <Items>\n          <FunctionARN>(string)</FunctionARN>\n          <EventType>(string)</EventType>\n        </Items>\n        <Items>\n          <FunctionARN>(string)</FunctionARN>\n          <EventType>(string)</EventType>\n        </Items>\n      </FunctionAssociations>\n      <LambdaFunctionAssociations>\n        <Quantity>(integer)</Quantity>\n        <Items>\n          <LambdaFunctionARN>(string)</LambdaFunctionARN>\n          <EventType>(string)</EventType>\n        </Items>\n        <Items>\n          <LambdaFunctionARN>(string)</LambdaFunctionARN>\n          <EventType>(string)</EventType>\n        </Items>\n      </LambdaFunctionAssociations>\n    </DefaultCacheBehavior>\n    <CacheBehaviors>\n      <Quantity>(integer)</Quantity>\n      <Items>\n        <PathPattern>(string)</PathPattern>\n        <TargetOriginId>(string)</TargetOriginId>\n        <ViewerProtocolPolicy>(string)</ViewerProtocolPolicy>\n        <AllowedMethods>\n          <Quantity>(integer)</Quantity>\n          <Items>(string)</Items>\n          <Items>(string)</Items>\n        </AllowedMethods>\n        <CachePolicyId>(string)</CachePolicyId>\n        <OriginRequestPolicyId>(string)</OriginRequestPolicyId>\n        <Compress>(boolean)</Compress>\n        <FunctionAssociations>\n          <Quantity>(integer)</Quantity>\n          <Items>\n            <FunctionARN>(string)</FunctionARN>\n            <EventType>(string)</EventType>\n          </Items>\n          <Items>\n            <FunctionARN>(string)</FunctionARN>\n            <EventType>(string)</EventType>\n          </Items>\n        </FunctionAssociations>\n        <LambdaFunctionAssociations>\n          <Quantity>(integer)</Quantity>\n          <Items>\n            <LambdaFunctionARN>(string)</LambdaFunctionARN>\n            <EventType>(string)</EventType>\n          </Items>\n          <Items>\n            <LambdaFunctionARN>(string)</LambdaFunctionARN>\n            <EventType>(string)</EventType>\n          </Items>\n        </LambdaFunctionAssociations>\n      </Items>\n      <Items>\n        <PathPattern>(string)</PathPattern>\n        <TargetOriginId>(string)</TargetOriginId>\n        <ViewerProtocolPolicy>(string)</ViewerProtocolPolicy>\n        <AllowedMethods>\n          <Quantity>(integer)</Quantity>\n          <Items>(string)</Items>\n          <Items>(string)</Items>\n        </AllowedMethods>\n        <CachePolicyId>(string)</CachePolicyId>\n        <OriginRequestPolicyId>(string)</OriginRequestPolicyId>\n        <Compress>(boolean)</Compress>\n        <FunctionAssociations>\n          <Quantity>(integer)</Quantity>\n          <Items>\n            <FunctionARN>(string)</FunctionARN>\n            <EventType>(string)</EventType>\n          </Items>\n          <Items>\n            <FunctionARN>(string)</FunctionARN>\n            <EventType>(string)</EventType>\n          </Items>\n        </FunctionAssociations>\n        <LambdaFunctionAssociations>\n          <Quantity>(integer)</Quantity>\n          <Items>\n            <LambdaFunctionARN>(string)</LambdaFunctionARN>\n            <EventType>(string)</EventType>\n          </Items>\n          <Items>\n            <LambdaFunctionARN>(string)</LambdaFunctionARN>\n            <EventType>(string)</EventType>\n          </Items>\n        </LambdaFunctionAssociations>\n      </Items>\n    </CacheBehaviors>\n    <Comment>(string)</Comment>\n    <Enabled>(boolean)</Enabled>\n    <PriceClass>(string)</PriceClass>\n    <ViewerCertificate>\n      <CloudFrontDefaultCertificate>(boolean)</CloudFrontDefaultCertificate>\n      <ACMCertificateArn>(string)</ACMCertificateArn>\n      <SSLSupportMethod>(string)</SSLSupportMethod>\n      <MinimumProtocolVersion>(string)</MinimumProtocolVersion>\n    </ViewerCertificate>\n    <WebACLId>(string)</WebACLId>\n    <HttpVersion>(string)</HttpVersion>\n    <IsIPV6Enabled>(boolean)</IsIPV6Enabled>\n  </DistributionConfig>\n</element>",
+                      "createdAt": "2026-07-28T00:30:33.000Z",
+                      "updatedAt": "2026-07-28T00:30:33.000Z",
+                      "uid": "35240-a58d2c46-7f80-43aa-af5f-94aebaee5cfb"
+                    },
+                    {
+                      "id": "b3ab5a2f-166c-477a-8194-ef3eec543cc8",
+                      "name": "Distribution not found",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                          "raw": "{{baseUrl}}/2020-05-31/distribution/:Id",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "2020-05-31",
+                            "distribution",
+                            ":Id"
+                          ],
+                          "variable": [
+                            {
+                              "key": "Id"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Not Found",
+                      "code": 404,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T00:30:33.000Z",
+                      "updatedAt": "2026-07-28T00:30:33.000Z",
+                      "uid": "35240-b3ab5a2f-166c-477a-8194-ef3eec543cc8"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T00:30:33.000Z",
+                  "updatedAt": "2026-07-28T00:30:33.000Z",
+                  "uid": "35240-ecc4934b-39d8-4380-af90-8e0f01d1b362"
+                },
+                {
+                  "name": "Amazon CloudFront Delete a CloudFront distribution",
+                  "id": "799f6933-43bb-4027-8964-6395f6419e4d",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "description": "(Required) The value of the ETag header that you received when you disabled the distribution.",
+                        "key": "If-Match",
+                        "value": "<string>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/2020-05-31/distribution/:Id",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "2020-05-31",
+                        "distribution",
+                        ":Id"
+                      ],
+                      "variable": [
+                        {
+                          "id": "ea0dbeb2-8d5f-4250-afb9-4bd6b88a8d15",
+                          "key": "Id",
+                          "value": "<string>",
+                          "description": "(Required) The distribution ID."
+                        }
+                      ]
+                    },
+                    "description": "Delete a distribution. You must disable the distribution before deleting it."
+                  },
+                  "response": [
+                    {
+                      "id": "9250257a-44b0-486a-a4ac-1fd70b563a68",
+                      "name": "Distribution deleted successfully",
+                      "originalRequest": {
+                        "method": "DELETE",
+                        "header": [
+                          {
+                            "description": "(Required) The value of the ETag header that you received when you disabled the distribution.",
+                            "key": "If-Match",
+                            "value": "<string>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/2020-05-31/distribution/:Id",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "2020-05-31",
+                            "distribution",
+                            ":Id"
+                          ],
+                          "variable": [
+                            {
+                              "key": "Id"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "No Content",
+                      "code": 204,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T00:30:33.000Z",
+                      "updatedAt": "2026-07-28T00:30:33.000Z",
+                      "uid": "35240-9250257a-44b0-486a-a4ac-1fd70b563a68"
+                    },
+                    {
+                      "id": "85ac4672-76c2-4de0-89ee-b6c42d4def4a",
+                      "name": "Distribution not found",
+                      "originalRequest": {
+                        "method": "DELETE",
+                        "header": [
+                          {
+                            "description": "(Required) The value of the ETag header that you received when you disabled the distribution.",
+                            "key": "If-Match",
+                            "value": "<string>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/2020-05-31/distribution/:Id",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "2020-05-31",
+                            "distribution",
+                            ":Id"
+                          ],
+                          "variable": [
+                            {
+                              "key": "Id"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Not Found",
+                      "code": 404,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T00:30:33.000Z",
+                      "updatedAt": "2026-07-28T00:30:33.000Z",
+                      "uid": "35240-85ac4672-76c2-4de0-89ee-b6c42d4def4a"
+                    },
+                    {
+                      "id": "c1b3d501-9291-418a-866d-69308b090c9d",
+                      "name": "Precondition failed - the If-Match value does not match",
+                      "originalRequest": {
+                        "method": "DELETE",
+                        "header": [
+                          {
+                            "description": "(Required) The value of the ETag header that you received when you disabled the distribution.",
+                            "key": "If-Match",
+                            "value": "<string>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/2020-05-31/distribution/:Id",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "2020-05-31",
+                            "distribution",
+                            ":Id"
+                          ],
+                          "variable": [
+                            {
+                              "key": "Id"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Precondition Failed",
+                      "code": 412,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T00:30:33.000Z",
+                      "updatedAt": "2026-07-28T00:30:33.000Z",
+                      "uid": "35240-c1b3d501-9291-418a-866d-69308b090c9d"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T00:30:33.000Z",
+                  "updatedAt": "2026-07-28T00:30:33.000Z",
+                  "uid": "35240-799f6933-43bb-4027-8964-6395f6419e4d"
+                }
+              ],
+              "id": "587478d9-5a1c-47c1-ab24-e9ad4796ec53",
+              "createdAt": "2026-07-28T00:30:33.000Z",
+              "updatedAt": "2026-07-28T00:30:33.000Z",
+              "uid": "35240-587478d9-5a1c-47c1-ab24-e9ad4796ec53"
+            },
+            {
+              "name": "Amazon CloudFront Create a new CloudFront distribution",
+              "id": "026206cd-298b-45bc-8c81-b1e43d62d8f3",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/xml"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/xml"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <CallerReference>(string)</CallerReference>\n  <Aliases>\n    <Quantity>(integer)</Quantity>\n    <Items>(string)</Items>\n    <Items>(string)</Items>\n  </Aliases>\n  <DefaultRootObject>(string)</DefaultRootObject>\n  <Origins>\n    <Quantity>(integer)</Quantity>\n    <Items>\n      <Id>(string)</Id>\n      <DomainName>(string)</DomainName>\n      <OriginPath>(string)</OriginPath>\n      <S3OriginConfig>\n        <OriginAccessIdentity>(string)</OriginAccessIdentity>\n      </S3OriginConfig>\n      <CustomOriginConfig>\n        <HTTPPort>(integer)</HTTPPort>\n        <HTTPSPort>(integer)</HTTPSPort>\n        <OriginProtocolPolicy>(string)</OriginProtocolPolicy>\n      </CustomOriginConfig>\n    </Items>\n    <Items>\n      <Id>(string)</Id>\n      <DomainName>(string)</DomainName>\n      <OriginPath>(string)</OriginPath>\n      <S3OriginConfig>\n        <OriginAccessIdentity>(string)</OriginAccessIdentity>\n      </S3OriginConfig>\n      <CustomOriginConfig>\n        <HTTPPort>(integer)</HTTPPort>\n        <HTTPSPort>(integer)</HTTPSPort>\n        <OriginProtocolPolicy>(string)</OriginProtocolPolicy>\n      </CustomOriginConfig>\n    </Items>\n  </Origins>\n  <DefaultCacheBehavior>\n    <PathPattern>(string)</PathPattern>\n    <TargetOriginId>(string)</TargetOriginId>\n    <ViewerProtocolPolicy>(string)</ViewerProtocolPolicy>\n    <AllowedMethods>\n      <Quantity>(integer)</Quantity>\n      <Items>(string)</Items>\n      <Items>(string)</Items>\n    </AllowedMethods>\n    <CachePolicyId>(string)</CachePolicyId>\n    <OriginRequestPolicyId>(string)</OriginRequestPolicyId>\n    <Compress>(boolean)</Compress>\n    <FunctionAssociations>\n      <Quantity>(integer)</Quantity>\n      <Items>\n        <FunctionARN>(string)</FunctionARN>\n        <EventType>(string)</EventType>\n      </Items>\n      <Items>\n        <FunctionARN>(string)</FunctionARN>\n        <EventType>(string)</EventType>\n      </Items>\n    </FunctionAssociations>\n    <LambdaFunctionAssociations>\n      <Quantity>(integer)</Quantity>\n      <Items>\n        <LambdaFunctionARN>(string)</LambdaFunctionARN>\n        <EventType>(string)</EventType>\n      </Items>\n      <Items>\n        <LambdaFunctionARN>(string)</LambdaFunctionARN>\n        <EventType>(string)</EventType>\n      </Items>\n    </LambdaFunctionAssociations>\n  </DefaultCacheBehavior>\n  <CacheBehaviors>\n    <Quantity>(integer)</Quantity>\n    <Items>\n      <PathPattern>(string)</PathPattern>\n      <TargetOriginId>(string)</TargetOriginId>\n      <ViewerProtocolPolicy>(string)</ViewerProtocolPolicy>\n      <AllowedMethods>\n        <Quantity>(integer)</Quantity>\n        <Items>(string)</Items>\n        <Items>(string)</Items>\n      </AllowedMethods>\n      <CachePolicyId>(string)</CachePolicyId>\n      <OriginRequestPolicyId>(string)</OriginRequestPolicyId>\n      <Compress>(boolean)</Compress>\n      <FunctionAssociations>\n        <Quantity>(integer)</Quantity>\n        <Items>\n          <FunctionARN>(string)</FunctionARN>\n          <EventType>(string)</EventType>\n        </Items>\n        <Items>\n          <FunctionARN>(string)</FunctionARN>\n          <EventType>(string)</EventType>\n        </Items>\n      </FunctionAssociations>\n      <LambdaFunctionAssociations>\n        <Quantity>(integer)</Quantity>\n        <Items>\n          <LambdaFunctionARN>(string)</LambdaFunctionARN>\n          <EventType>(string)</EventType>\n        </Items>\n        <Items>\n          <LambdaFunctionARN>(string)</LambdaFunctionARN>\n          <EventType>(string)</EventType>\n        </Items>\n      </LambdaFunctionAssociations>\n    </Items>\n    <Items>\n      <PathPattern>(string)</PathPattern>\n      <TargetOriginId>(string)</TargetOriginId>\n      <ViewerProtocolPolicy>(string)</ViewerProtocolPolicy>\n      <AllowedMethods>\n        <Quantity>(integer)</Quantity>\n        <Items>(string)</Items>\n        <Items>(string)</Items>\n      </AllowedMethods>\n      <CachePolicyId>(string)</CachePolicyId>\n      <OriginRequestPolicyId>(string)</OriginRequestPolicyId>\n      <Compress>(boolean)</Compress>\n      <FunctionAssociations>\n        <Quantity>(integer)</Quantity>\n        <Items>\n          <FunctionARN>(string)</FunctionARN>\n          <EventType>(string)</EventType>\n        </Items>\n        <Items>\n          <FunctionARN>(string)</FunctionARN>\n          <EventType>(string)</EventType>\n        </Items>\n      </FunctionAssociations>\n      <LambdaFunctionAssociations>\n        <Quantity>(integer)</Quantity>\n        <Items>\n          <LambdaFunctionARN>(string)</LambdaFunctionARN>\n          <EventType>(string)</EventType>\n        </Items>\n        <Items>\n          <LambdaFunctionARN>(string)</LambdaFunctionARN>\n          <EventType>(string)</EventType>\n        </Items>\n      </LambdaFunctionAssociations>\n    </Items>\n  </CacheBehaviors>\n  <Comment>(string)</Comment>\n  <Enabled>(boolean)</Enabled>\n  <PriceClass>(string)</PriceClass>\n  <ViewerCertificate>\n    <CloudFrontDefaultCertificate>(boolean)</CloudFrontDefaultCertificate>\n    <ACMCertificateArn>(string)</ACMCertificateArn>\n    <SSLSupportMethod>(string)</SSLSupportMethod>\n    <MinimumProtocolVersion>(string)</MinimumProtocolVersion>\n  </ViewerCertificate>\n  <WebACLId>(string)</WebACLId>\n  <HttpVersion>(string)</HttpVersion>\n  <IsIPV6Enabled>(boolean)</IsIPV6Enabled>\n</element>",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "xml",
+                      "language": "xml"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/2020-05-31/distribution",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "2020-05-31",
+                    "distribution"
+                  ]
+                },
+                "description": "Creates a new CloudFront distribution. You create a distribution to tell CloudFront where you want content to be delivered from, and the details about how to track and manage content delivery."
+              },
+              "response": [
+                {
+                  "id": "47c456a1-6068-44da-9d03-bee2be52047f",
+                  "name": "Distribution created successfully",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/xml"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/xml"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <CallerReference>(string)</CallerReference>\n  <Aliases>\n    <Quantity>(integer)</Quantity>\n    <Items>(string)</Items>\n    <Items>(string)</Items>\n  </Aliases>\n  <DefaultRootObject>(string)</DefaultRootObject>\n  <Origins>\n    <Quantity>(integer)</Quantity>\n    <Items>\n      <Id>(string)</Id>\n      <DomainName>(string)</DomainName>\n      <OriginPath>(string)</OriginPath>\n      <S3OriginConfig>\n        <OriginAccessIdentity>(string)</OriginAccessIdentity>\n      </S3OriginConfig>\n      <CustomOriginConfig>\n        <HTTPPort>(integer)</HTTPPort>\n        <HTTPSPort>(integer)</HTTPSPort>\n        <OriginProtocolPolicy>(string)</OriginProtocolPolicy>\n      </CustomOriginConfig>\n    </Items>\n    <Items>\n      <Id>(string)</Id>\n      <DomainName>(string)</DomainName>\n      <OriginPath>(string)</OriginPath>\n      <S3OriginConfig>\n        <OriginAccessIdentity>(string)</OriginAccessIdentity>\n      </S3OriginConfig>\n      <CustomOriginConfig>\n        <HTTPPort>(integer)</HTTPPort>\n        <HTTPSPort>(integer)</HTTPSPort>\n        <OriginProtocolPolicy>(string)</OriginProtocolPolicy>\n      </CustomOriginConfig>\n    </Items>\n  </Origins>\n  <DefaultCacheBehavior>\n    <PathPattern>(string)</PathPattern>\n    <TargetOriginId>(string)</TargetOriginId>\n    <ViewerProtocolPolicy>(string)</ViewerProtocolPolicy>\n    <AllowedMethods>\n      <Quantity>(integer)</Quantity>\n      <Items>(string)</Items>\n      <Items>(string)</Items>\n    </AllowedMethods>\n    <CachePolicyId>(string)</CachePolicyId>\n    <OriginRequestPolicyId>(string)</OriginRequestPolicyId>\n    <Compress>(boolean)</Compress>\n    <FunctionAssociations>\n      <Quantity>(integer)</Quantity>\n      <Items>\n        <FunctionARN>(string)</FunctionARN>\n        <EventType>(string)</EventType>\n      </Items>\n      <Items>\n        <FunctionARN>(string)</FunctionARN>\n        <EventType>(string)</EventType>\n      </Items>\n    </FunctionAssociations>\n    <LambdaFunctionAssociations>\n      <Quantity>(integer)</Quantity>\n      <Items>\n        <LambdaFunctionARN>(string)</LambdaFunctionARN>\n        <EventType>(string)</EventType>\n      </Items>\n      <Items>\n        <LambdaFunctionARN>(string)</LambdaFunctionARN>\n        <EventType>(string)</EventType>\n      </Items>\n    </LambdaFunctionAssociations>\n  </DefaultCacheBehavior>\n  <CacheBehaviors>\n    <Quantity>(integer)</Quantity>\n    <Items>\n      <PathPattern>(string)</PathPattern>\n      <TargetOriginId>(string)</TargetOriginId>\n      <ViewerProtocolPolicy>(string)</ViewerProtocolPolicy>\n      <AllowedMethods>\n        <Quantity>(integer)</Quantity>\n        <Items>(string)</Items>\n        <Items>(string)</Items>\n      </AllowedMethods>\n      <CachePolicyId>(string)</CachePolicyId>\n      <OriginRequestPolicyId>(string)</OriginRequestPolicyId>\n      <Compress>(boolean)</Compress>\n      <FunctionAssociations>\n        <Quantity>(integer)</Quantity>\n        <Items>\n          <FunctionARN>(string)</FunctionARN>\n          <EventType>(string)</EventType>\n        </Items>\n        <Items>\n          <FunctionARN>(string)</FunctionARN>\n          <EventType>(string)</EventType>\n        </Items>\n      </FunctionAssociations>\n      <LambdaFunctionAssociations>\n        <Quantity>(integer)</Quantity>\n        <Items>\n          <LambdaFunctionARN>(string)</LambdaFunctionARN>\n          <EventType>(string)</EventType>\n        </Items>\n        <Items>\n          <LambdaFunctionARN>(string)</LambdaFunctionARN>\n          <EventType>(string)</EventType>\n        </Items>\n      </LambdaFunctionAssociations>\n    </Items>\n    <Items>\n      <PathPattern>(string)</PathPattern>\n      <TargetOriginId>(string)</TargetOriginId>\n      <ViewerProtocolPolicy>(string)</ViewerProtocolPolicy>\n      <AllowedMethods>\n        <Quantity>(integer)</Quantity>\n        <Items>(string)</Items>\n        <Items>(string)</Items>\n      </AllowedMethods>\n      <CachePolicyId>(string)</CachePolicyId>\n      <OriginRequestPolicyId>(string)</OriginRequestPolicyId>\n      <Compress>(boolean)</Compress>\n      <FunctionAssociations>\n        <Quantity>(integer)</Quantity>\n        <Items>\n          <FunctionARN>(string)</FunctionARN>\n          <EventType>(string)</EventType>\n        </Items>\n        <Items>\n          <FunctionARN>(string)</FunctionARN>\n          <EventType>(string)</EventType>\n        </Items>\n      </FunctionAssociations>\n      <LambdaFunctionAssociations>\n        <Quantity>(integer)</Quantity>\n        <Items>\n          <LambdaFunctionARN>(string)</LambdaFunctionARN>\n          <EventType>(string)</EventType>\n        </Items>\n        <Items>\n          <LambdaFunctionARN>(string)</LambdaFunctionARN>\n          <EventType>(string)</EventType>\n        </Items>\n      </LambdaFunctionAssociations>\n    </Items>\n  </CacheBehaviors>\n  <Comment>(string)</Comment>\n  <Enabled>(boolean)</Enabled>\n  <PriceClass>(string)</PriceClass>\n  <ViewerCertificate>\n    <CloudFrontDefaultCertificate>(boolean)</CloudFrontDefaultCertificate>\n    <ACMCertificateArn>(string)</ACMCertificateArn>\n    <SSLSupportMethod>(string)</SSLSupportMethod>\n    <MinimumProtocolVersion>(string)</MinimumProtocolVersion>\n  </ViewerCertificate>\n  <WebACLId>(string)</WebACLId>\n  <HttpVersion>(string)</HttpVersion>\n  <IsIPV6Enabled>(boolean)</IsIPV6Enabled>\n</element>",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "xml",
+                          "language": "xml"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/2020-05-31/distribution",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "2020-05-31",
+                        "distribution"
+                      ]
+                    }
+                  },
+                  "status": "Created",
+                  "code": 201,
+                  "_postman_previewlanguage": "xml",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/xml"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "The fully qualified URI of the new distribution resource",
+                        "type": "text/plain"
+                      },
+                      "key": "Location",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "The current version of the distribution",
+                        "type": "text/plain"
+                      },
+                      "key": "ETag",
+                      "value": "<string>"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <Id>(string)</Id>\n  <ARN>(string)</ARN>\n  <Status>(string)</Status>\n  <LastModifiedTime>(string)</LastModifiedTime>\n  <DomainName>(string)</DomainName>\n  <DistributionConfig>\n    <CallerReference>(string)</CallerReference>\n    <Aliases>\n      <Quantity>(integer)</Quantity>\n      <Items>(string)</Items>\n      <Items>(string)</Items>\n    </Aliases>\n    <DefaultRootObject>(string)</DefaultRootObject>\n    <Origins>\n      <Quantity>(integer)</Quantity>\n      <Items>\n        <Id>(string)</Id>\n        <DomainName>(string)</DomainName>\n        <OriginPath>(string)</OriginPath>\n        <S3OriginConfig>\n          <OriginAccessIdentity>(string)</OriginAccessIdentity>\n        </S3OriginConfig>\n        <CustomOriginConfig>\n          <HTTPPort>(integer)</HTTPPort>\n          <HTTPSPort>(integer)</HTTPSPort>\n          <OriginProtocolPolicy>(string)</OriginProtocolPolicy>\n        </CustomOriginConfig>\n      </Items>\n      <Items>\n        <Id>(string)</Id>\n        <DomainName>(string)</DomainName>\n        <OriginPath>(string)</OriginPath>\n        <S3OriginConfig>\n          <OriginAccessIdentity>(string)</OriginAccessIdentity>\n        </S3OriginConfig>\n        <CustomOriginConfig>\n          <HTTPPort>(integer)</HTTPPort>\n          <HTTPSPort>(integer)</HTTPSPort>\n          <OriginProtocolPolicy>(string)</OriginProtocolPolicy>\n        </CustomOriginConfig>\n      </Items>\n    </Origins>\n    <DefaultCacheBehavior>\n      <PathPattern>(string)</PathPattern>\n      <TargetOriginId>(string)</TargetOriginId>\n      <ViewerProtocolPolicy>(string)</ViewerProtocolPolicy>\n      <AllowedMethods>\n        <Quantity>(integer)</Quantity>\n        <Items>(string)</Items>\n        <Items>(string)</Items>\n      </AllowedMethods>\n      <CachePolicyId>(string)</CachePolicyId>\n      <OriginRequestPolicyId>(string)</OriginRequestPolicyId>\n      <Compress>(boolean)</Compress>\n      <FunctionAssociations>\n        <Quantity>(integer)</Quantity>\n        <Items>\n          <FunctionARN>(string)</FunctionARN>\n          <EventType>(string)</EventType>\n        </Items>\n        <Items>\n          <FunctionARN>(string)</FunctionARN>\n          <EventType>(string)</EventType>\n        </Items>\n      </FunctionAssociations>\n      <LambdaFunctionAssociations>\n        <Quantity>(integer)</Quantity>\n        <Items>\n          <LambdaFunctionARN>(string)</LambdaFunctionARN>\n          <EventType>(string)</EventType>\n        </Items>\n        <Items>\n          <LambdaFunctionARN>(string)</LambdaFunctionARN>\n          <EventType>(string)</EventType>\n        </Items>\n      </LambdaFunctionAssociations>\n    </DefaultCacheBehavior>\n    <CacheBehaviors>\n      <Quantity>(integer)</Quantity>\n      <Items>\n        <PathPattern>(string)</PathPattern>\n        <TargetOriginId>(string)</TargetOriginId>\n        <ViewerProtocolPolicy>(string)</ViewerProtocolPolicy>\n        <AllowedMethods>\n          <Quantity>(integer)</Quantity>\n          <Items>(string)</Items>\n          <Items>(string)</Items>\n        </AllowedMethods>\n        <CachePolicyId>(string)</CachePolicyId>\n        <OriginRequestPolicyId>(string)</OriginRequestPolicyId>\n        <Compress>(boolean)</Compress>\n        <FunctionAssociations>\n          <Quantity>(integer)</Quantity>\n          <Items>\n            <FunctionARN>(string)</FunctionARN>\n            <EventType>(string)</EventType>\n          </Items>\n          <Items>\n            <FunctionARN>(string)</FunctionARN>\n            <EventType>(string)</EventType>\n          </Items>\n        </FunctionAssociations>\n        <LambdaFunctionAssociations>\n          <Quantity>(integer)</Quantity>\n          <Items>\n            <LambdaFunctionARN>(string)</LambdaFunctionARN>\n            <EventType>(string)</EventType>\n          </Items>\n          <Items>\n            <LambdaFunctionARN>(string)</LambdaFunctionARN>\n            <EventType>(string)</EventType>\n          </Items>\n        </LambdaFunctionAssociations>\n      </Items>\n      <Items>\n        <PathPattern>(string)</PathPattern>\n        <TargetOriginId>(string)</TargetOriginId>\n        <ViewerProtocolPolicy>(string)</ViewerProtocolPolicy>\n        <AllowedMethods>\n          <Quantity>(integer)</Quantity>\n          <Items>(string)</Items>\n          <Items>(string)</Items>\n        </AllowedMethods>\n        <CachePolicyId>(string)</CachePolicyId>\n        <OriginRequestPolicyId>(string)</OriginRequestPolicyId>\n        <Compress>(boolean)</Compress>\n        <FunctionAssociations>\n          <Quantity>(integer)</Quantity>\n          <Items>\n            <FunctionARN>(string)</FunctionARN>\n            <EventType>(string)</EventType>\n          </Items>\n          <Items>\n            <FunctionARN>(string)</FunctionARN>\n            <EventType>(string)</EventType>\n          </Items>\n        </FunctionAssociations>\n        <LambdaFunctionAssociations>\n          <Quantity>(integer)</Quantity>\n          <Items>\n            <LambdaFunctionARN>(string)</LambdaFunctionARN>\n            <EventType>(string)</EventType>\n          </Items>\n          <Items>\n            <LambdaFunctionARN>(string)</LambdaFunctionARN>\n            <EventType>(string)</EventType>\n          </Items>\n        </LambdaFunctionAssociations>\n      </Items>\n    </CacheBehaviors>\n    <Comment>(string)</Comment>\n    <Enabled>(boolean)</Enabled>\n    <PriceClass>(string)</PriceClass>\n    <ViewerCertificate>\n      <CloudFrontDefaultCertificate>(boolean)</CloudFrontDefaultCertificate>\n      <ACMCertificateArn>(string)</ACMCertificateArn>\n      <SSLSupportMethod>(string)</SSLSupportMethod>\n      <MinimumProtocolVersion>(string)</MinimumProtocolVersion>\n    </ViewerCertificate>\n    <WebACLId>(string)</WebACLId>\n    <HttpVersion>(string)</HttpVersion>\n    <IsIPV6Enabled>(boolean)</IsIPV6Enabled>\n  </DistributionConfig>\n</element>",
+                  "createdAt": "2026-07-28T00:30:33.000Z",
+                  "updatedAt": "2026-07-28T00:30:33.000Z",
+                  "uid": "35240-47c456a1-6068-44da-9d03-bee2be52047f"
+                },
+                {
+                  "id": "5714f766-aad6-42f1-8cec-07ee402ad6db",
+                  "name": "Bad request",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/xml"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <CallerReference>(string)</CallerReference>\n  <Aliases>\n    <Quantity>(integer)</Quantity>\n    <Items>(string)</Items>\n    <Items>(string)</Items>\n  </Aliases>\n  <DefaultRootObject>(string)</DefaultRootObject>\n  <Origins>\n    <Quantity>(integer)</Quantity>\n    <Items>\n      <Id>(string)</Id>\n      <DomainName>(string)</DomainName>\n      <OriginPath>(string)</OriginPath>\n      <S3OriginConfig>\n        <OriginAccessIdentity>(string)</OriginAccessIdentity>\n      </S3OriginConfig>\n      <CustomOriginConfig>\n        <HTTPPort>(integer)</HTTPPort>\n        <HTTPSPort>(integer)</HTTPSPort>\n        <OriginProtocolPolicy>(string)</OriginProtocolPolicy>\n      </CustomOriginConfig>\n    </Items>\n    <Items>\n      <Id>(string)</Id>\n      <DomainName>(string)</DomainName>\n      <OriginPath>(string)</OriginPath>\n      <S3OriginConfig>\n        <OriginAccessIdentity>(string)</OriginAccessIdentity>\n      </S3OriginConfig>\n      <CustomOriginConfig>\n        <HTTPPort>(integer)</HTTPPort>\n        <HTTPSPort>(integer)</HTTPSPort>\n        <OriginProtocolPolicy>(string)</OriginProtocolPolicy>\n      </CustomOriginConfig>\n    </Items>\n  </Origins>\n  <DefaultCacheBehavior>\n    <PathPattern>(string)</PathPattern>\n    <TargetOriginId>(string)</TargetOriginId>\n    <ViewerProtocolPolicy>(string)</ViewerProtocolPolicy>\n    <AllowedMethods>\n      <Quantity>(integer)</Quantity>\n      <Items>(string)</Items>\n      <Items>(string)</Items>\n    </AllowedMethods>\n    <CachePolicyId>(string)</CachePolicyId>\n    <OriginRequestPolicyId>(string)</OriginRequestPolicyId>\n    <Compress>(boolean)</Compress>\n    <FunctionAssociations>\n      <Quantity>(integer)</Quantity>\n      <Items>\n        <FunctionARN>(string)</FunctionARN>\n        <EventType>(string)</EventType>\n      </Items>\n      <Items>\n        <FunctionARN>(string)</FunctionARN>\n        <EventType>(string)</EventType>\n      </Items>\n    </FunctionAssociations>\n    <LambdaFunctionAssociations>\n      <Quantity>(integer)</Quantity>\n      <Items>\n        <LambdaFunctionARN>(string)</LambdaFunctionARN>\n        <EventType>(string)</EventType>\n      </Items>\n      <Items>\n        <LambdaFunctionARN>(string)</LambdaFunctionARN>\n        <EventType>(string)</EventType>\n      </Items>\n    </LambdaFunctionAssociations>\n  </DefaultCacheBehavior>\n  <CacheBehaviors>\n    <Quantity>(integer)</Quantity>\n    <Items>\n      <PathPattern>(string)</PathPattern>\n      <TargetOriginId>(string)</TargetOriginId>\n      <ViewerProtocolPolicy>(string)</ViewerProtocolPolicy>\n      <AllowedMethods>\n        <Quantity>(integer)</Quantity>\n        <Items>(string)</Items>\n        <Items>(string)</Items>\n      </AllowedMethods>\n      <CachePolicyId>(string)</CachePolicyId>\n      <OriginRequestPolicyId>(string)</OriginRequestPolicyId>\n      <Compress>(boolean)</Compress>\n      <FunctionAssociations>\n        <Quantity>(integer)</Quantity>\n        <Items>\n          <FunctionARN>(string)</FunctionARN>\n          <EventType>(string)</EventType>\n        </Items>\n        <Items>\n          <FunctionARN>(string)</FunctionARN>\n          <EventType>(string)</EventType>\n        </Items>\n      </FunctionAssociations>\n      <LambdaFunctionAssociations>\n        <Quantity>(integer)</Quantity>\n        <Items>\n          <LambdaFunctionARN>(string)</LambdaFunctionARN>\n          <EventType>(string)</EventType>\n        </Items>\n        <Items>\n          <LambdaFunctionARN>(string)</LambdaFunctionARN>\n          <EventType>(string)</EventType>\n        </Items>\n      </LambdaFunctionAssociations>\n    </Items>\n    <Items>\n      <PathPattern>(string)</PathPattern>\n      <TargetOriginId>(string)</TargetOriginId>\n      <ViewerProtocolPolicy>(string)</ViewerProtocolPolicy>\n      <AllowedMethods>\n        <Quantity>(integer)</Quantity>\n        <Items>(string)</Items>\n        <Items>(string)</Items>\n      </AllowedMethods>\n      <CachePolicyId>(string)</CachePolicyId>\n      <OriginRequestPolicyId>(string)</OriginRequestPolicyId>\n      <Compress>(boolean)</Compress>\n      <FunctionAssociations>\n        <Quantity>(integer)</Quantity>\n        <Items>\n          <FunctionARN>(string)</FunctionARN>\n          <EventType>(string)</EventType>\n        </Items>\n        <Items>\n          <FunctionARN>(string)</FunctionARN>\n          <EventType>(string)</EventType>\n        </Items>\n      </FunctionAssociations>\n      <LambdaFunctionAssociations>\n        <Quantity>(integer)</Quantity>\n        <Items>\n          <LambdaFunctionARN>(string)</LambdaFunctionARN>\n          <EventType>(string)</EventType>\n        </Items>\n        <Items>\n          <LambdaFunctionARN>(string)</LambdaFunctionARN>\n          <EventType>(string)</EventType>\n        </Items>\n      </LambdaFunctionAssociations>\n    </Items>\n  </CacheBehaviors>\n  <Comment>(string)</Comment>\n  <Enabled>(boolean)</Enabled>\n  <PriceClass>(string)</PriceClass>\n  <ViewerCertificate>\n    <CloudFrontDefaultCertificate>(boolean)</CloudFrontDefaultCertificate>\n    <ACMCertificateArn>(string)</ACMCertificateArn>\n    <SSLSupportMethod>(string)</SSLSupportMethod>\n    <MinimumProtocolVersion>(string)</MinimumProtocolVersion>\n  </ViewerCertificate>\n  <WebACLId>(string)</WebACLId>\n  <HttpVersion>(string)</HttpVersion>\n  <IsIPV6Enabled>(boolean)</IsIPV6Enabled>\n</element>",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "xml",
+                          "language": "xml"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/2020-05-31/distribution",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "2020-05-31",
+                        "distribution"
+                      ]
+                    }
+                  },
+                  "status": "Bad Request",
+                  "code": 400,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": null,
+                  "createdAt": "2026-07-28T00:30:33.000Z",
+                  "updatedAt": "2026-07-28T00:30:33.000Z",
+                  "uid": "35240-5714f766-aad6-42f1-8cec-07ee402ad6db"
+                },
+                {
+                  "id": "09afb309-615a-4552-a2e0-9f4a27416f65",
+                  "name": "Access denied",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/xml"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <CallerReference>(string)</CallerReference>\n  <Aliases>\n    <Quantity>(integer)</Quantity>\n    <Items>(string)</Items>\n    <Items>(string)</Items>\n  </Aliases>\n  <DefaultRootObject>(string)</DefaultRootObject>\n  <Origins>\n    <Quantity>(integer)</Quantity>\n    <Items>\n      <Id>(string)</Id>\n      <DomainName>(string)</DomainName>\n      <OriginPath>(string)</OriginPath>\n      <S3OriginConfig>\n        <OriginAccessIdentity>(string)</OriginAccessIdentity>\n      </S3OriginConfig>\n      <CustomOriginConfig>\n        <HTTPPort>(integer)</HTTPPort>\n        <HTTPSPort>(integer)</HTTPSPort>\n        <OriginProtocolPolicy>(string)</OriginProtocolPolicy>\n      </CustomOriginConfig>\n    </Items>\n    <Items>\n      <Id>(string)</Id>\n      <DomainName>(string)</DomainName>\n      <OriginPath>(string)</OriginPath>\n      <S3OriginConfig>\n        <OriginAccessIdentity>(string)</OriginAccessIdentity>\n      </S3OriginConfig>\n      <CustomOriginConfig>\n        <HTTPPort>(integer)</HTTPPort>\n        <HTTPSPort>(integer)</HTTPSPort>\n        <OriginProtocolPolicy>(string)</OriginProtocolPolicy>\n      </CustomOriginConfig>\n    </Items>\n  </Origins>\n  <DefaultCacheBehavior>\n    <PathPattern>(string)</PathPattern>\n    <TargetOriginId>(string)</TargetOriginId>\n    <ViewerProtocolPolicy>(string)</ViewerProtocolPolicy>\n    <AllowedMethods>\n      <Quantity>(integer)</Quantity>\n      <Items>(string)</Items>\n      <Items>(string)</Items>\n    </AllowedMethods>\n    <CachePolicyId>(string)</CachePolicyId>\n    <OriginRequestPolicyId>(string)</OriginRequestPolicyId>\n    <Compress>(boolean)</Compress>\n    <FunctionAssociations>\n      <Quantity>(integer)</Quantity>\n      <Items>\n        <FunctionARN>(string)</FunctionARN>\n        <EventType>(string)</EventType>\n      </Items>\n      <Items>\n        <FunctionARN>(string)</FunctionARN>\n        <EventType>(string)</EventType>\n      </Items>\n    </FunctionAssociations>\n    <LambdaFunctionAssociations>\n      <Quantity>(integer)</Quantity>\n      <Items>\n        <LambdaFunctionARN>(string)</LambdaFunctionARN>\n        <EventType>(string)</EventType>\n      </Items>\n      <Items>\n        <LambdaFunctionARN>(string)</LambdaFunctionARN>\n        <EventType>(string)</EventType>\n      </Items>\n    </LambdaFunctionAssociations>\n  </DefaultCacheBehavior>\n  <CacheBehaviors>\n    <Quantity>(integer)</Quantity>\n    <Items>\n      <PathPattern>(string)</PathPattern>\n      <TargetOriginId>(string)</TargetOriginId>\n      <ViewerProtocolPolicy>(string)</ViewerProtocolPolicy>\n      <AllowedMethods>\n        <Quantity>(integer)</Quantity>\n        <Items>(string)</Items>\n        <Items>(string)</Items>\n      </AllowedMethods>\n      <CachePolicyId>(string)</CachePolicyId>\n      <OriginRequestPolicyId>(string)</OriginRequestPolicyId>\n      <Compress>(boolean)</Compress>\n      <FunctionAssociations>\n        <Quantity>(integer)</Quantity>\n        <Items>\n          <FunctionARN>(string)</FunctionARN>\n          <EventType>(string)</EventType>\n        </Items>\n        <Items>\n          <FunctionARN>(string)</FunctionARN>\n          <EventType>(string)</EventType>\n        </Items>\n      </FunctionAssociations>\n      <LambdaFunctionAssociations>\n        <Quantity>(integer)</Quantity>\n        <Items>\n          <LambdaFunctionARN>(string)</LambdaFunctionARN>\n          <EventType>(string)</EventType>\n        </Items>\n        <Items>\n          <LambdaFunctionARN>(string)</LambdaFunctionARN>\n          <EventType>(string)</EventType>\n        </Items>\n      </LambdaFunctionAssociations>\n    </Items>\n    <Items>\n      <PathPattern>(string)</PathPattern>\n      <TargetOriginId>(string)</TargetOriginId>\n      <ViewerProtocolPolicy>(string)</ViewerProtocolPolicy>\n      <AllowedMethods>\n        <Quantity>(integer)</Quantity>\n        <Items>(string)</Items>\n        <Items>(string)</Items>\n      </AllowedMethods>\n      <CachePolicyId>(string)</CachePolicyId>\n      <OriginRequestPolicyId>(string)</OriginRequestPolicyId>\n      <Compress>(boolean)</Compress>\n      <FunctionAssociations>\n        <Quantity>(integer)</Quantity>\n        <Items>\n          <FunctionARN>(string)</FunctionARN>\n          <EventType>(string)</EventType>\n        </Items>\n        <Items>\n          <FunctionARN>(string)</FunctionARN>\n          <EventType>(string)</EventType>\n        </Items>\n      </FunctionAssociations>\n      <LambdaFunctionAssociations>\n        <Quantity>(integer)</Quantity>\n        <Items>\n          <LambdaFunctionARN>(string)</LambdaFunctionARN>\n          <EventType>(string)</EventType>\n        </Items>\n        <Items>\n          <LambdaFunctionARN>(string)</LambdaFunctionARN>\n          <EventType>(string)</EventType>\n        </Items>\n      </LambdaFunctionAssociations>\n    </Items>\n  </CacheBehaviors>\n  <Comment>(string)</Comment>\n  <Enabled>(boolean)</Enabled>\n  <PriceClass>(string)</PriceClass>\n  <ViewerCertificate>\n    <CloudFrontDefaultCertificate>(boolean)</CloudFrontDefaultCertificate>\n    <ACMCertificateArn>(string)</ACMCertificateArn>\n    <SSLSupportMethod>(string)</SSLSupportMethod>\n    <MinimumProtocolVersion>(string)</MinimumProtocolVersion>\n  </ViewerCertificate>\n  <WebACLId>(string)</WebACLId>\n  <HttpVersion>(string)</HttpVersion>\n  <IsIPV6Enabled>(boolean)</IsIPV6Enabled>\n</element>",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "xml",
+                          "language": "xml"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/2020-05-31/distribution",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "2020-05-31",
+                        "distribution"
+                      ]
+                    }
+                  },
+                  "status": "Forbidden",
+                  "code": 403,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": null,
+                  "createdAt": "2026-07-28T00:30:33.000Z",
+                  "updatedAt": "2026-07-28T00:30:33.000Z",
+                  "uid": "35240-09afb309-615a-4552-a2e0-9f4a27416f65"
+                }
+              ],
+              "createdAt": "2026-07-28T00:30:33.000Z",
+              "updatedAt": "2026-07-28T00:30:33.000Z",
+              "uid": "35240-026206cd-298b-45bc-8c81-b1e43d62d8f3"
+            },
+            {
+              "name": "Amazon CloudFront List CloudFront distributions",
+              "id": "d0350f55-218f-47ae-ba21-ebb05391b7ea",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/xml"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/2020-05-31/distribution?Marker=<string>&MaxItems=<integer>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "2020-05-31",
+                    "distribution"
+                  ],
+                  "query": [
+                    {
+                      "description": "Use this when paginating results to indicate where to begin in your list of distributions.",
+                      "key": "Marker",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The maximum number of distributions to return.",
+                      "key": "MaxItems",
+                      "value": "<integer>"
+                    }
+                  ]
+                },
+                "description": "Returns a list of distributions for the current AWS account."
+              },
+              "response": [
+                {
+                  "id": "69f04328-98e3-41b9-bc73-bb803e030734",
+                  "name": "Successful response",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/xml"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/2020-05-31/distribution?Marker=<string>&MaxItems=<integer>",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "2020-05-31",
+                        "distribution"
+                      ],
+                      "query": [
+                        {
+                          "description": "Use this when paginating results to indicate where to begin in your list of distributions.",
+                          "key": "Marker",
+                          "value": "<string>"
+                        },
+                        {
+                          "description": "The maximum number of distributions to return.",
+                          "key": "MaxItems",
+                          "value": "<integer>"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "xml",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/xml"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <Marker>(string)</Marker>\n  <NextMarker>(string)</NextMarker>\n  <MaxItems>(integer)</MaxItems>\n  <IsTruncated>(boolean)</IsTruncated>\n  <Quantity>(integer)</Quantity>\n  <Items>\n    <Id>(string)</Id>\n    <ARN>(string)</ARN>\n    <Status>(string)</Status>\n    <LastModifiedTime>(string)</LastModifiedTime>\n    <DomainName>(string)</DomainName>\n    <DistributionConfig>\n      <CallerReference>(string)</CallerReference>\n      <Aliases>\n        <Quantity>(integer)</Quantity>\n        <Items>(string)</Items>\n        <Items>(string)</Items>\n      </Aliases>\n      <DefaultRootObject>(string)</DefaultRootObject>\n      <Origins>\n        <Quantity>(integer)</Quantity>\n        <Items>\n          <Id>(string)</Id>\n          <DomainName>(string)</DomainName>\n          <OriginPath>(string)</OriginPath>\n          <S3OriginConfig>\n            <OriginAccessIdentity>(string)</OriginAccessIdentity>\n          </S3OriginConfig>\n          <CustomOriginConfig>\n            <HTTPPort>(integer)</HTTPPort>\n            <HTTPSPort>(integer)</HTTPSPort>\n            <OriginProtocolPolicy>(string)</OriginProtocolPolicy>\n          </CustomOriginConfig>\n        </Items>\n        <Items>\n          <Id>(string)</Id>\n          <DomainName>(string)</DomainName>\n          <OriginPath>(string)</OriginPath>\n          <S3OriginConfig>\n            <OriginAccessIdentity>(string)</OriginAccessIdentity>\n          </S3OriginConfig>\n          <CustomOriginConfig>\n            <HTTPPort>(integer)</HTTPPort>\n            <HTTPSPort>(integer)</HTTPSPort>\n            <OriginProtocolPolicy>(string)</OriginProtocolPolicy>\n          </CustomOriginConfig>\n        </Items>\n      </Origins>\n      <DefaultCacheBehavior>\n        <PathPattern>(string)</PathPattern>\n        <TargetOriginId>(string)</TargetOriginId>\n        <ViewerProtocolPolicy>(string)</ViewerProtocolPolicy>\n        <AllowedMethods>\n          <Quantity>(integer)</Quantity>\n          <Items>(string)</Items>\n          <Items>(string)</Items>\n        </AllowedMethods>\n        <CachePolicyId>(string)</CachePolicyId>\n        <OriginRequestPolicyId>(string)</OriginRequestPolicyId>\n        <Compress>(boolean)</Compress>\n        <FunctionAssociations>\n          <Quantity>(integer)</Quantity>\n          <Items>\n            <FunctionARN>(string)</FunctionARN>\n            <EventType>(string)</EventType>\n          </Items>\n          <Items>\n            <FunctionARN>(string)</FunctionARN>\n            <EventType>(string)</EventType>\n          </Items>\n        </FunctionAssociations>\n        <LambdaFunctionAssociations>\n          <Quantity>(integer)</Quantity>\n          <Items>\n            <LambdaFunctionARN>(string)</LambdaFunctionARN>\n            <EventType>(string)</EventType>\n          </Items>\n          <Items>\n            <LambdaFunctionARN>(string)</LambdaFunctionARN>\n            <EventType>(string)</EventType>\n          </Items>\n        </LambdaFunctionAssociations>\n      </DefaultCacheBehavior>\n      <CacheBehaviors>\n        <Quantity>(integer)</Quantity>\n        <Items>\n          <PathPattern>(string)</PathPattern>\n          <TargetOriginId>(string)</TargetOriginId>\n          <ViewerProtocolPolicy>(string)</ViewerProtocolPolicy>\n          <AllowedMethods>\n            <Quantity>(integer)</Quantity>\n            <Items>(string)</Items>\n            <Items>(string)</Items>\n          </AllowedMethods>\n          <CachePolicyId>(string)</CachePolicyId>\n          <OriginRequestPolicyId>(string)</OriginRequestPolicyId>\n          <Compress>(boolean)</Compress>\n          <FunctionAssociations>\n            <Quantity>(integer)</Quantity>\n            <Items>\n              <FunctionARN>(string)</FunctionARN>\n              <EventType>(string)</EventType>\n            </Items>\n            <Items>\n              <FunctionARN>(string)</FunctionARN>\n              <EventType>(string)</EventType>\n            </Items>\n          </FunctionAssociations>\n          <LambdaFunctionAssociations>\n            <Quantity>(integer)</Quantity>\n            <Items>\n              <LambdaFunctionARN>(string)</LambdaFunctionARN>\n              <EventType>(string)</EventType>\n            </Items>\n            <Items>\n              <LambdaFunctionARN>(string)</LambdaFunctionARN>\n              <EventType>(string)</EventType>\n            </Items>\n          </LambdaFunctionAssociations>\n        </Items>\n        <Items>\n          <PathPattern>(string)</PathPattern>\n          <TargetOriginId>(string)</TargetOriginId>\n          <ViewerProtocolPolicy>(string)</ViewerProtocolPolicy>\n          <AllowedMethods>\n            <Quantity>(integer)</Quantity>\n            <Items>(string)</Items>\n            <Items>(string)</Items>\n          </AllowedMethods>\n          <CachePolicyId>(string)</CachePolicyId>\n          <OriginRequestPolicyId>(string)</OriginRequestPolicyId>\n          <Compress>(boolean)</Compress>\n          <FunctionAssociations>\n            <Quantity>(integer)</Quantity>\n            <Items>\n              <FunctionARN>(string)</FunctionARN>\n              <EventType>(string)</EventType>\n            </Items>\n            <Items>\n              <FunctionARN>(string)</FunctionARN>\n              <EventType>(string)</EventType>\n            </Items>\n          </FunctionAssociations>\n          <LambdaFunctionAssociations>\n            <Quantity>(integer)</Quantity>\n            <Items>\n              <LambdaFunctionARN>(string)</LambdaFunctionARN>\n              <EventType>(string)</EventType>\n            </Items>\n            <Items>\n              <LambdaFunctionARN>(string)</LambdaFunctionARN>\n              <EventType>(string)</EventType>\n            </Items>\n          </LambdaFunctionAssociations>\n        </Items>\n      </CacheBehaviors>\n      <Comment>(string)</Comment>\n      <Enabled>(boolean)</Enabled>\n      <PriceClass>(string)</PriceClass>\n      <ViewerCertificate>\n        <CloudFrontDefaultCertificate>(boolean)</CloudFrontDefaultCertificate>\n        <ACMCertificateArn>(string)</ACMCertificateArn>\n        <SSLSupportMethod>(string)</SSLSupportMethod>\n        <MinimumProtocolVersion>(string)</MinimumProtocolVersion>\n      </ViewerCertificate>\n      <WebACLId>(string)</WebACLId>\n      <HttpVersion>(string)</HttpVersion>\n      <IsIPV6Enabled>(boolean)</IsIPV6Enabled>\n    </DistributionConfig>\n  </Items>\n  <Items>\n    <Id>(string)</Id>\n    <ARN>(string)</ARN>\n    <Status>(string)</Status>\n    <LastModifiedTime>(string)</LastModifiedTime>\n    <DomainName>(string)</DomainName>\n    <DistributionConfig>\n      <CallerReference>(string)</CallerReference>\n      <Aliases>\n        <Quantity>(integer)</Quantity>\n        <Items>(string)</Items>\n        <Items>(string)</Items>\n      </Aliases>\n      <DefaultRootObject>(string)</DefaultRootObject>\n      <Origins>\n        <Quantity>(integer)</Quantity>\n        <Items>\n          <Id>(string)</Id>\n          <DomainName>(string)</DomainName>\n          <OriginPath>(string)</OriginPath>\n          <S3OriginConfig>\n            <OriginAccessIdentity>(string)</OriginAccessIdentity>\n          </S3OriginConfig>\n          <CustomOriginConfig>\n            <HTTPPort>(integer)</HTTPPort>\n            <HTTPSPort>(integer)</HTTPSPort>\n            <OriginProtocolPolicy>(string)</OriginProtocolPolicy>\n          </CustomOriginConfig>\n        </Items>\n        <Items>\n          <Id>(string)</Id>\n          <DomainName>(string)</DomainName>\n          <OriginPath>(string)</OriginPath>\n          <S3OriginConfig>\n            <OriginAccessIdentity>(string)</OriginAccessIdentity>\n          </S3OriginConfig>\n          <CustomOriginConfig>\n            <HTTPPort>(integer)</HTTPPort>\n            <HTTPSPort>(integer)</HTTPSPort>\n            <OriginProtocolPolicy>(string)</OriginProtocolPolicy>\n          </CustomOriginConfig>\n        </Items>\n      </Origins>\n      <DefaultCacheBehavior>\n        <PathPattern>(string)</PathPattern>\n        <TargetOriginId>(string)</TargetOriginId>\n        <ViewerProtocolPolicy>(string)</ViewerProtocolPolicy>\n        <AllowedMethods>\n          <Quantity>(integer)</Quantity>\n          <Items>(string)</Items>\n          <Items>(string)</Items>\n        </AllowedMethods>\n        <CachePolicyId>(string)</CachePolicyId>\n        <OriginRequestPolicyId>(string)</OriginRequestPolicyId>\n        <Compress>(boolean)</Compress>\n        <FunctionAssociations>\n          <Quantity>(integer)</Quantity>\n          <Items>\n            <FunctionARN>(string)</FunctionARN>\n            <EventType>(string)</EventType>\n          </Items>\n          <Items>\n            <FunctionARN>(string)</FunctionARN>\n            <EventType>(string)</EventType>\n          </Items>\n        </FunctionAssociations>\n        <LambdaFunctionAssociations>\n          <Quantity>(integer)</Quantity>\n          <Items>\n            <LambdaFunctionARN>(string)</LambdaFunctionARN>\n            <EventType>(string)</EventType>\n          </Items>\n          <Items>\n            <LambdaFunctionARN>(string)</LambdaFunctionARN>\n            <EventType>(string)</EventType>\n          </Items>\n        </LambdaFunctionAssociations>\n      </DefaultCacheBehavior>\n      <CacheBehaviors>\n        <Quantity>(integer)</Quantity>\n        <Items>\n          <PathPattern>(string)</PathPattern>\n          <TargetOriginId>(string)</TargetOriginId>\n          <ViewerProtocolPolicy>(string)</ViewerProtocolPolicy>\n          <AllowedMethods>\n            <Quantity>(integer)</Quantity>\n            <Items>(string)</Items>\n            <Items>(string)</Items>\n          </AllowedMethods>\n          <CachePolicyId>(string)</CachePolicyId>\n          <OriginRequestPolicyId>(string)</OriginRequestPolicyId>\n          <Compress>(boolean)</Compress>\n          <FunctionAssociations>\n            <Quantity>(integer)</Quantity>\n            <Items>\n              <FunctionARN>(string)</FunctionARN>\n              <EventType>(string)</EventType>\n            </Items>\n            <Items>\n              <FunctionARN>(string)</FunctionARN>\n              <EventType>(string)</EventType>\n            </Items>\n          </FunctionAssociations>\n          <LambdaFunctionAssociations>\n            <Quantity>(integer)</Quantity>\n            <Items>\n              <LambdaFunctionARN>(string)</LambdaFunctionARN>\n              <EventType>(string)</EventType>\n            </Items>\n            <Items>\n              <LambdaFunctionARN>(string)</LambdaFunctionARN>\n              <EventType>(string)</EventType>\n            </Items>\n          </LambdaFunctionAssociations>\n        </Items>\n        <Items>\n          <PathPattern>(string)</PathPattern>\n          <TargetOriginId>(string)</TargetOriginId>\n          <ViewerProtocolPolicy>(string)</ViewerProtocolPolicy>\n          <AllowedMethods>\n            <Quantity>(integer)</Quantity>\n            <Items>(string)</Items>\n            <Items>(string)</Items>\n          </AllowedMethods>\n          <CachePolicyId>(string)</CachePolicyId>\n          <OriginRequestPolicyId>(string)</OriginRequestPolicyId>\n          <Compress>(boolean)</Compress>\n          <FunctionAssociations>\n            <Quantity>(integer)</Quantity>\n            <Items>\n              <FunctionARN>(string)</FunctionARN>\n              <EventType>(string)</EventType>\n            </Items>\n            <Items>\n              <FunctionARN>(string)</FunctionARN>\n              <EventType>(string)</EventType>\n            </Items>\n          </FunctionAssociations>\n          <LambdaFunctionAssociations>\n            <Quantity>(integer)</Quantity>\n            <Items>\n              <LambdaFunctionARN>(string)</LambdaFunctionARN>\n              <EventType>(string)</EventType>\n            </Items>\n            <Items>\n              <LambdaFunctionARN>(string)</LambdaFunctionARN>\n              <EventType>(string)</EventType>\n            </Items>\n          </LambdaFunctionAssociations>\n        </Items>\n      </CacheBehaviors>\n      <Comment>(string)</Comment>\n      <Enabled>(boolean)</Enabled>\n      <PriceClass>(string)</PriceClass>\n      <ViewerCertificate>\n        <CloudFrontDefaultCertificate>(boolean)</CloudFrontDefaultCertificate>\n        <ACMCertificateArn>(string)</ACMCertificateArn>\n        <SSLSupportMethod>(string)</SSLSupportMethod>\n        <MinimumProtocolVersion>(string)</MinimumProtocolVersion>\n      </ViewerCertificate>\n      <WebACLId>(string)</WebACLId>\n      <HttpVersion>(string)</HttpVersion>\n      <IsIPV6Enabled>(boolean)</IsIPV6Enabled>\n    </DistributionConfig>\n  </Items>\n</element>",
+                  "createdAt": "2026-07-28T00:30:33.000Z",
+                  "updatedAt": "2026-07-28T00:30:33.000Z",
+                  "uid": "35240-69f04328-98e3-41b9-bc73-bb803e030734"
+                },
+                {
+                  "id": "367416d9-5ff9-47cd-a7a1-a6368a0be02a",
+                  "name": "Bad request",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [],
+                    "url": {
+                      "raw": "{{baseUrl}}/2020-05-31/distribution?Marker=<string>&MaxItems=<integer>",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "2020-05-31",
+                        "distribution"
+                      ],
+                      "query": [
+                        {
+                          "description": "Use this when paginating results to indicate where to begin in your list of distributions.",
+                          "key": "Marker",
+                          "value": "<string>"
+                        },
+                        {
+                          "description": "The maximum number of distributions to return.",
+                          "key": "MaxItems",
+                          "value": "<integer>"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "Bad Request",
+                  "code": 400,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": null,
+                  "createdAt": "2026-07-28T00:30:33.000Z",
+                  "updatedAt": "2026-07-28T00:30:33.000Z",
+                  "uid": "35240-367416d9-5ff9-47cd-a7a1-a6368a0be02a"
+                }
+              ],
+              "createdAt": "2026-07-28T00:30:33.000Z",
+              "updatedAt": "2026-07-28T00:30:33.000Z",
+              "uid": "35240-d0350f55-218f-47ae-ba21-ebb05391b7ea"
+            }
+          ],
+          "id": "2322a64e-1b96-4db2-babf-05eda5e04185",
+          "createdAt": "2026-07-28T00:30:33.000Z",
+          "updatedAt": "2026-07-28T00:30:33.000Z",
+          "uid": "35240-2322a64e-1b96-4db2-babf-05eda5e04185"
+        }
+      ],
+      "id": "024fc8f4-a0d6-493f-a842-0ec4e1ad0d91",
+      "createdAt": "2026-07-28T00:30:33.000Z",
+      "updatedAt": "2026-07-28T00:30:33.000Z",
+      "uid": "35240-024fc8f4-a0d6-493f-a842-0ec4e1ad0d91"
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://cloudfront.amazonaws.com"
+    }
+  ]
+}
