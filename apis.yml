@@ -27,7 +27,7 @@ description: >-
   Presence.
 created: '2026-05-11'
 modified: '2026-05-19'
-specificationVersion: '0.19'
+specificationVersion: '0.23'
 apis:
 - aid: amazon-cloudfront:amazon-cloudfront-distributions-api
   name: Amazon CloudFront Distributions API
