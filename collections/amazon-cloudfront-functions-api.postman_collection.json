@@ -1,0 +1,338 @@
+{
+  "item": [
+    {
+      "id": "38bece5f-1f9e-4963-b31b-749308f29d57",
+      "name": "Functions",
+      "description": {
+        "content": "Operations for managing CloudFront functions",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "7a0e9c1c-9c55-4678-b1cd-da57ce9f5ce2",
+          "name": "Amazon CloudFront Create a CloudFront function",
+          "request": {
+            "name": "Amazon CloudFront Create a CloudFront function",
+            "description": {
+              "content": "Creates a CloudFront function. CloudFront functions are lightweight functions in JavaScript for high-scale, latency-sensitive CDN customizations.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "2020-05-31",
+                "function"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/xml"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <Name>(string)</Name>\n  <FunctionConfig>\n    <Comment>(string)</Comment>\n    <Runtime>(string)</Runtime>\n  </FunctionConfig>\n  <FunctionCode>(string)</FunctionCode>\n</element>",
+              "options": {
+                "raw": {
+                  "language": "xml"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "1aa7458f-398d-4828-8a78-5f12f18fac3f",
+              "name": "Function created successfully",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "2020-05-31",
+                    "function"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <Name>(string)</Name>\n  <FunctionConfig>\n    <Comment>(string)</Comment>\n    <Runtime>(string)</Runtime>\n  </FunctionConfig>\n  <FunctionCode>(string)</FunctionCode>\n</element>",
+                  "options": {
+                    "raw": {
+                      "language": "xml"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "Location",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "ETag",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "29472109-b086-45d8-b92d-76e14a3c3e1c",
+              "name": "Bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "2020-05-31",
+                    "function"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <Name>(string)</Name>\n  <FunctionConfig>\n    <Comment>(string)</Comment>\n    <Runtime>(string)</Runtime>\n  </FunctionConfig>\n  <FunctionCode>(string)</FunctionCode>\n</element>",
+                  "options": {
+                    "raw": {
+                      "language": "xml"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "bae46405-0be9-46a5-8e8e-7795e007afe7",
+              "name": "Access denied",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "2020-05-31",
+                    "function"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <Name>(string)</Name>\n  <FunctionConfig>\n    <Comment>(string)</Comment>\n    <Runtime>(string)</Runtime>\n  </FunctionConfig>\n  <FunctionCode>(string)</FunctionCode>\n</element>",
+                  "options": {
+                    "raw": {
+                      "language": "xml"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "1c50552b-7861-40db-b38a-f512736b461e",
+          "name": "Amazon CloudFront List CloudFront functions",
+          "request": {
+            "name": "Amazon CloudFront List CloudFront functions",
+            "description": {
+              "content": "Gets a list of all CloudFront functions in your AWS account.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "2020-05-31",
+                "function"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "Marker",
+                  "value": "<string>",
+                  "description": "Use this to paginate results."
+                },
+                {
+                  "disabled": false,
+                  "key": "MaxItems",
+                  "value": "<integer>",
+                  "description": "The maximum number of functions to return."
+                },
+                {
+                  "disabled": false,
+                  "key": "Stage",
+                  "value": "<string>",
+                  "description": "The function stage to filter by."
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "914157da-da5e-45f6-999e-86d7e01b3edf",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "2020-05-31",
+                    "function"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "Marker",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "MaxItems",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "Stage",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "7c0fe8a4-b40d-426e-a0da-20930850c965",
+              "name": "Bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "2020-05-31",
+                    "function"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "Marker",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "MaxItems",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "Stage",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://cloudfront.amazonaws.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "07658196-2b4f-4bdf-ba78-be90cb4f718a",
+    "name": "Amazon CloudFront Distributions Functions API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Amazon CloudFront is a content delivery network (CDN) service that accelerates delivery of your websites, APIs, video content, and other web assets. The CloudFront API enables you to programmatically manage distributions, invalidations, functions, and other CloudFront resources.\n\nContact Support:\n Name: Amazon Web Services",
+      "type": "text/plain"
+    }
+  }
+}

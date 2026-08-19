@@ -1,0 +1,68 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Amazon CloudFront Distributions Invalidations API",
+    "version": "2020-05-31"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Invalidations",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Amazon CloudFront List invalidations for a distribution",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://cloudfront.amazonaws.com/2020-05-31/distribution/:DistributionId/invalidation",
+            "params": [
+              {
+                "name": "DistributionId",
+                "value": "",
+                "type": "path",
+                "description": "The distribution's ID."
+              },
+              {
+                "name": "Marker",
+                "value": "",
+                "type": "query",
+                "description": "Use this parameter when paginating results to indicate where to begin in your list of invalidation batches."
+              },
+              {
+                "name": "MaxItems",
+                "value": "",
+                "type": "query",
+                "description": "The maximum number of invalidation batches to return."
+              }
+            ]
+          },
+          "docs": "Lists invalidation batches for the specified distribution."
+        },
+        {
+          "info": {
+            "name": "Amazon CloudFront Create an invalidation",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://cloudfront.amazonaws.com/2020-05-31/distribution/:DistributionId/invalidation",
+            "params": [
+              {
+                "name": "DistributionId",
+                "value": "",
+                "type": "path",
+                "description": "The distribution's ID."
+              }
+            ]
+          },
+          "docs": "Create a new invalidation to remove content from CloudFront edge caches. An invalidation forces CloudFront to re-request the content from the origin the next time a viewer requests it."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

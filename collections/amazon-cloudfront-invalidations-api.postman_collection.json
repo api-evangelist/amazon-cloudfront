@@ -1,0 +1,459 @@
+{
+  "item": [
+    {
+      "id": "019810b8-2695-4aa4-b96b-ea3b16ed1a0b",
+      "name": "Invalidations",
+      "description": {
+        "content": "Operations for managing cache invalidations",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "847d296e-c541-4165-b7fc-498cede3b492",
+          "name": "Amazon CloudFront Create an invalidation",
+          "request": {
+            "name": "Amazon CloudFront Create an invalidation",
+            "description": {
+              "content": "Create a new invalidation to remove content from CloudFront edge caches. An invalidation forces CloudFront to re-request the content from the origin the next time a viewer requests it.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "2020-05-31",
+                "distribution",
+                ":DistributionId",
+                "invalidation"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "DistributionId",
+                  "description": "(Required) The distribution's ID."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/xml"
+              },
+              {
+                "key": "Accept",
+                "value": "application/xml"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <Paths>\n    <Quantity>(integer)</Quantity>\n    <Items>(string)</Items>\n    <Items>(string)</Items>\n  </Paths>\n  <CallerReference>(string)</CallerReference>\n</element>",
+              "options": {
+                "raw": {
+                  "language": "xml"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "a4e00e9a-4c3e-40b5-aee3-304831837e9a",
+              "name": "Invalidation created successfully",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "2020-05-31",
+                    "distribution",
+                    ":DistributionId",
+                    "invalidation"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "DistributionId",
+                      "description": "(Required) The distribution's ID."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/xml"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <Paths>\n    <Quantity>(integer)</Quantity>\n    <Items>(string)</Items>\n    <Items>(string)</Items>\n  </Paths>\n  <CallerReference>(string)</CallerReference>\n</element>",
+                  "options": {
+                    "raw": {
+                      "language": "xml"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "The fully qualified URI of the invalidation",
+                  "key": "Location",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/xml"
+                }
+              ],
+              "body": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <Id>(string)</Id>\n  <Status>(string)</Status>\n  <CreateTime>(string)</CreateTime>\n  <InvalidationBatch>\n    <Paths>\n      <Quantity>(integer)</Quantity>\n      <Items>(string)</Items>\n      <Items>(string)</Items>\n    </Paths>\n    <CallerReference>(string)</CallerReference>\n  </InvalidationBatch>\n</element>",
+              "cookie": [],
+              "_postman_previewlanguage": "xml"
+            },
+            {
+              "id": "3707bff7-763b-47bd-a214-f246fbcf443a",
+              "name": "Bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "2020-05-31",
+                    "distribution",
+                    ":DistributionId",
+                    "invalidation"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "DistributionId",
+                      "description": "(Required) The distribution's ID."
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <Paths>\n    <Quantity>(integer)</Quantity>\n    <Items>(string)</Items>\n    <Items>(string)</Items>\n  </Paths>\n  <CallerReference>(string)</CallerReference>\n</element>",
+                  "options": {
+                    "raw": {
+                      "language": "xml"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "4f4628fc-af30-4c3e-afa7-e44a9a167683",
+              "name": "Distribution not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "2020-05-31",
+                    "distribution",
+                    ":DistributionId",
+                    "invalidation"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "DistributionId",
+                      "description": "(Required) The distribution's ID."
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <Paths>\n    <Quantity>(integer)</Quantity>\n    <Items>(string)</Items>\n    <Items>(string)</Items>\n  </Paths>\n  <CallerReference>(string)</CallerReference>\n</element>",
+                  "options": {
+                    "raw": {
+                      "language": "xml"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "d4c01220-b481-44b6-924a-00f40849a366",
+          "name": "Amazon CloudFront List invalidations for a distribution",
+          "request": {
+            "name": "Amazon CloudFront List invalidations for a distribution",
+            "description": {
+              "content": "Lists invalidation batches for the specified distribution.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "2020-05-31",
+                "distribution",
+                ":DistributionId",
+                "invalidation"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "Marker",
+                  "value": "<string>",
+                  "description": "Use this parameter when paginating results to indicate where to begin in your list of invalidation batches."
+                },
+                {
+                  "disabled": false,
+                  "key": "MaxItems",
+                  "value": "<integer>",
+                  "description": "The maximum number of invalidation batches to return."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "DistributionId",
+                  "description": "(Required) The distribution's ID."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/xml"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "dfb92fc0-abf5-4757-b032-ec66c3e2fa1c",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "2020-05-31",
+                    "distribution",
+                    ":DistributionId",
+                    "invalidation"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "Marker",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "MaxItems",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "DistributionId",
+                      "description": "(Required) The distribution's ID."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/xml"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/xml"
+                }
+              ],
+              "body": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <Marker>(string)</Marker>\n  <NextMarker>(string)</NextMarker>\n  <MaxItems>(integer)</MaxItems>\n  <IsTruncated>(boolean)</IsTruncated>\n  <Quantity>(integer)</Quantity>\n  <Items>\n    <Id>(string)</Id>\n    <Status>(string)</Status>\n    <CreateTime>(string)</CreateTime>\n    <InvalidationBatch>\n      <Paths>\n        <Quantity>(integer)</Quantity>\n        <Items>(string)</Items>\n        <Items>(string)</Items>\n      </Paths>\n      <CallerReference>(string)</CallerReference>\n    </InvalidationBatch>\n  </Items>\n  <Items>\n    <Id>(string)</Id>\n    <Status>(string)</Status>\n    <CreateTime>(string)</CreateTime>\n    <InvalidationBatch>\n      <Paths>\n        <Quantity>(integer)</Quantity>\n        <Items>(string)</Items>\n        <Items>(string)</Items>\n      </Paths>\n      <CallerReference>(string)</CallerReference>\n    </InvalidationBatch>\n  </Items>\n</element>",
+              "cookie": [],
+              "_postman_previewlanguage": "xml"
+            },
+            {
+              "id": "87feb4ba-d791-4788-ad6d-df0c7e061d87",
+              "name": "Bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "2020-05-31",
+                    "distribution",
+                    ":DistributionId",
+                    "invalidation"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "Marker",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "MaxItems",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "DistributionId",
+                      "description": "(Required) The distribution's ID."
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "1ed62eab-c910-4367-ac40-0a6158663246",
+              "name": "Distribution not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "2020-05-31",
+                    "distribution",
+                    ":DistributionId",
+                    "invalidation"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "Marker",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "MaxItems",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "DistributionId",
+                      "description": "(Required) The distribution's ID."
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://cloudfront.amazonaws.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "12c2a466-61e4-47bd-b3f3-fb0bd0869e95",
+    "name": "Amazon CloudFront Distributions Invalidations API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Amazon CloudFront is a content delivery network (CDN) service that accelerates delivery of your websites, APIs, video content, and other web assets. The CloudFront API enables you to programmatically manage distributions, invalidations, functions, and other CloudFront resources.\n\nContact Support:\n Name: Amazon Web Services",
+      "type": "text/plain"
+    }
+  }
+}
