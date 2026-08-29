@@ -144,6 +144,9 @@ apis:
   - type: JSONLD
     url: json-ld/amazon-cloudfront-context.jsonld
 common:
+  - type: CapabilityMap
+    url: capabilities/amazon-cloudfront-capability-edges.yml
+    name: Amazon CloudFront Business Capability Map
   - type: PostmanWorkspace
     url: https://www.postman.com/kinlaneapi/amazon-cloudfront/overview
   - type: AgenticAccess
