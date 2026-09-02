@@ -1,4 +1,4 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
   title: Amazon CloudFront Distributions API
   description: Amazon CloudFront is a content delivery network (CDN) service that accelerates delivery of your websites, APIs, video content, and other web assets. The CloudFront API enables you to programmatically manage distributions, invalidations, functions, and other CloudFront resources.
@@ -175,6 +175,27 @@ paths:
       - Distributions
 components:
   schemas:
+    Distribution:
+      type: object
+      properties:
+        Id:
+          type: string
+          description: The distribution's unique identifier.
+        ARN:
+          type: string
+          description: The ARN of the distribution.
+        Status:
+          type: string
+          description: The current status of the distribution (e.g., Deployed, InProgress).
+        LastModifiedTime:
+          type: string
+          format: date-time
+          description: The date and time the distribution was last modified.
+        DomainName:
+          type: string
+          description: The domain name corresponding to the distribution (e.g., d111111abcdef8.cloudfront.net).
+        DistributionConfig:
+          $ref: '#/components/schemas/DistributionConfig'
     DistributionConfig:
       type: object
       required:
@@ -260,44 +281,6 @@ components:
           - http2and3
         IsIPV6Enabled:
           type: boolean
-    Distribution:
-      type: object
-      properties:
-        Id:
-          type: string
-          description: The distribution's unique identifier.
-        ARN:
-          type: string
-          description: The ARN of the distribution.
-        Status:
-          type: string
-          description: The current status of the distribution (e.g., Deployed, InProgress).
-        LastModifiedTime:
-          type: string
-          format: date-time
-          description: The date and time the distribution was last modified.
-        DomainName:
-          type: string
-          description: The domain name corresponding to the distribution (e.g., d111111abcdef8.cloudfront.net).
-        DistributionConfig:
-          $ref: '#/components/schemas/DistributionConfig'
-    DistributionList:
-      type: object
-      properties:
-        Marker:
-          type: string
-        NextMarker:
-          type: string
-        MaxItems:
-          type: integer
-        IsTruncated:
-          type: boolean
-        Quantity:
-          type: integer
-        Items:
-          type: array
-          items:
-            $ref: '#/components/schemas/Distribution'
     Origin:
       type: object
       required:
@@ -412,3 +395,20 @@ components:
                     - viewer-response
                     - origin-request
                     - origin-response
+    DistributionList:
+      type: object
+      properties:
+        Marker:
+          type: string
+        NextMarker:
+          type: string
+        MaxItems:
+          type: integer
+        IsTruncated:
+          type: boolean
+        Quantity:
+          type: integer
+        Items:
+          type: array
+          items:
+            $ref: '#/components/schemas/Distribution'
